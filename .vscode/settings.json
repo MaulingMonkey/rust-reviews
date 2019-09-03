@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+
+        // These are not the point of this repository.
+        "Cargo.lock": true,
+        "src/": true,
+        "target/": true,
+    }
+}

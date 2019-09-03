@@ -1,0 +1,46 @@
+# https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[package]
+version = "0.0.0"
+name = "rust-reviews"
+publish = false
+authors = ["MaulingMonkey <git@maulingmonkey.com>"]
+edition = "2018"
+
+[dev-dependencies]
+
+# General Utility
+arrayvec                = "=0.4.11"
+smallvec                = "=0.6.10"
+autocfg                 = "=0.1.6"
+cfg-if                  = "=0.1.9"
+lazy_static             = "=1.4.0"
+idna                    = "=0.2.0"
+require_unsafe_in_body  = "=0.2.0"
+tempfile                = "=3.1.0"
+void                    = "=1.0.2"
+zip                     = "=0.5.3"
+
+# Gamedev
+tiled                   = "=0.8.0"
+tiled-json-rs           = "=0.2.6"
+midir                   = "=0.5.0"
+warmy                   = "=0.13.0"
+
+# Android
+cargo-ndk               = "=0.3.0"
+cargo-dinghy            = "=0.4.12"
+dinghy-build            = "=0.4.12"
+dinghy-lib              = "=0.4.12"
+jni-sys                 = "=0.3.0"
+
+# Debug
+#gimli                  = "=0.15.0" # TODO: Update
+
+# Unsound
+#ascii                  = "=0.9.2"  # TODO: Update
+#cargo-apk              = "=0.4.0"
+#jni                    = "=0.13.0" # TODO: Update
+
+# Avoid
+#memalloc               = "=0.1.0"
