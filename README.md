@@ -17,6 +17,7 @@ This repository serves a few purpouses:
 | [require_unsafe_in_body](https://crates.io/crates/require_unsafe_in_body) | 0.2.0     | ![positive](https://img.shields.io/badge/-positive-green)     | Reducing the scope of `unsafe { ... }` in `unsafe fn`s.
 | [tempfile](https://crates.io/crates/tempfile)                             | 3.1.0     | ![positive](https://img.shields.io/badge/-positive-green)     | Create/cleanup temporary files and directories.
 | [void](https://crates.io/crates/void)                                     | 1.0.2     | ![positive](https://img.shields.io/badge/-positive-green)     | Uninhabited type.
+| [xml-rs](https://crates.io/crates/xml-rs)                                 | [0.8.0](reviews/xml-rs.md#0.8.0)  | ![positive](https://img.shields.io/badge/-positive-green)     | Encoding and decoding XML.  Safe, sound, no deps.
 | [zip](https://crates.io/crates/zip)                                       | 0.5.3     | ![positive](https://img.shields.io/badge/-positive-green)     | Zipping/unzipping `.zip` archives.
 | **Gamedev** | | | |
 | [tiled](https://crates.io/crates/tiled)                                   | 0.8.0     | ![negative](https://img.shields.io/badge/-negative-yellow)    | [Tiled](https://www.mapeditor.org) `.tmx` file parser.  Decent bones, but I'm concerned about path traversal attacks.
