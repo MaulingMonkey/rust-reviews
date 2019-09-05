@@ -14,6 +14,7 @@ This repository serves a few purpouses:
 | [cfg-if](https://crates.io/crates/cfg-if)                                 | 0.1.9     | ![positive](https://img.shields.io/badge/-positive-green)     | Utility for managing cfg attribute soup.
 | [lazy_static](https://crates.io/crates/lazy_static)                       | 1.4.0     | ![positive](https://img.shields.io/badge/-positive-green)     | Static init at runtime.
 | [idna](https://crates.io/crates/idna)                                     | 0.2.0     | ![positive](https://img.shields.io/badge/-positive-green)     | Encoding/decoding domain names/punycode.
+| [macro_rules_attribute](https://crates.io/crates/macro_rules_attribute)   | 0.0.1     | ![positive](https://img.shields.io/badge/-positive-green)     | Provides a `#[derive(...)]`-like attribute without needing your own proc macro crate.
 | [require_unsafe_in_body](https://crates.io/crates/require_unsafe_in_body) | 0.2.0     | ![positive](https://img.shields.io/badge/-positive-green)     | Reducing the scope of `unsafe { ... }` in `unsafe fn`s.
 | [tempfile](https://crates.io/crates/tempfile)                             | 3.1.0     | ![positive](https://img.shields.io/badge/-positive-green)     | Create/cleanup temporary files and directories.
 | [void](https://crates.io/crates/void)                                     | 1.0.2     | ![positive](https://img.shields.io/badge/-positive-green)     | Uninhabited type.
