@@ -31,6 +31,8 @@ This repository serves a few purpouses:
 | [dinghy-build](https://crates.io/crates/dinghy-build)                     | 0.4.12    | ![positive](https://img.shields.io/badge/-positive-green)     | |
 | [dinghy-lib](https://crates.io/crates/dinghy-lib)                         | 0.4.12    | ![neutral](https://img.shields.io/badge/-neutral-lightgrey)   | |
 | [jni-sys](https://crates.io/crates/jni-sys)                               | 0.3.0     | ![positive](https://img.shields.io/badge/-positive-green)     | Rust bindings for JNI interop.
+| **Build Utility** | | | |
+| [cargo_metadata](https://crates.io/crates/cargo_metadata)                 | [0.8.2](reviews/cargo_metadata.md#0.8.2)                          | ![positive](https://img.shields.io/badge/-positive-green)     | Parse `cargo metadata` and `cargo build --message-format=json` output.
 | **Debug** | | | |
 | [gimli](https://crates.io/crates/gimli)                                   | 0.15.0    | ![positive](https://img.shields.io/badge/-positive-green)     | DWARF debug info parsing.
 | **Unsound** | | | |

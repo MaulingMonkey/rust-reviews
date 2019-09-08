@@ -37,6 +37,9 @@ dinghy-build            = "=0.4.12"
 dinghy-lib              = "=0.4.12"
 jni-sys                 = "=0.3.0"
 
+# Build Utility
+cargo_metadata          = "=0.8.2"
+
 # Debug
 #gimli                  = "=0.15.0" # TODO: Update
 
