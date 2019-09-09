@@ -34,7 +34,7 @@ warmy                   = "=0.13.0"
 cargo-ndk               = "=0.3.0"
 cargo-dinghy            = "=0.4.12"
 dinghy-build            = "=0.4.12"
-dinghy-lib              = "=0.4.12"
+dinghy-lib              = "=0.4.13"
 jni-sys                 = "=0.3.0"
 
 # Build Utility
