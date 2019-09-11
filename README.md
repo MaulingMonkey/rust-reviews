@@ -23,6 +23,7 @@ This repository serves a few purpouses:
 | **Gamedev** | | | |
 | [tiled](https://crates.io/crates/tiled)                                   | 0.8.0     | ![negative](https://img.shields.io/badge/-negative-yellow)    | [Tiled](https://www.mapeditor.org) `.tmx` file parser.  Decent bones, but I'm concerned about path traversal attacks.
 | [tiled-json-rs](https://crates.io/crates/tiled-json-rs)                   | 0.2.6     | ![negative](https://img.shields.io/badge/-negative-yellow)    | [Tiled](https://www.mapeditor.org) `.json` export file parser.  Decent bones, but I'm concerned about path traversal attacks.
+| [legion](https://crates.io/crates/legion)                                 | [0.1.1](reviews/legion.md#0.1.1)                                  | ![negative](https://img.shields.io/badge/-negative-yellow)    | A low-boilerplate, high performance archetype based ECS.  Lots of unsafe, possibly unsound, overflow concerns, etc.
 | [midir](https://crates.io/crates/midir)                                   | 0.5.0     | ![negative](https://img.shields.io/badge/-negative-yellow)    | Pure rust MIDI device I/O.  Good start, but probably unsound.
 | [warmy](https://crates.io/crates/warmy)                                   | 0.13.0    | ![positive](https://img.shields.io/badge/-positive-green)     | Hot reloading resources.  Not browser friendly.
 | **Android** | | | |
