@@ -34,7 +34,7 @@ warmy                   = "=0.13.0"
 
 # Android
 cargo-ndk               = "=0.3.0"
-cargo-dinghy            = "=0.4.13"
+cargo-dinghy            = "=0.4.16"
 dinghy-build            = "=0.4.13"
 dinghy-lib              = "=0.4.13"
 jni-sys                 = "=0.3.0"
