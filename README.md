@@ -22,6 +22,7 @@ This repository serves a few purpouses:
 | [xml-rs](https://crates.io/crates/xml-rs)                                 | [0.8.0](reviews/xml-rs.md#0.8.0)                                  | ![positive]           | Encoding and decoding XML.  Safe, sound, no deps.
 | [zip](https://crates.io/crates/zip)                                       | [0.5.2](reviews/zip.md#0.5.2) ... [0.5.3](reviews/zip.md#0.5.3)   | ![positive]           | Zipping/unzipping `.zip` archives.
 | **Gamedev** | | | |
+| [glsl-include](https://crates.io/crates/glsl-include)                     | [0.3.1](reviews/glsl-include.md#0.3.1)                            | ![positive]           | Handle basic #include s for GLSL.
 | [tiled](https://crates.io/crates/tiled)                                   | 0.8.0                                                             | ![negative-yellow]    | [Tiled](https://www.mapeditor.org) `.tmx` file parser.  Decent bones, but I'm concerned about path traversal attacks.
 | [tiled-json-rs](https://crates.io/crates/tiled-json-rs)                   | 0.2.6                                                             | ![negative-yellow]    | [Tiled](https://www.mapeditor.org) `.json` export file parser.  Decent bones, but I'm concerned about path traversal attacks.
 | [legion](https://crates.io/crates/legion)                                 | [0.1.1](reviews/legion.md#0.1.1)                                  | ![negative-yellow]    | A low-boilerplate, high performance archetype based ECS.  Lots of unsafe, possibly unsound, overflow concerns, etc.
