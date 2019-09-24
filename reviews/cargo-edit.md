@@ -6,8 +6,33 @@ Pros:
 Cons:
 * Lots of code
 * Lots of dependencies, some of which I haven't fully audited.
-* No Cargo.lock so not installable with `--frozen`
 * License ambiguity (is this MIT or Apache-2.0/MIT licensed?)
+
+0.4.0
+=====
+| crev          |   |
+| ------------- |---|
+| thoroughness  | low
+| understanding | medium
+| rating        | neutral
+
+| Diff                                                  | Rating | Notes |
+| ----------------------------------------------------- | ------ | ----- |
+| Cargo.lock                                            | +1 | Added since 0.3.3, enabling frozen installs.  Approx [200 indirect deps](https://github.com/killercup/cargo-edit/blob/e131c92b8e1d5617fb9dca2e095ed7d7c91776ae/Cargo.lock#L1819).
+| Cargo.toml                                            | +1 | Version bumps
+| Cargo.toml.orig                                       | +1 | Version bumps
+| README.md                                             | +1 | Mentions new `--sort` option
+| appveyor.yml                                          | +1 | Disables gnu targets
+| src/bin/add/args.rs                                   | +1 | New `--sort` and `--offline` options
+| src/bin/add/main.rs                                   | +1 | |
+| src/bin/upgrade/main.rs                               | +1 | |
+| src/errors.rs                                         | +1 | |
+| src/fetch.rs                                          | +1 | |
+| src/lib.rs                                            | +1 | |
+| src/manifest.rs                                       | +1 | |
+| src/registry.rs                                       | +1 | |
+| tests/cargo-add.rs                                    | +1 | |
+| tests/fixtures/add/Cargo.toml.unsorted                | +1 | |
 
 0.3.3
 =====

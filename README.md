@@ -38,7 +38,7 @@ This repository serves a few purpouses:
 | **Debug** | | | |
 | [gimli](https://crates.io/crates/gimli)                                   | 0.15.0                                                            | ![positive]           | DWARF debug info parsing.
 | **CLI Tools** | | | |
-| [cargo-edit](https://crates.io/crates/cargo-edit)                         | [0.3.3](reviews/cargo-edit.md#0.3.3)                              | ![neutral]            | Add/remove/update Cargo.toml dependencies from the command line.
+| [cargo-edit](https://crates.io/crates/cargo-edit)                         | [0.3.3](reviews/cargo-edit.md#0.3.3) ... [0.4.0](reviews/cargo-edit.md#0.4.0) | ![neutral] | Add/remove/update Cargo.toml dependencies from the command line.
 | **Unsound** | | | |
 | [ascii](https://crates.io/crates/ascii)                                   | 0.9.2                                                             | ![negative-yellow]    | Super full of unsafe and unsound.  Has responded to fixes well though.
 | [cargo-apk](https://crates.io/crates/cargo-apk)                           | 0.4.0                                                             | ![negative-yellow]    | Glue code is full of unsafe and unsound.

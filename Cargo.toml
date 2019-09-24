@@ -35,9 +35,6 @@ warmy                   = "=0.13.0"
 
 # Android
 cargo-ndk               = "=0.3.0"
-cargo-dinghy            = "=0.4.16"
-dinghy-build            = "=0.4.16"
-dinghy-lib              = "=0.4.16"
 jni-sys                 = "=0.3.0"
 
 # Build Utility
@@ -47,7 +44,7 @@ cargo_metadata          = "=0.8.2"
 #gimli                  = "=0.15.0" # TODO: Update
 
 # CLI Tools
-cargo-edit              = "=0.3.3"
+cargo-edit              = "=0.4.0"
 
 # Unsound
 #ascii                  = "=0.9.2"  # TODO: Update
