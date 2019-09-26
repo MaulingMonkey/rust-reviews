@@ -43,6 +43,8 @@ This repository serves a few purpouses:
 | **Unsound** | | | |
 | [ascii](https://crates.io/crates/ascii)                                   | 0.9.2                                                             | ![negative-yellow]    | Super full of unsafe and unsound.  Has responded to fixes well though.
 | [cargo-apk](https://crates.io/crates/cargo-apk)                           | 0.4.0                                                             | ![negative-yellow]    | Glue code is full of unsafe and unsound.
+| [crossterm_cursor](https://crates.io/crates/crossterm_cursor)             | [0.3.1](reviews/crossterm_cursor.md)                              | ![negative-yellow]    | Cross-platform console cursor maniulation.  Needs soundness fixes.
+| [crossterm_input](https://crates.io/crates/crossterm_input)               | [0.4.1](reviews/crossterm_input.md)                               | ![negative-yellow]    | Cross-platform console input reading.  Needs soundness fixes.
 | [jni](https://crates.io/crates/jni)                                       | 0.13.0                                                            | ![negative-yellow]    | Unsafe and unsound.  Has responded to fixes well though.
 | **Avoid** | | | |
 | actix-\*                                                                  | \*                                                                | ![negative-red]       | I don't trust this project's attitude towards unsafe for something web facing.  https://64.github.io/actix/
