@@ -35,7 +35,7 @@ midir                   = "=0.5.0"
 warmy                   = "=0.13.0"
 
 # Android
-cargo-ndk               = "=0.3.0"
+cargo-ndk               = "=0.4.0"
 jni-sys                 = "=0.3.0"
 
 # Build Utility
