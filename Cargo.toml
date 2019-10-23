@@ -40,7 +40,7 @@ cargo-ndk               = "=0.3.0"
 jni-sys                 = "=0.3.0"
 
 # Build Utility
-cargo_metadata          = "=0.8.2"
+cargo_metadata          = "=0.9.0"
 
 # Debug
 #gimli                  = "=0.15.0" # TODO: Update
