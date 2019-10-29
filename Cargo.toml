@@ -46,7 +46,7 @@ cargo_metadata          = "=0.8.2"
 #gimli                  = "=0.15.0" # TODO: Update
 
 # CLI Tools
-cargo-edit              = "=0.4.0"
+cargo-edit              = "=0.4.1"
 
 # Terminal
 crossterm_cursor        = "=0.3.1"
