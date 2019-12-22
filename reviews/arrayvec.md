@@ -8,6 +8,31 @@ Cons:
 * History of unsoundness (0.4.10 and earlier)
 * Disturbing amounts of unsafe
 
+0.5.1
+=====
+| crev          |   |
+| ------------- |---|
+| thoroughness  | medium
+| understanding | medium
+| rating        | neutral
+
+This version switched some slices possibly containing uninit (UB!) to use
+pointers instead.  This makes `encode_utf8` unsafe, sadly.
+
+| Diff                                  | Rating | Notes |
+| ------------------------------------- | ------ | ----- |
+| .cargo_vcs_info.json                  | +1 | |
+| .gitignore                            | +1 | |
+| Cargo.lock                            | +1 | Rust version bump?
+| Cargo.toml                            | +1 | debug \[profile.*\]
+| Cargo.toml.orig                       | +1 | debug \[profile.*\]
+| README.rst                            | +1 | |
+| *.{events,string_data,string_index}   | 0 | Binary test files, unreviewed
+| src/array.rs                          | +1 | Removed `#[inline]`
+| src/array_string.rs                   | +1 | Added `fn len`, removed `#[inline]`, use ptr instead of slice
+| src/chars.rs                          | +1 | `encode_utf8` is now sadly unsafe, more test coverage
+| src/lib.rs                            | +1 | Inline tweaks, more (correct) ptr use, add `as_*_ptr` to match Vec (safe/sound)
+
 0.5.0
 =====
 | crev          |   |

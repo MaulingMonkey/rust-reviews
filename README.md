@@ -8,7 +8,7 @@ This repository serves a few purpouses:
 | crate                                                                     | reviewed  | rating | description |
 | ------------------------------------------------------------------------- | --------- | ------ | ----------- |
 | **General Utility** | | | |
-| [arrayvec](https://crates.io/crates/arrayvec)                             | [0.4.11 ... 0.5.0](reviews/arrayvec.md)                           | ![neutral]            | Vec clone (Fixed capacity, no heap).  Prefer Vec?
+| [arrayvec](https://crates.io/crates/arrayvec)                             | [0.4.11 ... 0.5.1](reviews/arrayvec.md)                           | ![neutral]            | Vec clone (Fixed capacity, no heap).  Prefer Vec?
 | [smallvec](https://crates.io/crates/smallvec)                             | 0.6.10                                                            | ![negative-yellow]    | Vec clone (Small Buffer Optimization, Heap Fallback).  Prefer Vec.
 | [autocfg](https://crates.io/crates/autocfg)                               | 0.1.6                                                             | ![positive]           | `build.rs` script utility for auto-detecting compiler version/feature support.
 | [cfg-if](https://crates.io/crates/cfg-if)                                 | 0.1.9 ... 0.1.10                                                  | ![positive]           | Utility for managing cfg attribute soup.
