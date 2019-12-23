@@ -7,8 +7,8 @@ description:    Hot reloading resources. Not browser friendly.
 
 | version | thoroughness | understanding | rating |
 | ------- | ------------ | ------------- | ------ |
-| [0.13.0](#0.13.0) | low | low | positive
-| [0.12.0](#0.12.0) | low | low | positive
+| [0.13.0](#0130) | low | low | positive
+| [0.12.0](#0120) | low | low | positive
 
 # 0.13.0
 
@@ -27,7 +27,7 @@ Detail
 | examples/toml/main.rs                         | +1    | |
 | src/context.rs                                | +1    | |
 | src/json.rs                                   | +1    | |
-| [src/key.rs](src/key.rs)                      | +1    | |
+| [src/key.rs](#srckeyrs)                       | +1    | |
 | src/lib.rs                                    | +1    | |
 | src/load.rs                                   | +1    | |
 | src/res.rs                                    | +1    | |
