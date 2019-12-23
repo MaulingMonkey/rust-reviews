@@ -1,5 +1,11 @@
 # https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[workspace]
+members = [
+    ".",
+    "tracking/common",
+]
+
 [package]
 version = "0.0.0"
 name = "rust-reviews"
@@ -7,61 +13,5 @@ publish = false
 authors = ["MaulingMonkey <git@maulingmonkey.com>"]
 edition = "2018"
 
-[dev-dependencies]
-
-# General Utility
-arrayvec                = "=0.5.1"
-smallvec                = "=0.6.10"
-autocfg                 = "=0.1.7"
-cfg-if                  = "=0.1.10"
-lazy_static             = "=1.4.0"
-idna                    = "=0.2.0"
-instant                 = "=0.1.2"
-macro_rules_attribute               = "=0.0.1"
-macro_rules_attribute-proc_macro    = "=0.0.1"
-require_unsafe_in_body  = "=0.2.0"
-shellexpand             = "=1.0.0"
-specs                   = "=0.15.1"
-tempfile                = "=3.1.0"
-void                    = "=1.0.2"
-xml-rs                  = "=0.8.0"
-zip                     = "=0.5.3"
-
-# Gamedev
-glsl-include            = "=0.3.1"
-tiled                   = "=0.8.0"
-tiled-json-rs           = "=0.2.6"
-legion                  = "=0.1.1"
-midir                   = "=0.5.0"
-warmy                   = "=0.13.0"
-
-# Android
-cargo-ndk               = "=0.3.0"
-jni-sys                 = "=0.3.0"
-
-# Build Utility
-cargo_metadata          = "=0.9.1"
-
-# Debug
-#gimli                  = "=0.15.0" # TODO: Update
-
-# CLI Tools
-cargo-edit              = "=0.4.0"
-
-# Terminal
-crossterm_cursor        = "=0.3.1"
-crossterm_input         = "=0.4.1"
-crossterm_screen        = "=0.3.1"
-crossterm_style         = "=0.5.1"
-#crossterm_terminal      = "=0.3.1"
-#crossterm_utils         = "=0.3.1"
-#crossterm_winapi        = "=0.2.1"
-#crossterm               = "=0.11.1"
-
-# Unsound
-#ascii                  = "=0.9.2"  # TODO: Update
-#cargo-apk              = "=0.4.0"
-#jni                    = "=0.13.0" # TODO: Update
-
-# Avoid
-#memalloc               = "=0.1.0"
+[features]
+default = []

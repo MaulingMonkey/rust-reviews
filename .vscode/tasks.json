@@ -1,0 +1,10 @@
+{
+    "version": "2.0.0",
+    "presentation": { "clear": true },
+    "problemMatcher": ["$rustc"],
+    "type": "shell",
+    "options": { "cwd": "${workspaceFolder}", "env": { "RUST_BACKTRACE": "1" } },
+    "tasks": [
+        { "group": { "kind": "build", "isDefault": true }, "label": "cargo run", "command": "cargo run" },
+    ]
+}
