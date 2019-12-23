@@ -1,3 +1,14 @@
+---
+category:       Gamedev
+description:    A low-boilerplate, high performance archetype based ECS. Lots of unsafe, possibly unsound, overflow concerns, etc.
+---
+
+# legion
+
+| version | thoroughness | understanding | rating |
+| ------- | ------------ | ------------- | ------ |
+| [0.1.1](#0.1.1) | medium | low (thanks to use of unsafe) | negative
+
 A low-boilerplate, high performance [archetype] based ECS.
 
 Pros:
@@ -16,11 +27,9 @@ Cons:
 0.1.1
 =====
 
-| crev  |   |
-|-------|---|
-| thoroughness  | medium
-| understanding | low (thanks to use of unsafe)
-| rating        | negative
+| thoroughness | understanding | rating |
+| ------------ | ------------- | ------ |
+| medium | low (thanks to use of unsafe) | negative
 
 | File                                          | Rating | Notes |
 | --------------------------------------------- | ------ | ----- |

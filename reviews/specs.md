@@ -1,3 +1,14 @@
+---
+category:       Gamedev
+description:    High boilerplate ECS.  Fancy and parallel though.
+---
+
+# specs
+
+| version | thoroughness | understanding | rating |
+| ------- | ------------ | ------------- | ------ |
+| [0.15.1](#0.15.1) | medium | medium | neutral |
+
 Pros:
 * Very well documented
 * Well tested

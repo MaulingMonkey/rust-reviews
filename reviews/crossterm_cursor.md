@@ -1,3 +1,8 @@
+---
+category:       Unsound
+description:    Cross-platform console cursor maniulation. Needs soundness fixes.
+---
+
 Pros:
 * Cross platform
 

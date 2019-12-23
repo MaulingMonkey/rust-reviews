@@ -1,3 +1,8 @@
+---
+category:       Unsound
+description:    Cross-platform console input reading. Needs soundness fixes.
+---
+
 Pros:
 * Handles console input
 

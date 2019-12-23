@@ -1,4 +1,14 @@
-Expand unix style env vars within strings.
+---
+category:       General Utility
+description:    Expand unix style env vars within strings.
+---
+
+# shellexpand
+
+| version | thoroughness | understanding | rating |
+| ------- | ------------ | ------------- | ------ |
+| [1.0.0](#1.0.0) | medium | high | positive
+| [0.1.0](#0.1.0) | medium | high | positive
 
 Pros:
 * 100% safe code.
@@ -14,11 +24,6 @@ Cons:
 
 1.0.0
 =====
-| crev          |   |
-| ------------- |---|
-| thoroughness  | medium
-| understanding | high
-| rating        | positive
 
 * Minor breaking changes
 * Typo fixes
@@ -26,11 +31,6 @@ Cons:
 
 0.1.0
 =====
-| crev          |   |
-| ------------- |---|
-| thoroughness  | medium
-| understanding | high
-| rating        | positive
 
 | File                                          | Rating | Notes |
 | --------------------------------------------- | ------ | ----- |

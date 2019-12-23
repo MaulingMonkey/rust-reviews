@@ -5,62 +5,58 @@ This repository serves a few purpouses:
 * To provide a repository that [Dependabot](https://dependabot.com) can create issues against, to remind me to update my crev proofs.
 * To provide a visual fallback via deps.rs:  [![deps.rs](https://deps.rs/repo/github/MaulingMonkey/rust-reviews/status.svg)](https://deps.rs/repo/github/MaulingMonkey/rust-reviews)
 
-| crate                                                                     | reviewed  | rating | description |
-| ------------------------------------------------------------------------- | --------- | ------ | ----------- |
-| **General Utility** | | | |
-| [arrayvec](https://crates.io/crates/arrayvec)                             | [0.4.11 ... 0.5.1](reviews/arrayvec.md)                           | ![neutral]            | Vec clone (Fixed capacity, no heap).  Prefer Vec?
-| [smallvec](https://crates.io/crates/smallvec)                             | 0.6.10                                                            | ![negative-yellow]    | Vec clone (Small Buffer Optimization, Heap Fallback).  Prefer Vec.
-| [autocfg](https://crates.io/crates/autocfg)                               | 0.1.6                                                             | ![positive]           | `build.rs` script utility for auto-detecting compiler version/feature support.
-| [cfg-if](https://crates.io/crates/cfg-if)                                 | 0.1.9 ... 0.1.10                                                  | ![positive]           | Utility for managing cfg attribute soup.
-| [lazy_static](https://crates.io/crates/lazy_static)                       | 1.4.0                                                             | ![positive]           | Static init at runtime.
-| [idna](https://crates.io/crates/idna)                                     | 0.2.0                                                             | ![positive]           | Encoding/decoding domain names/punycode.
-| [macro_rules_attribute](https://crates.io/crates/macro_rules_attribute)   | 0.0.1                                                             | ![positive]           | Provides a `#[derive(...)]`-like attribute without needing your own proc macro crate.
-| [require_unsafe_in_body](https://crates.io/crates/require_unsafe_in_body) | 0.2.0                                                             | ![positive]           | Reducing the scope of `unsafe { ... }` in `unsafe fn`s.
-| [shellexpand](https://crates.io/crates/shellexpand)                       | [0.1.0](reviews/shellexpand.md#0.1.0) ... [1.0.0](reviews/shellexpand.md#1.0.0)   | ![positive]   | Expand unix style env vars within strings.
-| [tempfile](https://crates.io/crates/tempfile)                             | 3.1.0                                                             | ![positive]           | Create/cleanup temporary files and directories.
-| [void](https://crates.io/crates/void)                                     | 1.0.2                                                             | ![positive]           | Uninhabited type.
-| [xml-rs](https://crates.io/crates/xml-rs)                                 | [0.8.0](reviews/xml-rs.md#0.8.0)                                  | ![positive]           | Encoding and decoding XML.  Safe, sound, no deps.
-| [zip](https://crates.io/crates/zip)                                       | [0.5.2](reviews/zip.md#0.5.2) ... [0.5.3](reviews/zip.md#0.5.3)   | ![positive]           | Zipping/unzipping `.zip` archives.
-| **Gamedev** | | | |
-| [glsl-include](https://crates.io/crates/glsl-include)                     | [0.3.1](reviews/glsl-include.md#0.3.1)                            | ![positive]           | Handle basic #include s for GLSL.
-| [tiled](https://crates.io/crates/tiled)                                   | 0.8.0                                                             | ![negative-yellow]    | [Tiled](https://www.mapeditor.org) `.tmx` file parser.  Decent bones, but I'm concerned about path traversal attacks.
-| [tiled-json-rs](https://crates.io/crates/tiled-json-rs)                   | 0.2.6                                                             | ![negative-yellow]    | [Tiled](https://www.mapeditor.org) `.json` export file parser.  Decent bones, but I'm concerned about path traversal attacks.
-| [legion](https://crates.io/crates/legion)                                 | [0.1.1](reviews/legion.md#0.1.1)                                  | ![negative-yellow]    | A low-boilerplate, high performance archetype based ECS.  Lots of unsafe, possibly unsound, overflow concerns, etc.
-| [midir](https://crates.io/crates/midir)                                   | 0.5.0                                                             | ![negative-yellow]    | Pure rust MIDI device I/O.  Good start, but probably unsound.
-| [warmy](https://crates.io/crates/warmy)                                   | 0.13.0                                                            | ![positive]           | Hot reloading resources.  Not browser friendly.
-| **Android** | | | |
-| [cargo-ndk](https://crates.io/crates/cargo-ndk)                           | 0.3.0                                                             | ![positive]           | Kinda trivial apk building.
-| [cargo-dinghy](https://crates.io/crates/cargo-dinghy)                     | 0.4.11 .. 0.4.13                                                  | ![positive]           | `cargo` subcommand for building Android/iOS
-| [dinghy-build](https://crates.io/crates/dinghy-build)                     | 0.4.11 .. 0.4.13                                                  | ![positive]           | |
-| [dinghy-lib](https://crates.io/crates/dinghy-lib)                         | 0.4.11 .. 0.4.13                                                  | ![neutral]            | |
-| [jni-sys](https://crates.io/crates/jni-sys)                               | 0.3.0                                                             | ![positive]           | Rust bindings for JNI interop.
-| **Build Utility** | | | |
-| [cargo_metadata](https://crates.io/crates/cargo_metadata)                 | [0.8.2](reviews/cargo_metadata.md#0.8.2) ... [0.9.1](reviews/cargo_metadata.md#0.9.1) | ![positive] | Parse `cargo metadata` and `cargo build --message-format=json` output.
-| **Debug** | | | |
-| [gimli](https://crates.io/crates/gimli)                                   | 0.15.0                                                            | ![positive]           | DWARF debug info parsing.
-| **CLI Tools** | | | |
-| [cargo-edit](https://crates.io/crates/cargo-edit)                         | [0.3.3](reviews/cargo-edit.md#0.3.3) ... [0.4.0](reviews/cargo-edit.md#0.4.0) | ![neutral] | Add/remove/update Cargo.toml dependencies from the command line.
-| **Unsound** | | | |
-| [ascii](https://crates.io/crates/ascii)                                   | 0.9.2                                                             | ![negative-yellow]    | Super full of unsafe and unsound.  Has responded to fixes well though.
-| [cargo-apk](https://crates.io/crates/cargo-apk)                           | 0.4.0                                                             | ![negative-yellow]    | Glue code is full of unsafe and unsound.
-| [crossterm_cursor](https://crates.io/crates/crossterm_cursor)             | [0.3.1](reviews/crossterm_cursor.md)                              | ![negative-yellow]    | Cross-platform console cursor maniulation.  Needs soundness fixes.
-| [crossterm_input](https://crates.io/crates/crossterm_input)               | [0.4.1](reviews/crossterm_input.md)                               | ![negative-yellow]    | Cross-platform console input reading.  Needs soundness fixes.
-| [jni](https://crates.io/crates/jni)                                       | 0.13.0                                                            | ![negative-yellow]    | Unsafe and unsound.  Has responded to fixes well though.
-| **Avoid** | | | |
-| actix-\*                                                                  | \*                                                                | ![negative-red]       | I don't trust this project's attitude towards unsafe for something web facing.  https://64.github.io/actix/
-| [memalloc](https://crates.io/crates/memalloc)                             | 0.1.0                                                             | ![negative-red]       | Super brittle/dangerous at a fundamental level.  Avoid.
+## General Utility
 
-<!--
-| [CRATENAME](https://crates.io/crates/CRATENAME)                           |                                                                   | ![positive]           | 
-| [CRATENAME](https://crates.io/crates/CRATENAME)                           |                                                                   | ![neutral]            | 
-| [CRATENAME](https://crates.io/crates/CRATENAME)                           |                                                                   | ![negative-yellow]    | 
-| [CRATENAME](https://crates.io/crates/CRATENAME)                           |                                                                   | ![negative-red]       | 
--->
+[audio-rodio]:      https://img.shields.io/badge/🔊-rodio-green
 
-[positive]:             https://img.shields.io/badge/-positive-green
-[neutral]:              https://img.shields.io/badge/-neutral-lightgrey
-[negative-yellow]:      https://img.shields.io/badge/-negative-yellow
-[negative-red]:         https://img.shields.io/badge/-negative-red
+[crev-positive]:    https://img.shields.io/badge/crev-✓-green
+[crev-neutral]:     https://img.shields.io/badge/crev-%3D-lightgrey
+[crev-negative]:    https://img.shields.io/badge/crev-✗-yellow
+[crev-dangerous]:   https://img.shields.io/badge/crev-✗-red
+
+| Crate | Review | Description |
+| ----- | ------ | ----------- |
+| [actix](https://crates.io/crates/actix) | [![crev-dangerous]](reviews/actix.md) | I don't trust this project's attitude towards unsafe for something web facing. https://64.github.io/actix/
+| [arrayvec](https://crates.io/crates/arrayvec) | [![crev-neutral]](reviews/arrayvec.md) | Vec clone (Fixed capacity, no heap). Prefer Vec?
+| [ascii](https://crates.io/crates/ascii) | [![crev-negative]](reviews/ascii.md) | ASCII conversion and parsing.
+| [autocfg](https://crates.io/crates/autocfg) | [![crev-positive]](reviews/autocfg.md) | Runs `rustc` to test for features / versions.
+| [cargo-apk](https://crates.io/crates/cargo-apk) | [![crev-negative]](reviews/cargo-apk.md) | Glue code is full of unsafe and unsound.
+| [cargo-dinghy](https://crates.io/crates/cargo-dinghy) | [![crev-positive]](reviews/cargo-dinghy.md) | `cargo` subcommand for building Android/iOS
+| [cargo-edit](https://crates.io/crates/cargo-edit) | [![crev-neutral]](reviews/cargo-edit.md) | Add/remove/update Cargo.toml dependencies from the command line.
+| [cargo-ndk](https://crates.io/crates/cargo-ndk) | [![crev-positive]](reviews/cargo-ndk.md) | Kinda trivial `.apk` building.
+| [cargo_metadata](https://crates.io/crates/cargo_metadata) | [![crev-positive]](reviews/cargo_metadata.md) | Parse `cargo metadata` and `cargo build --message-format=json` output.
+| [cfg-if](https://crates.io/crates/cfg-if) | [![crev-positive]](reviews/cfg-if.md) | Parse `cargo metadata` and `cargo build --message-format=json` output.
+| [crossterm](https://crates.io/crates/crossterm) | [![crev-negative]](reviews/crossterm.md) | Cross-platform console stuff.  No web support, soundness issues.
+| [crossterm_cursor](https://crates.io/crates/crossterm_cursor) | [![crev-negative]](reviews/crossterm_cursor.md) | Cross-platform console cursor maniulation. Needs soundness fixes.
+| [crossterm_input](https://crates.io/crates/crossterm_input) | [![crev-negative]](reviews/crossterm_input.md) | Cross-platform console input reading. Needs soundness fixes.
+| [crossterm_screen](https://crates.io/crates/crossterm_screen) | [![crev-positive]](reviews/crossterm_screen.md) | 
+| [crossterm_style](https://crates.io/crates/crossterm_style) | [![crev-negative]](reviews/crossterm_style.md) | 
+| [dinghy-build](https://crates.io/crates/dinghy-build) | [![crev-positive]](reviews/dinghy-build.md) | 
+| [dinghy-lib](https://crates.io/crates/dinghy-lib) | [![crev-neutral]](reviews/dinghy-lib.md) | 
+| [gimli](https://crates.io/crates/gimli) | [![crev-positive]](reviews/gimli.md) | DWARF debug info parsing.
+| [glsl-include](https://crates.io/crates/glsl-include) | [![crev-positive]](reviews/glsl-include.md) | Handle basic `#include`s for GLSL.
+| [idna](https://crates.io/crates/idna) | [![crev-positive]](reviews/idna.md) | Encoding/decoding domain names/punycode.
+| [instant](https://crates.io/crates/instant) | [![crev-positive]](reviews/instant.md) | std::time::Instant alternative that doesn't panic on wasm targets.
+| [jni-sys](https://crates.io/crates/jni-sys) | [![crev-positive]](reviews/jni-sys.md) | Rust bindings for JNI interop.
+| [jni](https://crates.io/crates/jni) | [![crev-negative]](reviews/jni.md) | Unsafe and unsound. Has responded to fixes well though.
+| [lazy_static](https://crates.io/crates/lazy_static) | [![crev-positive]](reviews/lazy_static.md) | Static init at runtime.
+| [legion](https://crates.io/crates/legion) | [![crev-negative]](reviews/legion.md) | A low-boilerplate, high performance archetype based ECS. Lots of unsafe, possibly unsound, overflow concerns, etc.
+| [macro_rules_attribute](https://crates.io/crates/macro_rules_attribute) | [![crev-positive]](reviews/macro_rules_attribute.md) | Provides a #[derive(...)]-like attribute without needing your own proc macro crate.
+| [memalloc](https://crates.io/crates/memalloc) | [![crev-negative]](reviews/memalloc.md) | Super brittle/dangerous at a fundamental level. Avoid.
+| [midir](https://crates.io/crates/midir) | [![crev-negative]](reviews/midir.md) | Pure rust MIDI device I/O. Good start, but probably unsound.
+| [require_unsafe_in_body](https://crates.io/crates/require_unsafe_in_body) | [![crev-positive]](reviews/require_unsafe_in_body.md) | Reducing the scope of `unsafe { ... }` in `unsafe fn`s.
+| [shellexpand](https://crates.io/crates/shellexpand) | [![crev-positive]](reviews/shellexpand.md) | Expand unix style env vars within strings.
+| [smallvec](https://crates.io/crates/smallvec) | [![crev-negative]](reviews/smallvec.md) | Vec clone (Small Buffer Optimization, Heap Fallback). Prefer Vec.
+| [specs](https://crates.io/crates/specs) | [![crev-neutral]](reviews/specs.md) | High boilerplate ECS.  Fancy and parallel though.
+| [tempfile](https://crates.io/crates/tempfile) | [![crev-positive]](reviews/tempfile.md) | Create/cleanup temporary files and directories.
+| [tiled-json-rs](https://crates.io/crates/tiled-json-rs) | [![crev-negative]](reviews/tiled-json-rs.md) | [Tiled](https://www.mapeditor.org/) `.json` export file parser. Decent bones, but I'm concerned about path traversal attacks.
+| [tiled](https://crates.io/crates/tiled) | [![crev-negative]](reviews/tiled.md) | [Tiled](https://www.mapeditor.org/) `.tmx` file parser. Decent bones, but I'm concerned about path traversal attacks.
+| [void](https://crates.io/crates/void) | [![crev-positive]](reviews/void.md) | Uninhabited type.
+| [warmy](https://crates.io/crates/warmy) | [![crev-positive]](reviews/warmy.md) | Hot reloading resources. Not browser friendly.
+| [wasmparser](https://crates.io/crates/wasmparser) | [![crev-positive]](reviews/wasmparser.md) | `.wasm` file parser
+| [xml-rs](https://crates.io/crates/xml-rs) | [![crev-positive]](reviews/xml-rs.md) | Encoding and decoding XML. Safe, sound, no deps.
+| [zip](https://crates.io/crates/zip) | [![crev-positive]](reviews/zip.md) | Zipping/unzipping .zip archives.
+
 
 # Procedures
 

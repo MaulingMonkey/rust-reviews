@@ -1,3 +1,10 @@
+---
+category:       General Utility
+description:    Vec clone (Fixed capacity, no heap). Prefer Vec?
+---
+
+# arrayvec
+
 Stack/value variable length arrays without heap fallback.
 
 Pros:
@@ -8,13 +15,19 @@ Cons:
 * History of unsoundness (0.4.10 and earlier)
 * Disturbing amounts of unsafe
 
+
+| version | thoroughness | understanding | rating | Notes |
+| ------- | ------------ | ------------- | ------ | ----- |
+| [0.5.1](#0.5.1)   | medium | medium | neutral |
+| [0.5.0](#0.5.0)   | medium | medium | neutral |
+| [0.4.11](#0.4.11) | high | medium | neutral  |
+| [0.4.10](#0.4.10) | high | medium | negative | Unsound
+| [0.4.9](#0.4.9)   | high | medium | negative | Unsound
+| [0.4.8](#0.4.8)   | high | medium | negative | Unsound
+| [0.4.7](#0.4.7)   | high | medium | negative | Full review
+
 0.5.1
 =====
-| crev          |   |
-| ------------- |---|
-| thoroughness  | medium
-| understanding | medium
-| rating        | neutral
 
 This version switched some slices possibly containing uninit (UB!) to use
 pointers instead.  This makes `encode_utf8` unsafe, sadly.
@@ -35,11 +48,6 @@ pointers instead.  This makes `encode_utf8` unsafe, sadly.
 
 0.5.0
 =====
-| crev          |   |
-| ------------- |---|
-| thoroughness  | medium
-| understanding | medium
-| rating        | neutral
 
 | Diff                          | Rating | Notes |
 | ----------------------------- | ------ | ----- |
@@ -64,12 +72,6 @@ pointers instead.  This makes `encode_utf8` unsafe, sadly.
 ======
 * ArrayVec should now also be sound in Rust 1.36.0+, probably, maybe.
 
-| crev          |   |
-| ------------- |---|
-| thoroughness  | high
-| understanding | medium
-| rating        | neutral
-
 0.4.10
 ======
 * #[repr(C)]
@@ -89,6 +91,11 @@ pointers instead.  This makes `encode_utf8` unsafe, sadly.
 
 0.4.7
 =====
+
+Prefer 0.4.11 which at least starts using MaybeUninit instead of uninitialized!(), which is fundamentally unsound.
+Uses a disturbing amount of unsafe, but aside from uninitialized, it all at least appears to be correct after a careful reading.
+Unlike smallvec, this doesn't fall back on the heap.
+Better than whatever you'll write rolling your own, at least.
 
 | File                      | Rating | Notes |
 | ------------------------- | ------ | ----- |

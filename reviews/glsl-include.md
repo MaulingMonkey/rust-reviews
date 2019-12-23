@@ -1,4 +1,13 @@
-Handle basic #include s for GLSL.
+---
+category:       Gamedev
+description:    Handle basic `#include`s for GLSL.
+---
+
+# glsl-include
+
+| version | thoroughness | understanding | rating |
+| ------- | ------------ | ------------- | ------ |
+| [0.3.1](#0.3.1) | medium | high | positive
 
 Pros:
 * 100% Safe/Sandboxed
@@ -10,12 +19,6 @@ Cons:
 
 0.3.1
 =====
-| crev          |   |
-| ------------- |---|
-| thoroughness  | medium
-| understanding | high
-| rating        | positive
-
 | File                                          | Rating | Notes |
 | --------------------------------------------- | ------ | ----- |
 | src/error.rs                                  | +1 | Display for Error not double-clickable but provides good context.

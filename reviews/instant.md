@@ -1,4 +1,9 @@
-std::time::Instant alternative that doesn't panic on wasm targets.
+---
+category:       General Utility
+description:    std::time::Instant alternative that doesn't panic on wasm targets.
+---
+
+# instant
 
 Pros:
 - Doesn't panic!
@@ -10,13 +15,12 @@ Cons:
 - Unusual license choice for rust projects
 - Could use more test coverage
 
-0.1.2
-=====
-| crev          |   |
-| ------------- |---|
-| thoroughness  | medium
-| understanding | high
-| rating        | positive
+
+| version | thoroughness | understanding | rating |
+| ------- | ------------ | ------------- | ------ |
+| [0.1.2](#0.1.2) | medium | high | positive |
+
+# 0.1.2
 
 | File                                          | Rating | Notes |
 | --------------------------------------------- | ------ | ----- |

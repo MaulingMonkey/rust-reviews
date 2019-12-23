@@ -1,4 +1,9 @@
-Parse `cargo metadata` and `cargo build --message-format=json` output.
+---
+category:       Build Utility
+description:    Parse `cargo metadata` and `cargo build --message-format=json` output.
+---
+
+# cargo_metadata
 
 Pros:
 * Way better than parsing it yourself
@@ -8,13 +13,14 @@ Cons:
 * If you're feeling particularly paranoid, `cargo metadata` could be passed bad
   feature names (see 0.8.2 review for details)
 
+| version | thoroughness | understanding | rating |
+| ------- | ------------ | ------------- | ------ |
+| [0.9.1](#0.9.1) | medium | medium | positive
+| [0.9.0](#0.9.0) | medium | medium | positive
+| [0.8.2](#0.8.2) | medium | medium | positive
+
 0.9.1
 =====
-| crev          |   |
-| ------------- |---|
-| thoroughness  | medium
-| understanding | medium
-| rating        | positive
 
 | Diff                                          | Rating | Notes |
 | --------------------------------------------- | ------ | ----- |
@@ -28,11 +34,6 @@ Cons:
 
 0.9.0
 =====
-| crev          |   |
-| ------------- |---|
-| thoroughness  | medium
-| understanding | medium
-| rating        | positive
 
 | Diff                                          | Rating | Notes |
 | --------------------------------------------- | ------ | ----- |
@@ -47,11 +48,6 @@ Cons:
 
 0.8.2
 =====
-| crev          |   |
-| ------------- |---|
-| thoroughness  | medium
-| understanding | medium
-| rating        | positive
 
 | File                                          | Rating | Notes |
 | --------------------------------------------- | ------ | ----- |

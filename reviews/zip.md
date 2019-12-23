@@ -1,3 +1,8 @@
+---
+category:       General Utility
+description:    Zipping/unzipping .zip archives.
+---
+
 Preamble
 ========
 

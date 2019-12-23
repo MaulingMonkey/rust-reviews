@@ -1,3 +1,8 @@
+---
+category:       General Utility
+description:    Encoding and decoding XML. Safe, sound, no deps.
+---
+
 Preamble
 ========
 
