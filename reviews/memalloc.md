@@ -1,6 +1,6 @@
 ---
 category:       Avoid
-crev:           negative
+crev:           dangerous
 description:    Super brittle/dangerous at a fundamental level. Avoid.
 ---
 

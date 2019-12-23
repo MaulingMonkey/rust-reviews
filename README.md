@@ -42,7 +42,7 @@ This repository serves a few purpouses:
 | [lazy_static](https://crates.io/crates/lazy_static) | [![crev-positive]](reviews/lazy_static.md) | Static init at runtime.
 | [legion](https://crates.io/crates/legion) | [![crev-negative]](reviews/legion.md) | A low-boilerplate, high performance archetype based ECS. Lots of unsafe, possibly unsound, overflow concerns, etc.
 | [macro_rules_attribute](https://crates.io/crates/macro_rules_attribute) | [![crev-positive]](reviews/macro_rules_attribute.md) | Provides a #[derive(...)]-like attribute without needing your own proc macro crate.
-| [memalloc](https://crates.io/crates/memalloc) | [![crev-negative]](reviews/memalloc.md) | Super brittle/dangerous at a fundamental level. Avoid.
+| [memalloc](https://crates.io/crates/memalloc) | [![crev-dangerous]](reviews/memalloc.md) | Super brittle/dangerous at a fundamental level. Avoid.
 | [midir](https://crates.io/crates/midir) | [![crev-negative]](reviews/midir.md) | Pure rust MIDI device I/O. Good start, but probably unsound.
 | [require_unsafe_in_body](https://crates.io/crates/require_unsafe_in_body) | [![crev-positive]](reviews/require_unsafe_in_body.md) | Reducing the scope of `unsafe { ... }` in `unsafe fn`s.
 | [shellexpand](https://crates.io/crates/shellexpand) | [![crev-positive]](reviews/shellexpand.md) | Expand unix style env vars within strings.
