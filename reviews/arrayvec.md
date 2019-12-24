@@ -18,13 +18,13 @@ Cons:
 
 | version | thoroughness | understanding | rating | Notes |
 | ------- | ------------ | ------------- | ------ | ----- |
-| [0.5.1](#0.5.1)   | medium | medium | neutral |
-| [0.5.0](#0.5.0)   | medium | medium | neutral |
-| [0.4.11](#0.4.11) | high | medium | neutral  |
-| [0.4.10](#0.4.10) | high | medium | negative | Unsound
-| [0.4.9](#0.4.9)   | high | medium | negative | Unsound
-| [0.4.8](#0.4.8)   | high | medium | negative | Unsound
-| [0.4.7](#0.4.7)   | high | medium | negative | Full review
+| [0.5.1](#051)   | medium | medium | neutral |
+| [0.5.0](#050)   | medium | medium | neutral |
+| [0.4.11](#0411) | high | medium | neutral  |
+| [0.4.10](#0410) | high | medium | negative | Unsound
+| [0.4.9](#049)   | high | medium | negative | Unsound
+| [0.4.8](#048)   | high | medium | negative | Unsound
+| [0.4.7](#047)   | high | medium | negative | Full review
 
 0.5.1
 =====
