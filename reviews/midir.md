@@ -1,5 +1,5 @@
 ---
-category:       Gamedev
+category:       I/O
 description:    Pure rust MIDI device I/O. Good start, but probably unsound.
 ---
 

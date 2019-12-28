@@ -1,5 +1,5 @@
 ---
-category:       General Utility
+category:       I/O
 description:    Create/cleanup temporary files and directories.
 ---
 

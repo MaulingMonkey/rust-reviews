@@ -1,5 +1,5 @@
 ---
-category:       General Utility
+category:       I/O
 description:    Expand unix style env vars within strings.
 ---
 

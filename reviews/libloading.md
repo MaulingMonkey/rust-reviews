@@ -1,5 +1,5 @@
 ---
-category:       General Utility
+category:       I/O
 description:    Unsafe APIs for loading `.so`s, `.dll`s at runtime.
 ---
 
