@@ -7,7 +7,9 @@ description:    A low-boilerplate, high performance archetype based ECS. Lots of
 
 | version | thoroughness | understanding | rating |
 | ------- | ------------ | ------------- | ------ |
-| [0.1.1](#0.1.1) | medium | low (thanks to use of unsafe) | negative
+| [0.1.1] | medium | low (thanks to use of unsafe) | negative
+
+[0.1.1](#011)
 
 A low-boilerplate, high performance [archetype] based ECS.
 
@@ -33,33 +35,33 @@ Cons:
 
 | File                                          | Rating | Notes |
 | --------------------------------------------- | ------ | ----- |
-| benches/allocation_stress.rs                  | +1 | No global side effects, no black box use...?
-| benches/pos_vel.rs                            | +1 | No global side effects, no black box use...?
-| examples/hello_world.rs                       | +1 | |
-| [src/borrows.rs](src/borrows.rs)              | +1 | API lock design concerns me... and I suspect this relies on [stable_drop_order] to avoid aliasing violations.
-| [src/lib.rs](src/lib.rs)                      | -1 | Difficult to vet unsafe.  Some O(N) and overflow concerns.
-| [src/query.rs](src/query.rs)                  | -1 | Difficult to vet unsafe.
-| [src/storage.rs](src/storage.rs)              | -1 | Tons of difficult-to-vet UnsafeCell use that leaks some of it's unsafety out to other files.
-| tests/query_api.rs                            | +1 | |
-| tests/world_api.rs                            | +1 | |
-| .cargo_vcs_info.json                          | +1 | |
-| .cargo-ok                                     | +1 | |
-| .gitignore                                    | +1 | |
-| .travis.yml                                   | +1 | caching cargo might be a bad idea IME
-| bench.png                                     | +1 | |
-| Cargo.toml                                    | +1 | MIT
-| Cargo.toml.orig                               | +1 | MIT
-| LICENSE                                       | +1 | MIT
-| readme.md                                     | +1 | |
+| benches/allocation_stress.rs                  | :heavy_check_mark: | No global side effects, no black box use...?
+| benches/pos_vel.rs                            | :heavy_check_mark: | No global side effects, no black box use...?
+| examples/hello_world.rs                       | :heavy_check_mark: | |
+| [src/borrows.rs](src/borrows.rs)              | :heavy_check_mark: | API lock design concerns me... and I suspect this relies on [stable_drop_order] to avoid aliasing violations.
+| [src/lib.rs](src/lib.rs)                      | :exclamation: | Difficult to vet unsafe.  Some O(N) and overflow concerns.
+| [src/query.rs](src/query.rs)                  | :exclamation: | Difficult to vet unsafe.
+| [src/storage.rs](src/storage.rs)              | :exclamation: | Tons of difficult-to-vet UnsafeCell use that leaks some of it's unsafety out to other files.
+| tests/query_api.rs                            | :heavy_check_mark: | |
+| tests/world_api.rs                            | :heavy_check_mark: | |
+| .cargo_vcs_info.json                          | :heavy_check_mark: | |
+| .cargo-ok                                     | :heavy_check_mark: | |
+| .gitignore                                    | :heavy_check_mark: | |
+| .travis.yml                                   | :heavy_check_mark: | caching cargo might be a bad idea IME
+| bench.png                                     | :heavy_check_mark: | |
+| Cargo.toml                                    | :heavy_check_mark: | MIT
+| Cargo.toml.orig                               | :heavy_check_mark: | MIT
+| LICENSE                                       | :heavy_check_mark: | MIT
+| readme.md                                     | :heavy_check_mark: | |
 
 | Other     | Rating | Notes |
 | --------- | ------ | ----- |
-| unsafe    | -1 | Lots of hard to reason about unsafe.
-| miri      | -1 | Trivial use chokes up miri.
-| fs        | +1 | |
-| io        | +1 | |
-| docs      | +1 | |
-| tests     | +1 | |
+| unsafe    | :exclamation: | Lots of hard to reason about unsafe.
+| miri      | :exclamation: | Trivial use chokes up miri.
+| fs        | :heavy_check_mark: | |
+| io        | :heavy_check_mark: | |
+| docs      | :heavy_check_mark: | |
+| tests     | :heavy_check_mark: | |
 
 src/borrows.rs
 --------------
@@ -67,7 +69,7 @@ src/borrows.rs
 | -----:| ------------------------- | ----- |
 | 17    | Borrow::aquire_read       | Possible race condition source.  Attempts to increment if >= 0.  Theoretically could livelock if sufficiently contested, shouldn't in practice.
 | 33    | Borrow::aquire_write      | Possible race condition source.  Attempts to go from 0 => -1.
-| 43    | Drop for Borrow           | +1
+| 43    | Drop for Borrow           | :heavy_check_mark:
 | 57    | Borrow*ed*                | Safe from aliasing violations by virtue of [stable_drop_order] ?  Cannot drop `Borrow` before `value` lifetime has ended.
 | 92    | PartialEq for Borrowed    | 'b lifetime unused...?
 | 98    | Eq for Borrowed           | 'b lifetime unused...?
@@ -81,13 +83,13 @@ src/lib.rs
 ----------
 | Line  | What                              | Notes |
 | -----:| --------------------------------- | ----- |
-| 1     | Lib doc comments                  | +1
+| 1     | Lib doc comments                  | :heavy_check_mark:
 | 254   | WorldId                           | Only 16-bit world IDs? I could see this overflowing in practice, especially if using the advertized ability to stream stuff in.
 | 264   | ArchetypeId                       | Only 16-bit chunk IDs? Also, poor alignment.
 | 281   | Entity                            | Standard dual generation index, I approve... although hot entity IDs could overflow in practice?
 | 310   | Universe::logger                  | Not entirely sure I'm a fan of this.
 | 365   | ComponentIndex & friends          | These Indexes should be used earlier when defining WorldId etc....
-| 409   | impl EntityBlock                  | +1
+| 409   | impl EntityBlock                  | :heavy_check_mark:
 | 431   | EntityBlock::in_range             | Slightly bogus u32 cast - EntityBlock::new should enforce u32 size if you want a u32 len...
 | 498   | impl EntityAllocator              | Full of O(N/1024) operations that could be O(1).  Chunking is fine, but this really should abuse the fact that BLOCK_SIZE is constant more instead of looping.
 | 517   | EntityAllocator::create_entity    | A better allocation strategy (IMO) would be to always start with the block we last allocated from.  Will have degenerate behavior if we're constantly freeing/allocating from the first block.
@@ -120,7 +122,7 @@ src/storage.rs
 | 47    | ComponentStorage::remove for StorageVec   | `unsafe { ... }` - I *think* this might be sound thanks to `&mut self`
 | 52    | ComponentStorage::len for StorageVec      | `unsafe { ... }` - Unsound?  It's not clear what, if anything, ensures len() isn't being mutated by another borrower.
 | 104   | unsafe fn Chunk::entities_unchecked       | Because this doesn't take `&mut self`, this forces the caller to enforce borrow checking manually.
-| 126   | unsafe fn Chunk::entity_data_unchecked    | +1?
+| 126   | unsafe fn Chunk::entity_data_unchecked    | :grey_question:
 | 141   | unsafe fn Chunk::entity_data_mut_unchecked| Ditto.
 | 157   | Chunk::entity_data                        | `unsafe { ... }` - Unsound?  "Locks" via borrow types *after* constructing `&T`, which is too late.
 | 174   | Chunk::entity_data_mut                    | `unsafe { ... }` - Unsound?  "Locks" via borrow types *after* constructing `&mut T`, which is too late.
