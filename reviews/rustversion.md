@@ -5,6 +5,18 @@ description:  Attributes to do conditional compilation based on rust version/cha
 
 # rustversion
 
+Neat crate, but not as useful as you'd hope.  In rustc 1.36, custom attributes cannot:
+* Be applied as inner attributes
+* Be applied to modules
+* Be applied to crates
+
+Some tracking issues:
+* [rust-lang/rust#54726](https://github.com/rust-lang/rust/issues/54726) - Tracking issue for custom inner attributes
+* [rust-lang/rust#54727](https://github.com/rust-lang/rust/issues/54727) - Tracking issue for procedural macros and "hygiene 2.0"
+
+This has forced me to abandon for now:
+* [MaulingMonkey/jerk/dead/rustversion](https://github.com/MaulingMonkey/jerk/commit/850bebec7cfde5993eff4e7f056abba417fae4e0)
+
 | version | thoroughness | understanding | rating | notes |
 | ------- | ------------ | ------------- | ------ | ----- |
 | [1.0.0](#100) | high | medium | positive | Full Review
