@@ -12,8 +12,8 @@ Like all FFI, this is a big footgun, but it might work for your needs.
 
 | version | thoroughness | understanding | rating | notes |
 | ------- | ------------ | ------------- | ------ | ----- |
-| [0.5.0] | none   | none   | neutral  | [sfackler/foreign-types/#10]
-| [0.4.0] | none   | none   | negative | Unsound
+| [0.5.0] | none   | medium | neutral  | [sfackler/foreign-types/#10]
+| [0.4.0] | low    | medium | negative | Unsound
 | [0.3.2] | medium | medium | negative | Unsound, Full Review |
 
 # 0.5.0
