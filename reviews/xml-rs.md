@@ -1,5 +1,5 @@
 ---
-category:       General Utility
+category:       Serialization
 description:    Encoding and decoding XML. Safe, sound, no deps.
 ---
 

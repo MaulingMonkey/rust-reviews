@@ -1,5 +1,5 @@
 ---
-category:       Unsound
+category:       Android
 description:    Unsafe and unsound. Has responded to fixes well though.
 ---
 

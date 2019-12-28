@@ -1,5 +1,5 @@
 ---
-category:       Parsing
+category:       Serialization
 description:    Encoding/decoding domain names/punycode.
 ---
 

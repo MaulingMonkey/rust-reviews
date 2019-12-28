@@ -1,5 +1,5 @@
 ---
-category:     General Utility
+category:     Build Utility
 description:  Attributes to do conditional compilation based on rust version/channel
 ---
 

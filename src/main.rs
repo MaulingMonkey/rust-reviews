@@ -1,7 +1,9 @@
+use std::collections::{BTreeMap};
 use std::fs::{self, File};
 use std::io::{self, BufRead, BufReader, Write};
 use std::path::{Path};
 use std::process::Command;
+use std::sync::Arc;
 
 fn main() {
     let mut readme = File::create("README.md").unwrap();
@@ -15,16 +17,22 @@ fn write_readme_md(md: &mut File) -> io::Result<()> {
     let (pre, post) = template.split_at(i);
     let post = &post[placeholder.len()..];
 
+    let crates = Crates::from_dir("reviews")?;
+
     write!(md, "{}", pre)?;
 
-    writeln!(md, "| Crate | Review | Description |")?;
-    writeln!(md, "| ----- | ------ | ----------- |")?;
-    for e in fs::read_dir("reviews")? {
-        let c = Crate::from_review_md(e?.path().as_ref());
-        write!(md, "| [{name}](https://crates.io/crates/{name}) ", name=&c.name)?;
-        write!(md, "| ")?;
-        for badge in c.badges.iter() { write!(md, "{} ", badge)?; }
-        write!(md, "| {}", c.description.replace("\r\n", "<br>").replace("\n", "<br>"))?;
+    for (category, crates) in crates.by_category.iter() {
+        writeln!(md, "## {}", category)?;
+        writeln!(md)?;
+        writeln!(md, "| Crate | Review | Description |")?;
+        writeln!(md, "| ----- | ------ | ----------- |")?;
+        for c in crates.iter() {
+            write!(md, "| [{name}](https://crates.io/crates/{name}) ", name=&c.name)?;
+            write!(md, "| ")?;
+            for badge in c.badges.iter() { write!(md, "{} ", badge)?; }
+            write!(md, "| {}", c.description.replace("\r\n", "<br>").replace("\n", "<br>"))?;
+            writeln!(md)?;
+        }
         writeln!(md)?;
     }
 
@@ -32,12 +40,14 @@ fn write_readme_md(md: &mut File) -> io::Result<()> {
     Ok(())
 }
 
+type Category = Arc<String>;
+
 #[derive(Clone, Debug)]
 struct Crate {
-    pub name:       String,
-    pub category:   String,
-    pub description:       String,
-    pub badges:     Vec<String>,
+    pub name:           String,
+    pub category:       Category,
+    pub description:    String,
+    pub badges:         Vec<String>,
 }
 
 impl Crate {
@@ -47,7 +57,7 @@ impl Crate {
 
     fn new(name: &str, review_md: &Path) -> Self {
         let mut category = None;
-        let mut crev = None;
+        let mut crev = "none".to_string();
         let mut description = None;
         
         {
@@ -61,7 +71,7 @@ impl Crate {
                     if let Some(v) = prefixed(line, "category:") {
                         category = Some(v.trim().to_string());
                     } else if let Some(v) = prefixed(line, "crev:") {
-                        crev = Some(v.trim().to_string());
+                        crev = v.trim().to_string();
                     } else if let Some(v) = prefixed(line, "description:") {
                         description = Some(v.trim().to_string());
                     }
@@ -69,23 +79,43 @@ impl Crate {
             }
         }
 
-        if crev.is_none() {
-            crev = query_crev_rating(name);
+        if crev == "none" {
+            crev = query_crev_rating(name).unwrap_or("none".into());
         }
 
-        let mut badges = vec![];
-        if let Some(crev) = crev {
-            badges.push(format!("[![crev-{rating}]](reviews/{name}.md)", rating=crev, name=name));
-        }
+        let badges = vec![
+            format!("[![crev-{rating}]](reviews/{name}.md)", rating=crev, name=name)
+        ];
 
         Self {
             name:           name.to_string(),
-            category:       category.unwrap_or(String::new()),
+            category:       Category::new(category.unwrap_or(String::from("Uncategorized"))),
             description:    description.unwrap_or(String::new()),
             badges,
         }
     }
 }
+
+#[derive(Clone, Debug)]
+struct Crates {
+    pub by_category: BTreeMap<Category, Vec<Crate>>,
+}
+
+impl Crates {
+    pub fn from_dir(dir: &(impl ?Sized + AsRef<Path>)) -> io::Result<Self> {
+        let mut by_category = BTreeMap::new();
+
+        for e in fs::read_dir(dir)? {
+            let c = Crate::from_review_md(e?.path().as_ref());
+            by_category.entry(c.category.clone()).or_insert(Vec::new()).push(c);
+            print!(".");
+            let _ = std::io::stdout().flush();
+        }
+
+        Ok(Self{ by_category })
+    }
+}
+
 
 fn query_crev_rating(name: &str) -> Option<String> {
     let mut cmd = Command::new("cargo");

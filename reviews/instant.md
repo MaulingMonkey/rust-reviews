@@ -1,5 +1,5 @@
 ---
-category:       General Utility
+category:       Web
 description:    std::time::Instant alternative that doesn't panic on wasm targets.
 ---
 

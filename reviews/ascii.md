@@ -1,5 +1,5 @@
 ---
-category:       Parsing
+category:       Serialization
 description:    ASCII conversion and parsing.
 ---
 

@@ -1,5 +1,5 @@
 ---
-category:       Debug
+category:       Debugging
 description:    `.wasm` file parser
 ---
 

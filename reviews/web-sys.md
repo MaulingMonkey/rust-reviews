@@ -1,5 +1,5 @@
 ---
-category:       FFI
+category:       Web
 description:    Browser API interop
 ---
 

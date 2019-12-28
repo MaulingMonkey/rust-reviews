@@ -1,5 +1,5 @@
 ---
-category:       Avoid
+category:       Unsound
 crev:           dangerous
 description:    Super brittle/dangerous at a fundamental level. Avoid.
 ---

@@ -1,5 +1,5 @@
 ---
-category:       Debug
+category:       Debugging
 description:    DWARF debug info parsing.
 ---
 
