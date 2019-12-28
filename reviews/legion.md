@@ -9,7 +9,7 @@ description:    A low-boilerplate, high performance archetype based ECS. Lots of
 | ------- | ------------ | ------------- | ------ |
 | [0.1.1] | medium | low (thanks to use of unsafe) | negative
 
-[0.1.1](#011)
+[0.1.1]:    #011
 
 A low-boilerplate, high performance [archetype] based ECS.
 
