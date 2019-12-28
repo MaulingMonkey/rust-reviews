@@ -38,12 +38,13 @@ This repository serves a few purpouses:
 | [dinghy-build](https://crates.io/crates/dinghy-build) | [![crev-positive]](reviews/dinghy-build.md) | 
 | [dinghy-lib](https://crates.io/crates/dinghy-lib) | [![crev-neutral]](reviews/dinghy-lib.md) | 
 | [dlopen](https://crates.io/crates/dlopen) | | Safeish and unsafe APIs for loading `.so`s, `.dll`s at runtime.
+| [foreign-types](https://crates.io/crates/foreign-types) | [![crev-neutral]](reviews/foreign-types.md) | Generate Rust wrappers around C types
 | [ggez](https://crates.io/crates/ggez) | | 
 | [gimli](https://crates.io/crates/gimli) | [![crev-positive]](reviews/gimli.md) | DWARF debug info parsing.
 | [glsl-include](https://crates.io/crates/glsl-include) | [![crev-positive]](reviews/glsl-include.md) | Handle basic `#include`s for GLSL.
 | [idna](https://crates.io/crates/idna) | [![crev-positive]](reviews/idna.md) | Encoding/decoding domain names/punycode.
 | [instant](https://crates.io/crates/instant) | [![crev-positive]](reviews/instant.md) | std::time::Instant alternative that doesn't panic on wasm targets.
-| [inventory](https://crates.io/crates/inventory) | | Decentralize the registration of static data
+| [inventory](https://crates.io/crates/inventory) | [![crev-positive]](reviews/inventory.md) | Decentralized static registration
 | [jni-sys](https://crates.io/crates/jni-sys) | [![crev-positive]](reviews/jni-sys.md) | Rust bindings for JNI interop.
 | [jni](https://crates.io/crates/jni) | [![crev-negative]](reviews/jni.md) | Unsafe and unsound. Has responded to fixes well though.
 | [js-sys](https://crates.io/crates/js-sys) | | Browser API interop
@@ -59,6 +60,7 @@ This repository serves a few purpouses:
 | [require_unsafe_in_body](https://crates.io/crates/require_unsafe_in_body) | [![crev-positive]](reviews/require_unsafe_in_body.md) | Reducing the scope of `unsafe { ... }` in `unsafe fn`s.
 | [rocket](https://crates.io/crates/rocket) | | Rust library for creating API servers.  Nice design.
 | [rust-ffi](https://crates.io/crates/rust-ffi) | | Generate C/C++ headers for Rust code
+| [rustversion](https://crates.io/crates/rustversion) | [![crev-positive]](reviews/rustversion.md) | Attributes to do conditional compilation based on rust version/channel
 | [serde](https://crates.io/crates/serde) | | The crate used for serialization throughout the Rust ecosystem
 | [serde_json](https://crates.io/crates/serde_json) | | serde companion crate for (de)serializing `.json` files.
 | [shellexpand](https://crates.io/crates/shellexpand) | [![crev-positive]](reviews/shellexpand.md) | Expand unix style env vars within strings.
@@ -71,6 +73,7 @@ This repository serves a few purpouses:
 | [typetag](https://crates.io/crates/typetag) | | Deserialize `Box<dyn Trait>` based on `inventory` registrations.
 | [void](https://crates.io/crates/void) | [![crev-positive]](reviews/void.md) | Uninhabited type.
 | [warmy](https://crates.io/crates/warmy) | [![crev-positive]](reviews/warmy.md) | Hot reloading resources. Not browser friendly.
+| [wasm-dwarf](https://crates.io/crates/wasm-dwarf) | | WASM Dwarf reader / .map generator
 | [wasmparser](https://crates.io/crates/wasmparser) | [![crev-positive]](reviews/wasmparser.md) | `.wasm` file parser
 | [web-sys](https://crates.io/crates/web-sys) | | Browser API interop
 | [winapi](https://crates.io/crates/winapi) | | Win32 / Windows APIs megacrate.  You use this.
@@ -123,3 +126,23 @@ This repository serves a few purpouses:
     Closes MaulingMonkey/rust-reviews#000
     ```
 * git push
+
+## Initial Setup
+
+* Install and configure cargo crev
+    ```cmd
+    cargo install cargo-crev
+    :: ...?
+    ```
+* Add the following to your `cargo crev edit config`:
+    ```yml
+    ---
+    version: -1
+    ...
+    open-cmd: "start \"\" \"C:\\Users\\UserName\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" -n --disable-extension rust-lang.rust --disable-extension matklad.ra-lsp --disable-extension kalitaalexey.vscode-rust"
+     
+    ```
+    This disables these extensions, which all provide Rust intellisense, which has a tendency to pollute `%USERPROFILE%\.cargo\registry\src` with `Cargo.lock` files, `target` directories, or worse, which makes cargo crev angry:
+    * rust-lang.rust
+    * matklad.ra-lsp
+    * kalitaalexey.vscode-rust
