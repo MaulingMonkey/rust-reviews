@@ -18,7 +18,18 @@ but rust/WASM simply don't have the link_section stuff to abuse (yet?)
 
 | version | thoroughness | understanding | rating | notes |
 | ------- | ------------ | ------------- | ------ | ----- |
+| [0.1.5](#015) :heavy_check_mark: | high | high | positive | [dtolnay/inventory#15]
 | [0.1.4](#014) :exclamation: | high | high | negative | Unsound! \[[1],[2]\]
+
+# 0.1.5
+
+| diff                  | rating | notes |
+| --------------------- | ------ | ----- |
+| .cargo_vcs_info.json  | :heavy_check_mark: | |
+| Cargo.lock            | :heavy_check_mark: | version bumps for ctor, ghost, inventory, inventory-impl, proc-macro2, quote, syn, unicode-xid
+| Cargo.toml            | :heavy_check_mark: | Version bumps, badges
+| Cargo.toml.orig       | :heavy_check_mark: | Version bumps, badges
+| src/lib.rs            | :heavy_check_mark: | Merges soundness fixes [dtolnay/inventory#15]
 
 # 0.1.4
 
@@ -52,7 +63,7 @@ but rust/WASM simply don't have the link_section stuff to abuse (yet?)
 * Every `unsafe { prev.as_ref() }` possibly returns a `&Node<T>` to our `&mut Node<T>` use, which is Undefined Behavior.
 * Even if it weren't UB, this would temporarilly truncate the registry.
 
-This should be fixable ([dtolnay/inventory#15](https://github.com/dtolnay/inventory/pull/15)):
+This should be fixable ([dtolnay/inventory#15]):
 * Set `new.next = unsafe { head.as_ref() };` unconditionally, in the loop, *before* the CAS, to fix the race condition.
 * ~~Downgrade `&mut Node` to `&Node` before the CAS~~ Use a `ptr::NonNull` and only construct `&mut Node` when not visible.
 * Make `Registry::submit` do the box leaking to make the API locally sound.
@@ -72,3 +83,4 @@ Head will always be null (maps to `None`) or a valid instance (`Some(&Node<T>)`)
 
 [1]: #exclamation--1-unsound-fn-registrytsubmit-race-conditions
 [2]: #exclamation--2-unsound-unsafe--prevas_ref--blocks
+[dtolnay/inventory#15]: https://github.com/dtolnay/inventory/pull/15
