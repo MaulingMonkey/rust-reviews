@@ -1,5 +1,5 @@
 ---
-category:       General Utility
+category:       Build Utility
 description:    Build dependency to get C/C++ [vcpkg](https://github.com/Microsoft/vcpkg)s
 ---
 

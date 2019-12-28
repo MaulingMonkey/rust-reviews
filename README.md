@@ -43,6 +43,7 @@ This repository serves a few purpouses:
 | [lies-impl](https://crates.io/crates/lies-impl) | [![crev-author]](reviews/lies-impl.md) | 
 | [lies](https://crates.io/crates/lies) | [![crev-author]](reviews/lies.md) | Embed license text into your program via proc macros around cargo-about.
 | [rustversion](https://crates.io/crates/rustversion) | [![crev-positive]](reviews/rustversion.md) | Attributes to do conditional compilation based on rust version/channel
+| [vcpkg](https://crates.io/crates/vcpkg) | [![crev-positive]](reviews/vcpkg.md) | Build dependency to get C/C++ [vcpkg](https://github.com/Microsoft/vcpkg)s
 
 ## CLI Tools
 
@@ -112,7 +113,6 @@ This repository serves a few purpouses:
 | [matches](https://crates.io/crates/matches) | [![crev-positive]](reviews/matches.md) | `matches!(variable, SomeEnum::SomeCase) == true`
 | [require_unsafe_in_body](https://crates.io/crates/require_unsafe_in_body) | [![crev-positive]](reviews/require_unsafe_in_body.md) | Reducing the scope of `unsafe { ... }` in `unsafe fn`s.
 | [smallvec](https://crates.io/crates/smallvec) | [![crev-negative]](reviews/smallvec.md) | Vec clone (Small Buffer Optimization, Heap Fallback). Prefer Vec.
-| [vcpkg](https://crates.io/crates/vcpkg) | [![crev-positive]](reviews/vcpkg.md) | Build dependency to get C/C++ [vcpkg](https://github.com/Microsoft/vcpkg)s
 | [void](https://crates.io/crates/void) | [![crev-positive]](reviews/void.md) | Uninhabited type.
 
 ## I/O
