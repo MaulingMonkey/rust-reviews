@@ -6,9 +6,8 @@ msrv:           1.31.0
 
 # inventory
 
-Excellent crate that allows you to decentralize static registration.  Two caveats:
+Excellent crate that allows you to decentralize static registration.  One caveat:
 
-* It's currently unsound \[[1],[2]\].
 * It doesn't work with WASM targets.
 
 The author has shown interest in adding WASM support, and has attempted to find a way,
