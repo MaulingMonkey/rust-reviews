@@ -51,6 +51,7 @@ This repository serves a few purpouses:
 | [cargo-about](https://crates.io/crates/cargo-about) | [![crev-none]](reviews/cargo-about.md) | Validate dependency licenses and aggregate into a single .html file
 | [cargo-crev](https://crates.io/crates/cargo-crev) | [![crev-none]](reviews/cargo-crev.md) | Share code reviews/audits through a web of trust
 | [cargo-edit](https://crates.io/crates/cargo-edit) | [![crev-neutral]](reviews/cargo-edit.md) | Add/remove/update Cargo.toml dependencies from the command line.
+| [cargo](https://crates.io/crates/cargo) | [![crev-positive]](reviews/cargo.md) | *The* rust build tool.
 
 ## Debugging
 
@@ -59,6 +60,7 @@ This repository serves a few purpouses:
 | [bugsalot](https://crates.io/crates/bugsalot) | [![crev-author]](reviews/bugsalot.md) | Breakpoints, debugger detection, fail-stable macros, etc.
 | [gimli](https://crates.io/crates/gimli) | [![crev-positive]](reviews/gimli.md) | DWARF debug info parsing.
 | [natvis-pdbs](https://crates.io/crates/natvis-pdbs) | [![crev-author]](reviews/natvis-pdbs.md) | Embed .natvis files into your .pdb s via build.rs/metabuild script.
+| [vlq](https://crates.io/crates/vlq) | [![crev-positive]](reviews/vlq.md) | Sourcemap VLQ Base64 encode/decode
 | [wasm-dwarf](https://crates.io/crates/wasm-dwarf) | [![crev-none]](reviews/wasm-dwarf.md) | WASM Dwarf reader / .map generator
 | [wasmparser](https://crates.io/crates/wasmparser) | [![crev-positive]](reviews/wasmparser.md) | `.wasm` file parser
 
@@ -68,9 +70,12 @@ This repository serves a few purpouses:
 | ----- | ------ | ----------- |
 | [bindgen](https://crates.io/crates/bindgen) | [![crev-none]](reviews/bindgen.md) | Generate Rust bindings from C/C++ headers
 | [cbindgen](https://crates.io/crates/cbindgen) | [![crev-none]](reviews/cbindgen.md) | Generate C/C++ headers for Rust code
+| [cloudabi](https://crates.io/crates/cloudabi) | [![crev-neutral]](reviews/cloudabi.md) | Reduced capability-based POSIX subset/alternative.
 | [com_impl](https://crates.io/crates/com_impl) | [![crev-none]](reviews/com_impl.md) | COM interop utilities.
+| [foreign-types-shared](https://crates.io/crates/foreign-types-shared) | [![crev-negative]](reviews/foreign-types-shared.md) | foreign-types support crate
 | [foreign-types](https://crates.io/crates/foreign-types) | [![crev-neutral]](reviews/foreign-types.md) | Generate Rust wrappers around C types
 | [libc](https://crates.io/crates/libc) | [![crev-none]](reviews/libc.md) | POSIX / C APIs megacrate.  You use this.
+| [redox_syscall](https://crates.io/crates/redox_syscall) | [![crev-negative]](reviews/redox_syscall.md) | System calls for the Rust OS, Redox
 | [rust-ffi](https://crates.io/crates/rust-ffi) | [![crev-none]](reviews/rust-ffi.md) | Generate C/C++ headers for Rust code
 | [winapi](https://crates.io/crates/winapi) | [![crev-none]](reviews/winapi.md) | Win32 / Windows APIs megacrate.  You use this.
 | [winrt](https://crates.io/crates/winrt) | [![crev-none]](reviews/winrt.md) | C++/CX APIs megacrate.
@@ -90,28 +95,38 @@ This repository serves a few purpouses:
 | ----- | ------ | ----------- |
 | [glsl-include](https://crates.io/crates/glsl-include) | [![crev-positive]](reviews/glsl-include.md) | Handle basic `#include`s for GLSL.
 | [legion](https://crates.io/crates/legion) | [![crev-negative]](reviews/legion.md) | A low-boilerplate, high performance archetype based ECS. Lots of unsafe, possibly unsound, overflow concerns, etc.
-| [midir](https://crates.io/crates/midir) | [![crev-negative]](reviews/midir.md) | Pure rust MIDI device I/O. Good start, but probably unsound.
 | [nines](https://crates.io/crates/nines) | [![crev-author]](reviews/nines.md) | 9-slice scaling math
+| [rdrand](https://crates.io/crates/rdrand) | [![crev-neutral]](reviews/rdrand.md) | :game_die: Get random numbers :game_die:
 | [specs](https://crates.io/crates/specs) | [![crev-neutral]](reviews/specs.md) | High boilerplate ECS.  Fancy and parallel though.
 | [tiled-json-rs](https://crates.io/crates/tiled-json-rs) | [![crev-negative]](reviews/tiled-json-rs.md) | [Tiled](https://www.mapeditor.org/) `.json` export file parser. Decent bones, but I'm concerned about path traversal attacks.
 | [tiled](https://crates.io/crates/tiled) | [![crev-negative]](reviews/tiled.md) | [Tiled](https://www.mapeditor.org/) `.tmx` file parser. Decent bones, but I'm concerned about path traversal attacks.
-| [warmy](https://crates.io/crates/warmy) | [![crev-positive]](reviews/warmy.md) | Hot reloading resources. Not browser friendly.
 
 ## General Utility
 
 | Crate | Review | Description |
 | ----- | ------ | ----------- |
 | [arrayvec](https://crates.io/crates/arrayvec) | [![crev-neutral]](reviews/arrayvec.md) | Vec clone (Fixed capacity, no heap). Prefer Vec?
-| [dlopen](https://crates.io/crates/dlopen) | [![crev-none]](reviews/dlopen.md) | Safeish and unsafe APIs for loading `.so`s, `.dll`s at runtime.
 | [inventory](https://crates.io/crates/inventory) | [![crev-positive]](reviews/inventory.md) | Decentralized static registration
 | [lazy_static](https://crates.io/crates/lazy_static) | [![crev-positive]](reviews/lazy_static.md) | Static init at runtime.
-| [libloading](https://crates.io/crates/libloading) | [![crev-none]](reviews/libloading.md) | Unsafe APIs for loading `.so`s, `.dll`s at runtime.
 | [macro_rules_attribute](https://crates.io/crates/macro_rules_attribute) | [![crev-positive]](reviews/macro_rules_attribute.md) | Provides a #[derive(...)]-like attribute without needing your own proc macro crate.
+| [matches](https://crates.io/crates/matches) | [![crev-positive]](reviews/matches.md) | `matches!(variable, SomeEnum::SomeCase) == true`
 | [require_unsafe_in_body](https://crates.io/crates/require_unsafe_in_body) | [![crev-positive]](reviews/require_unsafe_in_body.md) | Reducing the scope of `unsafe { ... }` in `unsafe fn`s.
-| [shellexpand](https://crates.io/crates/shellexpand) | [![crev-positive]](reviews/shellexpand.md) | Expand unix style env vars within strings.
 | [smallvec](https://crates.io/crates/smallvec) | [![crev-negative]](reviews/smallvec.md) | Vec clone (Small Buffer Optimization, Heap Fallback). Prefer Vec.
-| [tempfile](https://crates.io/crates/tempfile) | [![crev-positive]](reviews/tempfile.md) | Create/cleanup temporary files and directories.
+| [vcpkg](https://crates.io/crates/vcpkg) | [![crev-positive]](reviews/vcpkg.md) | Build dependency to get C/C++ [vcpkg](https://github.com/Microsoft/vcpkg)s
 | [void](https://crates.io/crates/void) | [![crev-positive]](reviews/void.md) | Uninhabited type.
+
+## I/O
+
+| Crate | Review | Description |
+| ----- | ------ | ----------- |
+| [dlopen](https://crates.io/crates/dlopen) | [![crev-none]](reviews/dlopen.md) | Safeish and unsafe APIs for loading `.so`s, `.dll`s at runtime.
+| [fs2](https://crates.io/crates/fs2) | [![crev-positive]](reviews/fs2.md) | Some extra filesystem utilities
+| [libloading](https://crates.io/crates/libloading) | [![crev-none]](reviews/libloading.md) | Unsafe APIs for loading `.so`s, `.dll`s at runtime.
+| [midir](https://crates.io/crates/midir) | [![crev-negative]](reviews/midir.md) | Pure rust MIDI device I/O. Good start, but probably unsound.
+| [podio](https://crates.io/crates/podio) | [![crev-positive]](reviews/podio.md) | Utility extension methods for `Read` / `Write`
+| [shellexpand](https://crates.io/crates/shellexpand) | [![crev-positive]](reviews/shellexpand.md) | Expand unix style env vars within strings.
+| [tempfile](https://crates.io/crates/tempfile) | [![crev-positive]](reviews/tempfile.md) | Create/cleanup temporary files and directories.
+| [warmy](https://crates.io/crates/warmy) | [![crev-positive]](reviews/warmy.md) | Hot reloading resources. Not browser friendly.
 
 ## Serialization
 
@@ -119,8 +134,10 @@ This repository serves a few purpouses:
 | ----- | ------ | ----------- |
 | [ascii](https://crates.io/crates/ascii) | [![crev-negative]](reviews/ascii.md) | ASCII conversion and parsing.
 | [idna](https://crates.io/crates/idna) | [![crev-positive]](reviews/idna.md) | Encoding/decoding domain names/punycode.
+| [itoa](https://crates.io/crates/itoa) | [![crev-neutral]](reviews/itoa.md) | Fast integer I/O
 | [serde](https://crates.io/crates/serde) | [![crev-none]](reviews/serde.md) | The crate used for serialization throughout the Rust ecosystem
 | [serde_json](https://crates.io/crates/serde_json) | [![crev-none]](reviews/serde_json.md) | serde companion crate for (de)serializing `.json` files.
+| [sourcefile](https://crates.io/crates/sourcefile) | [![crev-positive]](reviews/sourcefile.md) | Source code file:line <-> offset conversion
 | [typetag](https://crates.io/crates/typetag) | [![crev-none]](reviews/typetag.md) | Deserialize `Box<dyn Trait>` based on `inventory` registrations.
 | [xml-rs](https://crates.io/crates/xml-rs) | [![crev-positive]](reviews/xml-rs.md) | Encoding and decoding XML. Safe, sound, no deps.
 | [zip](https://crates.io/crates/zip) | [![crev-positive]](reviews/zip.md) | Zipping/unzipping .zip archives.
