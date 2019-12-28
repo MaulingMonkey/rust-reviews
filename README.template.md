@@ -5,7 +5,7 @@ This repository serves a few purpouses:
 * To provide a repository that [Dependabot](https://dependabot.com) can create issues against, to remind me to update my crev proofs.
 * To provide a visual fallback via deps.rs:  [![deps.rs](https://deps.rs/repo/github/MaulingMonkey/rust-reviews/status.svg)](https://deps.rs/repo/github/MaulingMonkey/rust-reviews)
 
-[crev-author]:      https://img.shields.io/badge/author-🐵-lightblue
+[crev-author]:      https://img.shields.io/badge/author-🐵-green
 [crev-none]:        https://img.shields.io/badge/crev-N/A-lightblue
 
 [audio-rodio]:      https://img.shields.io/badge/🔊-rodio-green

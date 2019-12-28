@@ -5,7 +5,7 @@ This repository serves a few purpouses:
 * To provide a repository that [Dependabot](https://dependabot.com) can create issues against, to remind me to update my crev proofs.
 * To provide a visual fallback via deps.rs:  [![deps.rs](https://deps.rs/repo/github/MaulingMonkey/rust-reviews/status.svg)](https://deps.rs/repo/github/MaulingMonkey/rust-reviews)
 
-[crev-author]:      https://img.shields.io/badge/author-🐵-lightblue
+[crev-author]:      https://img.shields.io/badge/author-🐵-green
 [crev-none]:        https://img.shields.io/badge/crev-N/A-lightblue
 
 [audio-rodio]:      https://img.shields.io/badge/🔊-rodio-green
@@ -23,6 +23,13 @@ This repository serves a few purpouses:
 | [cargo-ndk](https://crates.io/crates/cargo-ndk) | [![crev-positive]](reviews/cargo-ndk.md) | Kinda trivial `.apk` building.
 | [dinghy-build](https://crates.io/crates/dinghy-build) | [![crev-positive]](reviews/dinghy-build.md) | 
 | [dinghy-lib](https://crates.io/crates/dinghy-lib) | [![crev-neutral]](reviews/dinghy-lib.md) | 
+| [jerk-build](https://crates.io/crates/jerk-build) | [![crev-author]](reviews/jerk-build.md) | Build Java alongside Rust via build.rs/metabuild scripts
+| [jerk-test](https://crates.io/crates/jerk-test) | [![crev-author]](reviews/jerk-test.md) | Unit test Java built alongside Rust
+| [jerk](https://crates.io/crates/jerk) | [![crev-author]](reviews/jerk.md) | Java path discovery and other utilities
+| [jni-android-sys](https://crates.io/crates/jni-android-sys) | [![crev-author]](reviews/jni-android-sys.md) | Bindings to Android Java APIs
+| [jni-bindgen](https://crates.io/crates/jni-bindgen) | [![crev-author]](reviews/jni-bindgen.md) | Java API binding code generator
+| [jni-glue-macros](https://crates.io/crates/jni-glue-macros) | [![crev-author]](reviews/jni-glue-macros.md) | Proc macros to implement Java APIs from Rust
+| [jni-glue](https://crates.io/crates/jni-glue) | [![crev-author]](reviews/jni-glue.md) | Safeish wrappers around jni-sys used by jni-bindgen bindings
 | [jni-sys](https://crates.io/crates/jni-sys) | [![crev-positive]](reviews/jni-sys.md) | Rust bindings for JNI interop.
 | [jni](https://crates.io/crates/jni) | [![crev-negative]](reviews/jni.md) | Unsafe and unsound. Has responded to fixes well though.
 
@@ -33,19 +40,25 @@ This repository serves a few purpouses:
 | [autocfg](https://crates.io/crates/autocfg) | [![crev-positive]](reviews/autocfg.md) | Runs `rustc` to test for features / versions.
 | [cargo_metadata](https://crates.io/crates/cargo_metadata) | [![crev-positive]](reviews/cargo_metadata.md) | Parse `cargo metadata` and `cargo build --message-format=json` output.
 | [cfg-if](https://crates.io/crates/cfg-if) | [![crev-positive]](reviews/cfg-if.md) | Parse `cargo metadata` and `cargo build --message-format=json` output.
+| [lies-impl](https://crates.io/crates/lies-impl) | [![crev-author]](reviews/lies-impl.md) | 
+| [lies](https://crates.io/crates/lies) | [![crev-author]](reviews/lies.md) | Embed license text into your program via proc macros around cargo-about.
 | [rustversion](https://crates.io/crates/rustversion) | [![crev-positive]](reviews/rustversion.md) | Attributes to do conditional compilation based on rust version/channel
 
 ## CLI Tools
 
 | Crate | Review | Description |
 | ----- | ------ | ----------- |
+| [cargo-about](https://crates.io/crates/cargo-about) | [![crev-none]](reviews/cargo-about.md) | Validate dependency licenses and aggregate into a single .html file
+| [cargo-crev](https://crates.io/crates/cargo-crev) | [![crev-none]](reviews/cargo-crev.md) | Share code reviews/audits through a web of trust
 | [cargo-edit](https://crates.io/crates/cargo-edit) | [![crev-neutral]](reviews/cargo-edit.md) | Add/remove/update Cargo.toml dependencies from the command line.
 
 ## Debugging
 
 | Crate | Review | Description |
 | ----- | ------ | ----------- |
+| [bugsalot](https://crates.io/crates/bugsalot) | [![crev-author]](reviews/bugsalot.md) | Breakpoints, debugger detection, fail-stable macros, etc.
 | [gimli](https://crates.io/crates/gimli) | [![crev-positive]](reviews/gimli.md) | DWARF debug info parsing.
+| [natvis-pdbs](https://crates.io/crates/natvis-pdbs) | [![crev-author]](reviews/natvis-pdbs.md) | Embed .natvis files into your .pdb s via build.rs/metabuild script.
 | [wasm-dwarf](https://crates.io/crates/wasm-dwarf) | [![crev-none]](reviews/wasm-dwarf.md) | WASM Dwarf reader / .map generator
 | [wasmparser](https://crates.io/crates/wasmparser) | [![crev-positive]](reviews/wasmparser.md) | `.wasm` file parser
 
@@ -78,6 +91,7 @@ This repository serves a few purpouses:
 | [glsl-include](https://crates.io/crates/glsl-include) | [![crev-positive]](reviews/glsl-include.md) | Handle basic `#include`s for GLSL.
 | [legion](https://crates.io/crates/legion) | [![crev-negative]](reviews/legion.md) | A low-boilerplate, high performance archetype based ECS. Lots of unsafe, possibly unsound, overflow concerns, etc.
 | [midir](https://crates.io/crates/midir) | [![crev-negative]](reviews/midir.md) | Pure rust MIDI device I/O. Good start, but probably unsound.
+| [nines](https://crates.io/crates/nines) | [![crev-author]](reviews/nines.md) | 9-slice scaling math
 | [specs](https://crates.io/crates/specs) | [![crev-neutral]](reviews/specs.md) | High boilerplate ECS.  Fancy and parallel though.
 | [tiled-json-rs](https://crates.io/crates/tiled-json-rs) | [![crev-negative]](reviews/tiled-json-rs.md) | [Tiled](https://www.mapeditor.org/) `.json` export file parser. Decent bones, but I'm concerned about path traversal attacks.
 | [tiled](https://crates.io/crates/tiled) | [![crev-negative]](reviews/tiled.md) | [Tiled](https://www.mapeditor.org/) `.tmx` file parser. Decent bones, but I'm concerned about path traversal attacks.
@@ -128,10 +142,12 @@ This repository serves a few purpouses:
 
 | Crate | Review | Description |
 | ----- | ------ | ----------- |
+| [cargo-web](https://crates.io/crates/cargo-web) | [![crev-none]](reviews/cargo-web.md) | .wasm packager for use with stdweb
 | [instant](https://crates.io/crates/instant) | [![crev-positive]](reviews/instant.md) | std::time::Instant alternative that doesn't panic on wasm targets.
 | [js-sys](https://crates.io/crates/js-sys) | [![crev-none]](reviews/js-sys.md) | Browser API interop
 | [rocket](https://crates.io/crates/rocket) | [![crev-none]](reviews/rocket.md) | Rust library for creating API servers.  Nice design.
 | [stdweb](https://crates.io/crates/stdweb) | [![crev-none]](reviews/stdweb.md) | Browser API interop
+| [wasm-pack](https://crates.io/crates/wasm-pack) | [![crev-none]](reviews/wasm-pack.md) | .wasm packager for use with web-sys
 | [web-sys](https://crates.io/crates/web-sys) | [![crev-none]](reviews/web-sys.md) | Browser API interop
 
 
