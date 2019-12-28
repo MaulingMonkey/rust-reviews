@@ -15,6 +15,6 @@ path = "main.rs"
 
 # Android
 # NOTE:  dinghy is lagging behind on libgit2-sys dependency (0.7.x) which conflicts with cargo-edit 0.4.0 (depends on 0.8.x)
-cargo-dinghy            = "=0.4.16"
+cargo-dinghy            = "=0.4.18"
 dinghy-build            = "=0.4.16"
 dinghy-lib              = "=0.4.16"
