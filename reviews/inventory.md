@@ -52,9 +52,9 @@ but rust/WASM simply don't have the link_section stuff to abuse (yet?)
 * Every `unsafe { prev.as_ref() }` possibly returns a `&Node<T>` to our `&mut Node<T>` use, which is Undefined Behavior.
 * Even if it weren't UB, this would temporarilly truncate the registry.
 
-This should be fixable:
+This should be fixable ([dtolnay/inventory#15](https://github.com/dtolnay/inventory/pull/15)):
 * Set `new.next = unsafe { head.as_ref() };` unconditionally, in the loop, *before* the CAS, to fix the race condition.
-* Downgrade `&mut Node` to `&Node` before the CAS
+* ~~Downgrade `&mut Node` to `&Node` before the CAS~~ Use a `ptr::NonNull` and only construct `&mut Node` when not visible.
 * Make `Registry::submit` do the box leaking to make the API locally sound.
 
 Undefined Behavior is also hard to trigger in practice - requiring submitting or iterating over the registry from a new (pre-main?) thread, mid-registration.
