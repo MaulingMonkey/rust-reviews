@@ -62,6 +62,9 @@ crossterm_style         = "=0.5.1"
 #crossterm_winapi        = "=0.2.1"
 #crossterm               = "=0.11.1"
 
+# FFI
+foreign-types           = "=0.5.0"
+
 # Unsound
 #ascii                  = "=0.9.2"  # TODO: Update
 #cargo-apk              = "=0.4.0"
