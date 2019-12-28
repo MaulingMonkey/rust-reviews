@@ -18,7 +18,7 @@ description:  Attributes to do conditional compilation based on rust version/cha
 | src/date.rs           | :heavy_check_mark: | Custom parse impls
 | src/expr.rs           | :heavy_check_mark: | Custom keywords
 | src/lib.rs            | :heavy_check_mark: | Custom HTML docs, error handling
-| src/rustc.rs          | :heavy_check_mark: | Command \[[1](https://github.com/MaulingMonkey/rust-reviews/new/master/reviews#note-1--pub-fn-version-uses-command)\]
+| src/rustc.rs          | :heavy_check_mark: | Command \[[1](#note-1--pub-fn-version-uses-command)\]
 | src/time.rs           | :grey_question:    | Parsing date times seems a bit out-of-scope for this crate.  OTOH, this is only used for an error message example by date.rs.
 | src/version.rs        | :heavy_check_mark: | |
 | .cargo_vcs_info.json  | :heavy_check_mark: | |
@@ -36,7 +36,7 @@ description:  Attributes to do conditional compilation based on rust version/cha
 | --------- | ------ | ----- |
 | unsafe    | :heavy_check_mark: | None
 | fs        | :heavy_check_mark: | None
-| io        | :heavy_check_mark: | Command \[[1](https://github.com/MaulingMonkey/rust-reviews/new/master/reviews#note-1--pub-fn-version-uses-command)\]
+| io        | :heavy_check_mark: | Command \[[1](#note-1--pub-fn-version-uses-command)\]
 | docs      | :heavy_check_mark: | Duplicated between readme and src/lib.rs
 | tests     | :grey_question:    | Could use more test coverage
 
