@@ -60,3 +60,23 @@ This repository serves a few purpouses:
     Closes MaulingMonkey/rust-reviews#000
     ```
 * git push
+
+## Initial Setup
+
+* Install and configure cargo crev
+    ```cmd
+    cargo install cargo-crev
+    :: ...?
+    ```
+* Add the following to your `cargo crev edit config`:
+    ```yml
+    ---
+    version: -1
+    ...
+    open-cmd: "start \"\" \"C:\\Users\\UserName\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" -n --disable-extension rust-lang.rust --disable-extension matklad.ra-lsp --disable-extension kalitaalexey.vscode-rust"
+     
+    ```
+    This disables these extensions, which all provide Rust intellisense, which has a tendency to pollute `%USERPROFILE%\.cargo\registry\src` with `Cargo.lock` files, `target` directories, or worse, which makes cargo crev angry:
+    * rust-lang.rust
+    * matklad.ra-lsp
+    * kalitaalexey.vscode-rust
