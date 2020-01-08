@@ -7,9 +7,35 @@ description:    $crate for proc macros
 
 | version | thoroughness | understanding | rating | Notes |
 | ------- | ------------ | ------------- | ------ | ----- |
+| [0.1.4] | medium | medium | positive | Diff
+| [0.1.3] | medium | medium | positive | Diff
+| [0.1.2] | medium | medium | positive | Diff
+| [0.1.1] | medium | medium | positive | Diff
 | [0.1.0] | medium | medium | positive | Full review
 
-[0.1.0]:    #100
+[0.1.4]:    #014
+[0.1.3]:    #013
+[0.1.2]:    #012
+[0.1.1]:    #011
+[0.1.0]:    #010
+
+# 0.1.4
+
+* Version bumps, typos, formatting
+* Start searching `[target.*.dependencies]` too
+
+# 0.1.3
+
+Dropped `'static` lifetime requirements
+
+# 0.1.2
+
+- Added syn, proc-macro2 deps
+- Sanitized "-" to "_"
+
+# 0.1.1
+
+Minor metadata tweaks
 
 # 0.1.0
 
