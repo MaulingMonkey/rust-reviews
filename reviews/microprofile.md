@@ -61,8 +61,8 @@ Cons:
 | src/lib.rs                                    | :grey_question:       | No docs, haven't verified C ABI, uses static mut, but not obviously unsound.
 | .cargo_fcs_info.json                          | :heavy_check_mark:    | |
 | .cargo-ok                                     | :heavy_check_mark:    | |
-| Cargo.toml                                    | :heavy_check_mark:    | Says MIT
-| Cargo.toml.orig                               | :heavy_check_mark:    | Says MIT, no file, other licenses in deps, no file, other licenses in deps
+| Cargo.toml                                    | :x:                   | Says MIT, includes BSD code.
+| Cargo.toml.orig                               | :x:                   | Says MIT, includes BSD code.
 
 | Other     | Rating | Notes |
 | --------- | ------ | ----- |
