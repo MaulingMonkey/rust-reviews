@@ -17,6 +17,8 @@ Cons:
     * **and rewrites x86 code on the fly**
     * **I don't see fuzz tests upstream either**
 * If this isn't unsound somewhere, I'll eat my hat.
+    * Exceeding the max scope depth appears unsound.
+    * Exceeding the ~1024 max timer count asserts then overflows.
 * Don't use in production, only development, IMO
 
 # Audit
