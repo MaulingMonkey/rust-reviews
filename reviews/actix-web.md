@@ -7,6 +7,7 @@ description:    AVOID.  Closes soundness bugs unfixed.  Deletes external soundne
 Cons:
 * This project has a history of unsound and unsafe code, as previously covered by
   ["Why we need alternatives to Actix"](https://64.github.io/actix)
+* Original repository has been moved and may be taken down - details @ https://gist.github.com/MaulingMonkey/dfc9299fb51b862e4c7fea87f1b57505
 * While much of the old unsafe code has been cleaned up and removed, the project has also taken to deleting
   [soundness bugs](http://web.archive.org/web/20200116231317/https://github.com/actix/actix-net/issues/83),
   which are still present despite much work put into cleaning them up by others.
