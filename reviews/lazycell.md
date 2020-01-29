@@ -10,7 +10,7 @@ msrv:           1.24.0
 
 | version   | thoroughness | understanding | rating | notes |
 | --------- | ------------ | ------------- | ------ | ----- |
-| [1.2.1]   | 
+| [1.2.1]   | high | medium | positive | Diff review
 | [1.2.0]   | high | medium | positive | Full review, appears high quality
 
 [1.2.1]: #1.2.1
@@ -19,7 +19,14 @@ msrv:           1.24.0
 
 <h2 name="1.2.1">1.2.1</h2>
 
-Pending
+| diff                  | rating | notes |
+| --------------------- | ------ | ----- |
+| .cargo_vcs_info.json  | ✔️ | New
+| CHANGELOG.md          | ✔️ | |
+| Cargo.toml            | ✔️ | Version bump only
+| Cargo.toml.orig       | ✔️ | Version bump only
+| LICENSE-MIT           | ✔️ | Copyright year bump only
+| src/lib.rs            | ✔️ | New clone impls are safe, sane, and well unit tested
 
 <h2 name="1.2.0">1.2.0</h2>
 
