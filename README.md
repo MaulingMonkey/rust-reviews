@@ -108,6 +108,7 @@ This repository serves a few purpouses:
 | ----- | ------ | ----------- |
 | [arrayvec](https://crates.io/crates/arrayvec) | [![crev-neutral]](reviews/arrayvec.md) | Vec clone (Fixed capacity, no heap). Prefer Vec?
 | [inventory](https://crates.io/crates/inventory) | [![crev-positive]](reviews/inventory.md) | Decentralized static registration
+| [lazycell](https://crates.io/crates/lazycell) | [![crev-positive]](reviews/lazycell.md) | Similar to RefCell<Option<T>>, but you can keep T borrowed
 | [lazy_static](https://crates.io/crates/lazy_static) | [![crev-positive]](reviews/lazy_static.md) | Static init at runtime.
 | [macro_rules_attribute](https://crates.io/crates/macro_rules_attribute) | [![crev-positive]](reviews/macro_rules_attribute.md) | Provides a #[derive(...)]-like attribute without needing your own proc macro crate.
 | [matches](https://crates.io/crates/matches) | [![crev-positive]](reviews/matches.md) | `matches!(variable, SomeEnum::SomeCase) == true`
@@ -128,6 +129,12 @@ This repository serves a few purpouses:
 | [tempfile](https://crates.io/crates/tempfile) | [![crev-positive]](reviews/tempfile.md) | Create/cleanup temporary files and directories.
 | [warmy](https://crates.io/crates/warmy) | [![crev-positive]](reviews/warmy.md) | Hot reloading resources. Not browser friendly.
 
+## Macros
+
+| Crate | Review | Description |
+| ----- | ------ | ----------- |
+| [proc-macro-crate](https://crates.io/crates/proc-macro-crate) | [![crev-positive]](reviews/proc-macro-crate.md) | $crate for proc macros
+
 ## Serialization
 
 | Crate | Review | Description |
@@ -146,7 +153,7 @@ This repository serves a few purpouses:
 
 | Crate | Review | Description |
 | ----- | ------ | ----------- |
-| [actix-web](https://crates.io/crates/actix-web) | [![crev-dangerous]](reviews/actix-web.md) | I don't trust this project's attitude towards unsafe for something web facing. https://64.github.io/actix/
+| [actix-web](https://crates.io/crates/actix-web) | [![crev-dangerous]](reviews/actix-web.md) | AVOID.  Closes soundness bugs unfixed.  Deletes external soundness bugs.
 | [cargo-apk](https://crates.io/crates/cargo-apk) | [![crev-negative]](reviews/cargo-apk.md) | Glue code is full of unsafe and unsound.
 | [crossterm](https://crates.io/crates/crossterm) | [![crev-negative]](reviews/crossterm.md) | Cross-platform console stuff.  No web support, soundness issues.
 | [crossterm_cursor](https://crates.io/crates/crossterm_cursor) | [![crev-negative]](reviews/crossterm_cursor.md) | Cross-platform console cursor maniulation. Needs soundness fixes.
@@ -154,6 +161,7 @@ This repository serves a few purpouses:
 | [crossterm_screen](https://crates.io/crates/crossterm_screen) | [![crev-positive]](reviews/crossterm_screen.md) | 
 | [crossterm_style](https://crates.io/crates/crossterm_style) | [![crev-negative]](reviews/crossterm_style.md) | 
 | [memalloc](https://crates.io/crates/memalloc) | [![crev-dangerous]](reviews/memalloc.md) | Super brittle/dangerous at a fundamental level. Avoid.
+| [microprofile](https://crates.io/crates/microprofile) | [![crev-dangerous]](reviews/microprofile.md) | Bindings for a C++ flamegraph profiler
 
 ## Web
 
