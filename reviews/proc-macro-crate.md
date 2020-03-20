@@ -1,9 +1,40 @@
 ---
 category:       Macros
-description:    $crate for proc macros
+description:    $crate for proc macros (prefer shim macros per review notes!)
+crev:           neutral
 ---
 
 # proc-macro-crate
+
+$crate for proc macros
+
+**Prefer shim macros where possible** (they're less brittle / more portable - thank [dtolnay](https://github.com/MaulingMonkey/rust-reviews/issues/71#issuecomment-601514580) for the suggestion!):
+
+```rust
+#[doc(hidden)] pub use impl_crate::my_macro_impl;
+
+#[macro_export] macro_rules! my_macro {
+    ($($args:tt)*) => {
+        $crate::my_macro_impl!{$crate $($args)*}
+    };
+}
+```
+
+```rust
+#[proc_macro] pub fn my_macro_impl(input: TokenStream) -> TokenStream {
+    let mut tokens = input.into_iter();
+    let my_crate = tokens.next().unwrap();
+    ...
+}
+```
+
+Where not possible, consider hardcoding a fallback for non-cargo build environments such as Bazel instead of panicing (since proc_macro_crate relies on parsing Cargo.toml):
+
+```rust
+let my_crate = proc_macro_crate::crate_name("my-crate").unwrap_or("my_crate".to_string());
+```
+
+## Audit
 
 | version | thoroughness | understanding | rating | Notes |
 | ------- | ------------ | ------------- | ------ | ----- |
@@ -19,25 +50,25 @@ description:    $crate for proc macros
 [0.1.1]:    #011
 [0.1.0]:    #010
 
-# 0.1.4
+## 0.1.4
 
 * Version bumps, typos, formatting
 * Start searching `[target.*.dependencies]` too
 
-# 0.1.3
+## 0.1.3
 
 Dropped `'static` lifetime requirements
 
-# 0.1.2
+## 0.1.2
 
 - Added syn, proc-macro2 deps
 - Sanitized "-" to "_"
 
-# 0.1.1
+## 0.1.1
 
 Minor metadata tweaks
 
-# 0.1.0
+## 0.1.0
 
 | file                  | rating | notes |
 | --------------------- | ------ | ----- |
