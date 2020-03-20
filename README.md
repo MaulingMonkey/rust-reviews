@@ -134,7 +134,7 @@ This repository serves a few purpouses:
 
 | Crate | Review | Description |
 | ----- | ------ | ----------- |
-| [proc-macro-crate](https://crates.io/crates/proc-macro-crate) | [![crev-positive]](reviews/proc-macro-crate.md) | $crate for proc macros
+| [proc-macro-crate](https://crates.io/crates/proc-macro-crate) | [![crev-neutral]](reviews/proc-macro-crate.md) | $crate for proc macros (prefer shim macros per review notes!)
 
 ## Serialization
 
