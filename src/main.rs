@@ -119,7 +119,7 @@ impl Crates {
 
 fn query_crev_rating(name: &str) -> Option<String> {
     let mut cmd = Command::new("cargo");
-    cmd.args(&["crev", "query", "review", name]);
+    cmd.args(&["crev", "proof", "find", "--crate", name]);
     let crev_review = cmd.output().unwrap();
 
     let mut review = None;
