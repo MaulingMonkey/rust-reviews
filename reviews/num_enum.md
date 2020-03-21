@@ -12,9 +12,9 @@ derive traits for enums
 
 | version   | thoroughness | understanding | rating | notes |
 | --------- | ------------ | ------------- | ------ | ----- |
-| [0.4.3]   | none | | | Not yet reviewed
-| [0.4.1]   | none | | | Not yet reviewed
-| [0.4.0]   | none | | | Not yet reviewed
+| [0.4.3]   | low | medium | positive | Diff Review - Dependency bumps
+| [0.4.1]   | low | medium | positive | Diff Review - Fixed README.md path (hah, called it!)
+| [0.4.0]   | low | medium | positive | Diff Review - mostly refactored into num_enum_derive
 | [0.3.1]   | low | medium | positive | Diff Review - introduce UnsafeFromPrimitive
 | [0.3.0]   | low | medium | positive | Diff Review - no_std support
 | [0.2.3]   | low | medium | positive | Diff Review - metadata tweaks
@@ -39,10 +39,32 @@ derive traits for enums
 
 
 <h2 name="0.4.3">0.4.3</h2>
+
+Diff Review - Dependency bumps
+
+
+
 <h2 name="0.4.1">0.4.1</h2>
+
+Diff Review - Fixed README.md path (hah, called it!)
+
+
+
 <h2 name="0.4.0">0.4.0</h2>
 
-Not yet reviewed.  Major refactor:  was split into derivative / num_enum_derive crates.
+Diff Review - mostly refactored into num_enum_derive
+
+| diff                          | rating | notes |
+| ----------------------------- | ------ | ----- |
+| .cargo_vcs_info.json          | ✔️ | |
+| .gitignore                    | ✔️ | Removed
+| .travis.yml                   | ✔️ | Removed
+| Cargo.toml                    | ✔️ | Metadata, +derive dependency
+| Cargo.toml.orig               | ✔️ | Metadata, +derive dependency
+| README.md                     | ✔️ | test fns turned into main fns, minor tweaks
+| src/lib.rs                    | ✔️ | Reworked to mostly be in num_enum_derive (README embed looks off?)
+| tests/lib.rs                  | ✔️ | Error handling overhaul
+| tests/renamed_num_enum.rs     | ✔️ | Invokes cargo run jank
 
 
 
