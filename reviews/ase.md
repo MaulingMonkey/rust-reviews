@@ -1,12 +1,21 @@
 ---
 category:       Gamedev
 description:    Asesprite Format Reader
+crev:           negative
 ---
 
 # ase
 
 A crate for reading [Aseprite](https://www.aseprite.org/) files.
-Decent basis with room for improvement.
+
+~~Decent basis with room for improvement.~~
+
+**Undertested, published crate unusably buggy.  Git master branch might be usable / a decent basis?:**
+
+```toml
+[dependencies]
+ase = { git = "https://github.com/matheuslessarodrigues/ase-rs", branch = "753c7c866bb6438a6c04c8eecf328942bc0533a0" }
+```
 
 ## Issues
 
@@ -21,9 +30,11 @@ Decent basis with room for improvement.
 
 | version   | thoroughness | understanding | rating | notes |
 | --------- | ------------ | ------------- | ------ | ----- |
-| [0.1.3]   | medium | medium | neutral | Diff review.  Some test coverage, bugfixes, minor refactoring. |
-| [0.1.1]   | medium | medium | neutral | Diff review.  Typo fixes. |
-| [0.1.0]   | medium | medium | neutral | Full review.  Not suitable for UGC - memory exhaustion and panic concerns |
+| [753c7c8](https://github.com/matheuslessarodrigues/ase-rs/commit/753c7c866bb6438a6c04c8eecf328942bc0533a0) | low | medium | neutral | Skimmed full src, lots of bugfixes. |
+|           |        |        |          | **Unusably buggy bellow this point** |
+| [0.1.3]   | medium | medium | negative | Diff review.  Some test coverage, bugfixes, minor refactoring. |
+| [0.1.1]   | medium | medium | negative | Diff review.  Typo fixes. |
+| [0.1.0]   | medium | medium | negative | Full review.  Not suitable for UGC - memory exhaustion and panic concerns |
 
 [0.1.3]: #0.1.3
 [0.1.1]: #0.1.1
