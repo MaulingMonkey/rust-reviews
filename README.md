@@ -94,7 +94,7 @@ This repository serves a few purpouses:
 
 | Crate | Review | Description |
 | ----- | ------ | ----------- |
-| [ase](https://crates.io/crates/ase) | [![crev-neutral]](reviews/ase.md) | Asesprite Format Reader
+| [ase](https://crates.io/crates/ase) | [![crev-negative]](reviews/ase.md) | Asesprite Format Reader
 | [glsl-include](https://crates.io/crates/glsl-include) | [![crev-positive]](reviews/glsl-include.md) | Handle basic `#include`s for GLSL.
 | [legion](https://crates.io/crates/legion) | [![crev-negative]](reviews/legion.md) | A low-boilerplate, high performance archetype based ECS. Lots of unsafe, possibly unsound, overflow concerns, etc.
 | [nines](https://crates.io/crates/nines) | [![crev-author]](reviews/nines.md) | 9-slice scaling math
@@ -114,6 +114,7 @@ This repository serves a few purpouses:
 | [macro_rules_attribute](https://crates.io/crates/macro_rules_attribute) | [![crev-positive]](reviews/macro_rules_attribute.md) | Provides a #[derive(...)]-like attribute without needing your own proc macro crate.
 | [matches](https://crates.io/crates/matches) | [![crev-positive]](reviews/matches.md) | `matches!(variable, SomeEnum::SomeCase) == true`
 | [num_enum](https://crates.io/crates/num_enum) | [![crev-positive]](reviews/num_enum.md) | derive traits for enums
+| [num_enum_derive](https://crates.io/crates/num_enum_derive) | [![crev-positive]](reviews/num_enum_derive.md) | impl crate for num_enum
 | [require_unsafe_in_body](https://crates.io/crates/require_unsafe_in_body) | [![crev-positive]](reviews/require_unsafe_in_body.md) | Reducing the scope of `unsafe { ... }` in `unsafe fn`s.
 | [smallvec](https://crates.io/crates/smallvec) | [![crev-negative]](reviews/smallvec.md) | Vec clone (Small Buffer Optimization, Heap Fallback). Prefer Vec.
 | [void](https://crates.io/crates/void) | [![crev-positive]](reviews/void.md) | Uninhabited type.
@@ -122,6 +123,7 @@ This repository serves a few purpouses:
 
 | Crate | Review | Description |
 | ----- | ------ | ----------- |
+| [codepage-437](https://crates.io/crates/codepage-437) | [![crev-positive]](reviews/codepage-437.md) | Codepage 437 conversion functions
 | [dlopen](https://crates.io/crates/dlopen) | [![crev-none]](reviews/dlopen.md) | Safeish and unsafe APIs for loading `.so`s, `.dll`s at runtime.
 | [fs2](https://crates.io/crates/fs2) | [![crev-positive]](reviews/fs2.md) | Some extra filesystem utilities
 | [libloading](https://crates.io/crates/libloading) | [![crev-none]](reviews/libloading.md) | Unsafe APIs for loading `.so`s, `.dll`s at runtime.
