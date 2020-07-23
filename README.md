@@ -164,6 +164,7 @@ This repository serves a few purpouses:
 | [crossterm_input](https://crates.io/crates/crossterm_input) | [![crev-negative]](reviews/crossterm_input.md) | Cross-platform console input reading. Needs soundness fixes.
 | [crossterm_screen](https://crates.io/crates/crossterm_screen) | [![crev-positive]](reviews/crossterm_screen.md) | 
 | [crossterm_style](https://crates.io/crates/crossterm_style) | [![crev-negative]](reviews/crossterm_style.md) | 
+| [egl](https://crates.io/crates/egl) | [![crev-dangerous]](reviews/egl.md) | AVOID.  Unsound as fuck, abandoned.  See khronos-egl for a sounder, maintained fork.
 | [memalloc](https://crates.io/crates/memalloc) | [![crev-dangerous]](reviews/memalloc.md) | Super brittle/dangerous at a fundamental level. Avoid.
 | [microprofile](https://crates.io/crates/microprofile) | [![crev-dangerous]](reviews/microprofile.md) | Bindings for a C++ flamegraph profiler
 
