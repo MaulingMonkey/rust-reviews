@@ -11,7 +11,7 @@ description:    AVOID.  Unsound as fuck, abandoned.  See khronos-egl for a sound
 Alternatives:
 * <code>[khronos-egl](https://lib.rs/crates/khronos-egl)</code> is a sounder, maintained fork.
 * <code>[egli](https://lib.rs/crates/egli)</code> is an alternative, supposedly sound API with low and high level APIs.
-* <code>[glutin_egl_sys]https://lib.rs/crates/glutin_egl_sys)</code> uses `gl_generator` to provide low level `unsafe` API structs.
+* <code>[glutin_egl_sys](https://lib.rs/crates/glutin_egl_sys)</code> uses `gl_generator` to provide low level `unsafe` API structs.
 
 Unsoundness:
 * Tons of "safe" functions taking raw pointers that will get used.
