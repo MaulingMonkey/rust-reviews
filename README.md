@@ -119,6 +119,13 @@ This repository serves a few purpouses:
 | [smallvec](https://crates.io/crates/smallvec) | [![crev-negative]](reviews/smallvec.md) | Vec clone (Small Buffer Optimization, Heap Fallback). Prefer Vec.
 | [void](https://crates.io/crates/void) | [![crev-positive]](reviews/void.md) | Uninhabited type.
 
+## Graphics
+
+| Crate | Review | Description |
+| ----- | ------ | ----------- |
+| [egli](https://crates.io/crates/egli) | [![crev-none]](reviews/egli.md) | EGL bindings - provides OpenGL (ES) contexts
+| [khronos-egl](https://crates.io/crates/khronos-egl) | [![crev-none]](reviews/khronos-egl.md) | EGL bindings - provides OpenGL (ES) contexts
+
 ## I/O
 
 | Crate | Review | Description |
