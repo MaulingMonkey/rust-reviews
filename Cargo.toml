@@ -3,7 +3,7 @@
 [workspace]
 members = [
     ".",
-    "tracking/common",
+    #"tracking/common",
 ]
 
 [package]
@@ -12,6 +12,9 @@ name = "rust-reviews"
 publish = false
 authors = ["MaulingMonkey <git@maulingmonkey.com>"]
 edition = "2018"
+
+[dependencies]
+crates-index = "=0.15.2"
 
 [features]
 default = []

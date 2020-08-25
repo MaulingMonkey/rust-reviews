@@ -5,6 +5,7 @@
     "type": "shell",
     "options": { "cwd": "${workspaceFolder}", "env": { "RUST_BACKTRACE": "1" } },
     "tasks": [
-        { "group": { "kind": "build", "isDefault": true }, "label": "cargo run", "command": "cargo run" },
+        { "group": { "kind": "build", "isDefault": true }, "label": "cargo readme", "command": "cargo readme" },
+        { "label": "cargo build", "command": "cargo build" },
     ]
 }

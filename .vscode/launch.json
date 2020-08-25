@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name":                     "cargo versions git2",
+            "type":                     "cppvsdbg",
+            "request":                  "launch",
+            "program":                  "${workspaceFolder}/target/debug/versions.exe",
+            "args":                     ["git2"],
+            "preLaunchTask":            "cargo build",
+            "internalConsoleOptions":   "openOnSessionStart",
+            "enableDebugHeap":          true,
+        },
+    ]
+}
