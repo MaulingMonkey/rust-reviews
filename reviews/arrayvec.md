@@ -1,5 +1,5 @@
 ---
-category:       General Utility
+category:       Data Structure
 description:    Vec clone (Fixed capacity, no heap). Prefer Vec?
 ---
 

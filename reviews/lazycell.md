@@ -1,5 +1,5 @@
 ---
-category:       General Utility
+category:       Data Structure
 description:    Similar to RefCell<Option<T>>, but you can keep T borrowed
 msrv:           1.24.0
 ---

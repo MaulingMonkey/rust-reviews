@@ -1,5 +1,5 @@
 ---
-category:       General Utility
+category:       Data Structure
 description:    Uninhabited type.
 ---
 

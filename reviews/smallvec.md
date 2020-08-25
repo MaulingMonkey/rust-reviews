@@ -1,5 +1,5 @@
 ---
-category:       General Utility
+category:       Data Structure
 description:    Vec clone (Small Buffer Optimization, Heap Fallback). Prefer Vec.
 ---
 
