@@ -1,5 +1,5 @@
 ---
-category:       General Utility
+category:       Serialization
 description:    File line/col span for .toml values
 ---
 

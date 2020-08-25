@@ -1,5 +1,5 @@
 ---
-category:       General Utility
+category:       Serialization
 description:    serde .toml deserialization
 ---
 
