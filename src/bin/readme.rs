@@ -12,7 +12,7 @@ fn main() {
 
 fn write_readme_md(md: &mut File) -> io::Result<()> {
     let placeholder = "{{CRATES}}";
-    let template = include_str!("../README.template.md");
+    let template = include_str!("../../README.template.md");
     let i = template.find(placeholder).unwrap();
     let (pre, post) = template.split_at(i);
     let post = &post[placeholder.len()..];

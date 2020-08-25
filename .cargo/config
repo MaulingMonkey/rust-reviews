@@ -1,0 +1,2 @@
+[alias]
+readme = "run --bin readme"
