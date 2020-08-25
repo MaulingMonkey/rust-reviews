@@ -1,3 +1,5 @@
+const MM_CREV_ID : &'static str = "6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY";
+
 use std::collections::{BTreeMap};
 use std::fs::{self, File};
 use std::io::{self, BufRead, BufReader, Write};
@@ -16,11 +18,11 @@ pub struct Crate {
 }
 
 impl Crate {
-    pub fn from_review_md(review_md: &Path) -> Self {
-        Self::new(review_md.file_stem().unwrap().to_str().unwrap(), review_md)
+    pub fn from_review_md(reviews: &Reviews, review_md: &Path) -> Self {
+        Self::new(reviews, review_md.file_stem().unwrap().to_str().unwrap(), review_md)
     }
 
-    fn new(name: &str, review_md: &Path) -> Self {
+    fn new(reviews: &Reviews, name: &str, review_md: &Path) -> Self {
         let mut category = None;
         let mut crev = "none".to_string();
         let mut description = None;
@@ -45,7 +47,10 @@ impl Crate {
         }
 
         if crev == "none" {
-            crev = query_crev_rating(name).unwrap_or("none".into());
+            crev = reviews.by_name.get(name)
+                .and_then(|r| r.iter().filter(|r| r.from_id == MM_CREV_ID).last())
+                .map(|r| r.review_rating.clone())
+                .unwrap_or_else(|| "none".into());
         }
 
         let badges = vec![
@@ -68,12 +73,12 @@ pub struct Crates {
 
 impl Crates {
     pub fn from_dir(dir: &(impl ?Sized + AsRef<Path>)) -> io::Result<Self> {
+        let reviews = Reviews::find();
         let mut by_category = BTreeMap::new();
 
         for e in fs::read_dir(dir)? {
-            let c = Crate::from_review_md(e?.path().as_ref());
+            let c = Crate::from_review_md(&reviews, e?.path().as_ref());
             by_category.entry(c.category.clone()).or_insert(Vec::new()).push(c);
-            print!(".");
             let _ = std::io::stdout().flush();
         }
 
@@ -81,47 +86,77 @@ impl Crates {
     }
 }
 
+#[derive(Default)]
+struct ReviewBuilder<'s> {
+    pub section:            Option<&'s str>,
+    pub from_id:            Option<String>,
+    pub package_name:       Option<String>,
+    pub package_version:    Option<String>,
+    pub review_rating:      Option<String>,
+    pub review_version:     Option<String>,
+}
 
-fn query_crev_rating(name: &str) -> Option<String> {
-    let mut cmd = Command::new("cargo");
-    cmd.args(&["crev", "proof", "find", "--crate", name]);
-    let crev_review = cmd.output().unwrap();
+impl ReviewBuilder<'_> {
+    pub fn build(self) -> Option<Review> {
+        Some(Review{
+            from_id:            self.from_id?,
+            package_name:       self.package_name?,
+            package_version:    self.package_version?,
+            review_rating:      self.review_rating?,
+        })
+    }
+}
 
-    let mut review = None;
-    let mut _review_version = None;
+pub struct Review {
+    pub from_id:            String,
+    pub package_name:       String,
+    pub package_version:    String,
+    pub review_rating:      String,
+}
 
-    let mut section = None;
-    let mut from_id = None;
-    let mut _package_name = None;
-    let mut package_version = None;
-    let stdout = String::from_utf8_lossy(&crev_review.stdout[..]);
+fn cargo_crev_reviews() -> Vec<Review> {
+    let reviews = Command::new("cargo").args(&["crev", "proof", "find"]).output().unwrap();
+    let stdout = String::from_utf8_lossy(&reviews.stdout[..]);
+    let mut reviews = Vec::new();
+    let mut next_review = ReviewBuilder::default();
     for line in stdout.lines() {
-        if line.trim() == "" {
+        let trimmed = line.trim();
+        if trimmed == "---" {
+            reviews.extend(std::mem::take(&mut next_review).build());
+        } else if trimmed == "" {
             continue;
         } else if !line.starts_with("  ") {
             if line.ends_with(":") {
-                section = Some(line);
-                if line == "package:" {
-                    _package_name = None;
-                    package_version = None;
-                }
+                next_review.section = Some(line);
             } else {
-                section = None;
+                next_review.section = None;
             }
-        } else if section == Some("from:") {
-            if let Some(v) = prefixed(line, "  id: ") { from_id = Some(v); }
-        } else if section == Some("package:") {
-            if      let Some(v) = prefixed(line, "  name: "   ) { _package_name = Some(v); }
-            else if let Some(v) = prefixed(line, "  version: ") { package_version = Some(v); }
-        } else if section == Some("review:") && from_id == Some("6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY") {
+        } else if next_review.section == Some("from:") {
+            if let Some(v) = prefixed(line, "  id: ") { next_review.from_id = Some(v.to_string()); }
+        } else if next_review.section == Some("package:") {
+            if      let Some(v) = prefixed(line, "  name: "   ) { next_review.package_name = Some(v.to_string()); }
+            else if let Some(v) = prefixed(line, "  version: ") { next_review.package_version = Some(v.to_string()); }
+        } else if next_review.section == Some("review:") {
             if let Some(v) = prefixed(line, "  rating: ") {
-                review = Some(v.into());
-                _review_version = package_version.clone();
+                next_review.review_rating = Some(v.into());
             }
         }
     }
+    reviews.extend(std::mem::take(&mut next_review).build());
+    reviews
+}
 
-    review
+pub struct Reviews {
+    pub by_name: BTreeMap<String, Vec<Review>>,
+}
+impl Reviews {
+    pub fn find() -> Self {
+        let mut by_name = BTreeMap::<String, Vec<Review>>::new();
+        for review in cargo_crev_reviews() {
+            by_name.entry(review.package_name.clone()).or_default().extend(Some(review));
+        }
+        Self { by_name }
+    }
 }
 
 fn prefixed<'a>(line: &'a str, prefix: &str) -> Option<&'a str> {
