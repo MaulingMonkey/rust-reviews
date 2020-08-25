@@ -54,6 +54,16 @@ This repository serves a few purpouses:
 | [cargo-edit](https://crates.io/crates/cargo-edit) | [![crev-neutral]](reviews/cargo-edit.md) | Add/remove/update Cargo.toml dependencies from the command line.
 | [cargo](https://crates.io/crates/cargo) | [![crev-positive]](reviews/cargo.md) | *The* rust build tool.
 
+## Data Structure
+
+| Crate | Review | Description |
+| ----- | ------ | ----------- |
+| [arrayvec](https://crates.io/crates/arrayvec) | [![crev-neutral]](reviews/arrayvec.md) | Vec clone (Fixed capacity, no heap). Prefer Vec?
+| [lazycell](https://crates.io/crates/lazycell) | [![crev-positive]](reviews/lazycell.md) | Similar to RefCell<Option<T>>, but you can keep T borrowed
+| [smallvec](https://crates.io/crates/smallvec) | [![crev-negative]](reviews/smallvec.md) | Vec clone (Small Buffer Optimization, Heap Fallback). Prefer Vec.
+| [smol_str](https://crates.io/crates/smol_str) | [![crev-none]](reviews/smol_str.md) | Immutable small string premature optimizations
+| [void](https://crates.io/crates/void) | [![crev-positive]](reviews/void.md) | Uninhabited type.
+
 ## Debugging
 
 | Crate | Review | Description |
@@ -107,17 +117,15 @@ This repository serves a few purpouses:
 
 | Crate | Review | Description |
 | ----- | ------ | ----------- |
-| [arrayvec](https://crates.io/crates/arrayvec) | [![crev-neutral]](reviews/arrayvec.md) | Vec clone (Fixed capacity, no heap). Prefer Vec?
+| [crates-index](https://crates.io/crates/crates-index) | [![crev-none]](reviews/crates-index.md) | Parse the crates.io index
 | [inventory](https://crates.io/crates/inventory) | [![crev-positive]](reviews/inventory.md) | Decentralized static registration
-| [lazycell](https://crates.io/crates/lazycell) | [![crev-positive]](reviews/lazycell.md) | Similar to RefCell<Option<T>>, but you can keep T borrowed
 | [lazy_static](https://crates.io/crates/lazy_static) | [![crev-positive]](reviews/lazy_static.md) | Static init at runtime.
 | [macro_rules_attribute](https://crates.io/crates/macro_rules_attribute) | [![crev-positive]](reviews/macro_rules_attribute.md) | Provides a #[derive(...)]-like attribute without needing your own proc macro crate.
 | [matches](https://crates.io/crates/matches) | [![crev-positive]](reviews/matches.md) | `matches!(variable, SomeEnum::SomeCase) == true`
 | [num_enum](https://crates.io/crates/num_enum) | [![crev-positive]](reviews/num_enum.md) | derive traits for enums
 | [num_enum_derive](https://crates.io/crates/num_enum_derive) | [![crev-positive]](reviews/num_enum_derive.md) | impl crate for num_enum
 | [require_unsafe_in_body](https://crates.io/crates/require_unsafe_in_body) | [![crev-positive]](reviews/require_unsafe_in_body.md) | Reducing the scope of `unsafe { ... }` in `unsafe fn`s.
-| [smallvec](https://crates.io/crates/smallvec) | [![crev-negative]](reviews/smallvec.md) | Vec clone (Small Buffer Optimization, Heap Fallback). Prefer Vec.
-| [void](https://crates.io/crates/void) | [![crev-positive]](reviews/void.md) | Uninhabited type.
+| [wchar](https://crates.io/crates/wchar) | [![crev-none]](reviews/wchar.md) | Compile time UTF16 strings for windows `wchar_t *` interop.
 
 ## Graphics
 
