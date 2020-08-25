@@ -10,12 +10,11 @@ fn main() {
     //       crates_index OTOH uses the raw textual format... so it needs to update
     let index = crates_index::Index::new_cargo_default();
     let now = SystemTime::now();
-    let day = Duration::from_secs(24 * 60 * 60);
     let index_mod = index.path().join(".git").join("index").metadata().and_then(|md| md.modified());
     if !index.exists() {
         println!("Cloning index (this will take awhile...)");
         index.retrieve().unwrap();
-    } else if index_mod.map_or(true, |index_mod| index_mod <= now - day) {
+    } else if index_mod.map_or(true, |index_mod| index_mod <= now - Duration::from_secs(120)) {
         println!("Updating index (this may take awhile...)");
         index.update().unwrap();
     }
@@ -23,7 +22,7 @@ fn main() {
 
     println!("versions:");
     for version in krate.versions() {
-        println!("    {}", version.version());
+        println!("    {}{}", version.version(), if version.is_yanked() { " (yanked)" } else { "" });
     }
     println!("earliest: {}", krate.earliest_version().version());
     println!("latest:   {}", krate.latest_version().version());

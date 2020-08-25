@@ -1,6 +1,8 @@
 [alias]
-readme      = "run --release --bin readme"
-versions    = "run --release --bin versions"
-vers        = "run --release --bin versions"
-ver         = "run --release --bin versions"
-open        = "crev open"
+diff        = "run --release --bin diff     --"
+readme      = "run --release --bin readme   --"
+versions    = "run --release --bin versions --"
+vers        = "run --release --bin versions --"
+ver         = "run --release --bin versions --"
+review      = "run --release --bin review   --"
+open        = "run --release --bin open     --"
