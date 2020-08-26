@@ -16,17 +16,29 @@ fn main() {
         .or_else(|| krate.highest_stable_version().map(|v| v.to_string()))
         .unwrap_or_else(|| { eprintln!("Usage: cargo open [crate] [version]"); exit(1); });
 
-    let mut registry_src = PathBuf::from(index.path());
-    registry_src.pop(); // github.com-1ecc6299db9ec823
-    registry_src.pop(); // index
-    registry_src.push("src");
-    registry_src.push("github.com-1ecc6299db9ec823");
-    registry_src.push(format!("{}-{}", krate.name(), vers));
-
-    Command::new("cmd").args(&["/S", "/C", "call", "code",
+    let mut vscode = Command::new("cmd");
+    vscode.args(&["/S", "/C", "call", "code",
         // Avoid Cargo.lock file spew
         "--disable-extension", "matklad.rust-analyzer",
         "--disable-extension", "kalitaalexey.vscode-rust",
         "--disable-extension", "rust-lang.rust",
-    ]).arg(registry_src).status().unwrap();
+    ]);
+
+    let versions = if vers != "*" {
+        vec![vers]
+    } else {
+        krate.versions().iter().filter(|v| !v.is_yanked()).map(|v| v.version().to_string()).collect()
+    };
+
+    for vers in versions {
+        let mut dir = PathBuf::from(index.path());
+        dir.pop(); // github.com-1ecc6299db9ec823
+        dir.pop(); // index
+        dir.push("src");
+        dir.push("github.com-1ecc6299db9ec823");
+        dir.push(format!("{}-{}", krate.name(), vers));
+        vscode.arg(dir);
+    }
+
+    vscode.status().unwrap();
 }
