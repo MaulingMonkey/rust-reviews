@@ -139,6 +139,8 @@ This repository serves a few purpouses:
 | Crate | Review | Description |
 | ----- | ------ | ----------- |
 | [codepage-437](https://crates.io/crates/codepage-437) | [![crev-positive]](reviews/codepage-437.md) | Codepage 437 conversion functions
+| [codespan-reporting](https://crates.io/crates/codespan-reporting) | [![crev-none]](reviews/codespan-reporting.md) | Beautiful cargo-like error reporting
+| [codespan](https://crates.io/crates/codespan) | [![crev-none]](reviews/codespan.md) | Core structures for codespan-reporting
 | [dlopen](https://crates.io/crates/dlopen) | [![crev-none]](reviews/dlopen.md) | Safeish and unsafe APIs for loading `.so`s, `.dll`s at runtime.
 | [fs2](https://crates.io/crates/fs2) | [![crev-positive]](reviews/fs2.md) | Some extra filesystem utilities
 | [libloading](https://crates.io/crates/libloading) | [![crev-none]](reviews/libloading.md) | Unsafe APIs for loading `.so`s, `.dll`s at runtime.
@@ -164,6 +166,8 @@ This repository serves a few purpouses:
 | [serde](https://crates.io/crates/serde) | [![crev-none]](reviews/serde.md) | The crate used for serialization throughout the Rust ecosystem
 | [serde_json](https://crates.io/crates/serde_json) | [![crev-none]](reviews/serde_json.md) | serde companion crate for (de)serializing `.json` files.
 | [sourcefile](https://crates.io/crates/sourcefile) | [![crev-positive]](reviews/sourcefile.md) | Source code file:line <-> offset conversion
+| [toml-spanned-value](https://crates.io/crates/toml-spanned-value) | [![crev-none]](reviews/toml-spanned-value.md) | File line/col span for .toml values
+| [toml](https://crates.io/crates/toml) | [![crev-none]](reviews/toml.md) | serde .toml deserialization
 | [typetag](https://crates.io/crates/typetag) | [![crev-none]](reviews/typetag.md) | Deserialize `Box<dyn Trait>` based on `inventory` registrations.
 | [xml-rs](https://crates.io/crates/xml-rs) | [![crev-positive]](reviews/xml-rs.md) | Encoding and decoding XML. Safe, sound, no deps.
 | [zip](https://crates.io/crates/zip) | [![crev-positive]](reviews/zip.md) | Zipping/unzipping .zip archives.
