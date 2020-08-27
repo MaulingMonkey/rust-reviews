@@ -15,7 +15,17 @@ This repository serves a few purpouses:
 [crev-negative]:    https://img.shields.io/badge/crev-✗-yellow
 [crev-dangerous]:   https://img.shields.io/badge/crev-✗-red
 
-{{CRATES}}
+{{#categories}}
+## {{{category}}}
+
+| Crate | Review | Description |
+| ----- | ------ | ----------- |
+{{#crates}}
+| [{{crate}}](https://crates.io/crates/{{crate}}) | {{{badges}}} | {{description}}
+{{/crates}}
+
+{{/categories}}
+
 
 # Procedures
 

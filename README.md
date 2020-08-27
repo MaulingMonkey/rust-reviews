@@ -59,7 +59,7 @@ This repository serves a few purpouses:
 | Crate | Review | Description |
 | ----- | ------ | ----------- |
 | [arrayvec](https://crates.io/crates/arrayvec) | [![crev-neutral]](reviews/arrayvec.md) | Vec clone (Fixed capacity, no heap). Prefer Vec?
-| [lazycell](https://crates.io/crates/lazycell) | [![crev-positive]](reviews/lazycell.md) | Similar to RefCell<Option<T>>, but you can keep T borrowed
+| [lazycell](https://crates.io/crates/lazycell) | [![crev-positive]](reviews/lazycell.md) | Similar to RefCell&lt;Option&lt;T&gt;&gt;, but you can keep T borrowed
 | [smallvec](https://crates.io/crates/smallvec) | [![crev-negative]](reviews/smallvec.md) | Vec clone (Small Buffer Optimization, Heap Fallback). Prefer Vec.
 | [smol_str](https://crates.io/crates/smol_str) | [![crev-none]](reviews/smol_str.md) | Immutable small string premature optimizations
 | [void](https://crates.io/crates/void) | [![crev-positive]](reviews/void.md) | Uninhabited type.
@@ -98,7 +98,7 @@ This repository serves a few purpouses:
 | [amethyst](https://crates.io/crates/amethyst) | [![crev-none]](reviews/amethyst.md) | Heavyweight data driven game engine.  Seems popular.
 | [ggez](https://crates.io/crates/ggez) | [![crev-none]](reviews/ggez.md) | 
 | [piston](https://crates.io/crates/piston) | [![crev-none]](reviews/piston.md) | 
-| [quicksilver](https://crates.io/crates/quicksilver) | [![crev-none]](reviews/quicksilver.md) | Lightweight engine targeting Desktop & Browser
+| [quicksilver](https://crates.io/crates/quicksilver) | [![crev-none]](reviews/quicksilver.md) | Lightweight engine targeting Desktop &amp; Browser
 
 ## Gamedev
 
@@ -110,8 +110,8 @@ This repository serves a few purpouses:
 | [nines](https://crates.io/crates/nines) | [![crev-author]](reviews/nines.md) | 9-slice scaling math
 | [rdrand](https://crates.io/crates/rdrand) | [![crev-neutral]](reviews/rdrand.md) | :game_die: Get random numbers :game_die:
 | [specs](https://crates.io/crates/specs) | [![crev-neutral]](reviews/specs.md) | High boilerplate ECS.  Fancy and parallel though.
-| [tiled-json-rs](https://crates.io/crates/tiled-json-rs) | [![crev-negative]](reviews/tiled-json-rs.md) | [Tiled](https://www.mapeditor.org/) `.json` export file parser. Decent bones, but I'm concerned about path traversal attacks.
-| [tiled](https://crates.io/crates/tiled) | [![crev-negative]](reviews/tiled.md) | [Tiled](https://www.mapeditor.org/) `.tmx` file parser. Decent bones, but I'm concerned about path traversal attacks.
+| [tiled-json-rs](https://crates.io/crates/tiled-json-rs) | [![crev-negative]](reviews/tiled-json-rs.md) | [Tiled](https://www.mapeditor.org/) `.json` export file parser. Decent bones, but I&#39;m concerned about path traversal attacks.
+| [tiled](https://crates.io/crates/tiled) | [![crev-negative]](reviews/tiled.md) | [Tiled](https://www.mapeditor.org/) `.tmx` file parser. Decent bones, but I&#39;m concerned about path traversal attacks.
 
 ## General Utility
 
@@ -165,10 +165,10 @@ This repository serves a few purpouses:
 | [itoa](https://crates.io/crates/itoa) | [![crev-neutral]](reviews/itoa.md) | Fast integer I/O
 | [serde](https://crates.io/crates/serde) | [![crev-none]](reviews/serde.md) | The crate used for serialization throughout the Rust ecosystem
 | [serde_json](https://crates.io/crates/serde_json) | [![crev-none]](reviews/serde_json.md) | serde companion crate for (de)serializing `.json` files.
-| [sourcefile](https://crates.io/crates/sourcefile) | [![crev-positive]](reviews/sourcefile.md) | Source code file:line <-> offset conversion
+| [sourcefile](https://crates.io/crates/sourcefile) | [![crev-positive]](reviews/sourcefile.md) | Source code file:line &lt;-&gt; offset conversion
 | [toml-spanned-value](https://crates.io/crates/toml-spanned-value) | [![crev-none]](reviews/toml-spanned-value.md) | File line/col span for .toml values
 | [toml](https://crates.io/crates/toml) | [![crev-none]](reviews/toml.md) | serde .toml deserialization
-| [typetag](https://crates.io/crates/typetag) | [![crev-none]](reviews/typetag.md) | Deserialize `Box<dyn Trait>` based on `inventory` registrations.
+| [typetag](https://crates.io/crates/typetag) | [![crev-none]](reviews/typetag.md) | Deserialize `Box&lt;dyn Trait&gt;` based on `inventory` registrations.
 | [xml-rs](https://crates.io/crates/xml-rs) | [![crev-positive]](reviews/xml-rs.md) | Encoding and decoding XML. Safe, sound, no deps.
 | [zip](https://crates.io/crates/zip) | [![crev-positive]](reviews/zip.md) | Zipping/unzipping .zip archives.
 
@@ -192,7 +192,7 @@ This repository serves a few purpouses:
 | Crate | Review | Description |
 | ----- | ------ | ----------- |
 | [cargo-web](https://crates.io/crates/cargo-web) | [![crev-none]](reviews/cargo-web.md) | .wasm packager for use with stdweb
-| [instant](https://crates.io/crates/instant) | [![crev-positive]](reviews/instant.md) | std::time::Instant alternative that doesn't panic on wasm targets.
+| [instant](https://crates.io/crates/instant) | [![crev-positive]](reviews/instant.md) | std::time::Instant alternative that doesn&#39;t panic on wasm targets.
 | [js-sys](https://crates.io/crates/js-sys) | [![crev-none]](reviews/js-sys.md) | Browser API interop
 | [rocket](https://crates.io/crates/rocket) | [![crev-none]](reviews/rocket.md) | Rust library for creating API servers.  Nice design.
 | [stdweb](https://crates.io/crates/stdweb) | [![crev-none]](reviews/stdweb.md) | Browser API interop
