@@ -5,15 +5,24 @@ This repository serves a few purpouses:
 * To provide a repository that [Dependabot](https://dependabot.com) can create issues against, to remind me to update my crev proofs.
 * To provide a visual fallback via deps.rs:  [![deps.rs](https://deps.rs/repo/github/MaulingMonkey/rust-reviews/status.svg)](https://deps.rs/repo/github/MaulingMonkey/rust-reviews)
 
-[crev-author]:      https://img.shields.io/badge/author-🐵-green
-[crev-none]:        https://img.shields.io/badge/crev-N/A-lightblue
+[crev-author]:      https://img.shields.io/badge/-🐵-green
+[crev-none]:        https://img.shields.io/badge/-%3F-lightblue
 
 [audio-rodio]:      https://img.shields.io/badge/🔊-rodio-green
 
-[crev-positive]:    https://img.shields.io/badge/crev-✓-green
-[crev-neutral]:     https://img.shields.io/badge/crev-%3D-lightgrey
-[crev-negative]:    https://img.shields.io/badge/crev-✗-yellow
-[crev-dangerous]:   https://img.shields.io/badge/crev-✗-red
+[crev-positive]:    https://img.shields.io/badge/-✓-green
+[crev-neutral]:     https://img.shields.io/badge/-%3D-lightgrey
+[crev-negative]:    https://img.shields.io/badge/-✗-yellow
+[crev-dangerous]:   https://img.shields.io/badge/-✗-red
+
+| Legend | Description |
+| ------ | ----------- |
+| ![crev-author]    &nbsp; Author      | I wrote this!
+| ![crev-positive]  &nbsp; Positive    | I like this crate
+| ![crev-neutral]   &nbsp; Neutral     | This crate is OK, but might have better alternatives
+| ![crev-negative]  &nbsp; Negative    | I have serious concerns, possibly including: too much `unsafe`, `panic!`-prone, history of soundness bugs, general brittleness, or lacking critical functionality.  Might still be a good basis for cleanup / forking.
+| ![crev-dangerous] &nbsp; Dangerous   | Unsound, vulnerable, or likely to be (now or in the future based on poor history)
+| ![crev-none]      &nbsp; N/A         | Haven't properly reviewed the code yet
 
 # Categories
 
@@ -24,10 +33,10 @@ This repository serves a few purpouses:
 {{#categories}}
 <h2 id="{{anchor}}">{{{category}}}</h2>
 
-| Crate | Review | Links | Description |
-| ----- | ------ | ----- | ----------- |
+| Review | Links | Description |
+| ------ | ----- | ----------- |
 {{#crates}}
-| [{{crate}}](reviews/{{crate}}.md) | [![crev-{{crev}}]](reviews/{{crate}}.md) | [docs.rs](https://docs.rs/{{crate}}) <!-- [lib.rs](https://lib.rs/crates/{{crate}}) --> | {{description}}
+| ![crev-{{crev}}] &nbsp; [{{crate}}](reviews/{{crate}}.md) | [docs.rs](https://docs.rs/{{crate}}) <!-- [lib.rs](https://lib.rs/crates/{{crate}}) --> | {{description}}
 {{/crates}}
 
 {{/categories}}
