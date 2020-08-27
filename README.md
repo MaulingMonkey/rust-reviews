@@ -126,7 +126,7 @@ This repository serves a few purpouses:
 | [glsl-include](reviews/glsl-include.md) | [![crev-positive]](reviews/glsl-include.md) | [docs.rs](https://docs.rs/glsl-include) <!-- [lib.rs](https://lib.rs/crates/glsl-include) --> | Handle basic `#include`s for GLSL.
 | [legion](reviews/legion.md) | [![crev-negative]](reviews/legion.md) | [docs.rs](https://docs.rs/legion) <!-- [lib.rs](https://lib.rs/crates/legion) --> | A low-boilerplate, high performance archetype based ECS. Lots of unsafe, possibly unsound, overflow concerns, etc.
 | [nines](reviews/nines.md) | [![crev-author]](reviews/nines.md) | [docs.rs](https://docs.rs/nines) <!-- [lib.rs](https://lib.rs/crates/nines) --> | 9-slice scaling math
-| [rdrand](reviews/rdrand.md) | [![crev-neutral]](reviews/rdrand.md) | [docs.rs](https://docs.rs/rdrand) <!-- [lib.rs](https://lib.rs/crates/rdrand) --> | :game_die: Get random numbers :game_die:
+| [rdrand](reviews/rdrand.md) | [![crev-neutral]](reviews/rdrand.md) | [docs.rs](https://docs.rs/rdrand) <!-- [lib.rs](https://lib.rs/crates/rdrand) --> | 🎲 Get random numbers 🎲
 | [specs](reviews/specs.md) | [![crev-neutral]](reviews/specs.md) | [docs.rs](https://docs.rs/specs) <!-- [lib.rs](https://lib.rs/crates/specs) --> | High boilerplate ECS.  Fancy and parallel though.
 | [tiled-json-rs](reviews/tiled-json-rs.md) | [![crev-negative]](reviews/tiled-json-rs.md) | [docs.rs](https://docs.rs/tiled-json-rs) <!-- [lib.rs](https://lib.rs/crates/tiled-json-rs) --> | [Tiled](https://www.mapeditor.org/) `.json` export file parser. Decent bones, but I&#39;m concerned about path traversal attacks.
 | [tiled](reviews/tiled.md) | [![crev-negative]](reviews/tiled.md) | [docs.rs](https://docs.rs/tiled) <!-- [lib.rs](https://lib.rs/crates/tiled) --> | [Tiled](https://www.mapeditor.org/) `.tmx` file parser. Decent bones, but I&#39;m concerned about path traversal attacks.
@@ -186,7 +186,7 @@ This repository serves a few purpouses:
 | [sourcefile](reviews/sourcefile.md) | [![crev-positive]](reviews/sourcefile.md) | [docs.rs](https://docs.rs/sourcefile) <!-- [lib.rs](https://lib.rs/crates/sourcefile) --> | Source code file:line &lt;-&gt; offset conversion
 | [toml-spanned-value](reviews/toml-spanned-value.md) | [![crev-none]](reviews/toml-spanned-value.md) | [docs.rs](https://docs.rs/toml-spanned-value) <!-- [lib.rs](https://lib.rs/crates/toml-spanned-value) --> | File line/col span for .toml values
 | [toml](reviews/toml.md) | [![crev-none]](reviews/toml.md) | [docs.rs](https://docs.rs/toml) <!-- [lib.rs](https://lib.rs/crates/toml) --> | serde .toml deserialization
-| [typetag](reviews/typetag.md) | [![crev-none]](reviews/typetag.md) | [docs.rs](https://docs.rs/typetag) <!-- [lib.rs](https://lib.rs/crates/typetag) --> | Deserialize `Box&lt;dyn Trait&gt;` based on `inventory` registrations.
+| [typetag](reviews/typetag.md) | [![crev-none]](reviews/typetag.md) | [docs.rs](https://docs.rs/typetag) <!-- [lib.rs](https://lib.rs/crates/typetag) --> | Deserialize Box&lt;dyn Trait&gt; based on inventory registrations.
 | [xml-rs](reviews/xml-rs.md) | [![crev-positive]](reviews/xml-rs.md) | [docs.rs](https://docs.rs/xml-rs) <!-- [lib.rs](https://lib.rs/crates/xml-rs) --> | Encoding and decoding XML. Safe, sound, no deps.
 | [zip](reviews/zip.md) | [![crev-positive]](reviews/zip.md) | [docs.rs](https://docs.rs/zip) <!-- [lib.rs](https://lib.rs/crates/zip) --> | Zipping/unzipping .zip archives.
 

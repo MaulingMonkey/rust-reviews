@@ -1,6 +1,6 @@
 ---
 category:       Gamedev
-description:    :game_die: Get random numbers :game_die:
+description:    🎲 Get random numbers 🎲
 ---
 
 # rdrand
