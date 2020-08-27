@@ -14,7 +14,7 @@ pub struct Crate {
     pub name:           String,
     pub category:       Category,
     pub description:    String,
-    pub badges:         Vec<String>,
+    pub crev:           String,
 }
 
 impl Crate {
@@ -53,15 +53,11 @@ impl Crate {
                 .unwrap_or_else(|| "none".into());
         }
 
-        let badges = vec![
-            format!("[![crev-{rating}]](reviews/{name}.md)", rating=crev, name=name)
-        ];
-
         Self {
             name:           name.to_string(),
             category:       Category::new(category.unwrap_or(String::from("Uncategorized"))),
             description:    description.unwrap_or(String::new()),
-            badges,
+            crev,
         }
     }
 }

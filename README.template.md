@@ -15,13 +15,19 @@ This repository serves a few purpouses:
 [crev-negative]:    https://img.shields.io/badge/crev-✗-yellow
 [crev-dangerous]:   https://img.shields.io/badge/crev-✗-red
 
-{{#categories}}
-## {{{category}}}
+# Categories
 
-| Crate | Review | Description |
-| ----- | ------ | ----------- |
+{{#categories}}
+* [{{category}}](#{{anchor}})
+{{/categories}}
+
+{{#categories}}
+<h2 id="{{anchor}}">{{{category}}}</h2>
+
+| Crate | Review | Links | Description |
+| ----- | ------ | ----- | ----------- |
 {{#crates}}
-| [{{crate}}](https://crates.io/crates/{{crate}}) | {{{badges}}} | {{description}}
+| [{{crate}}](reviews/{{crate}}.md) | [![crev-{{crev}}]](reviews/{{crate}}.md) | [docs.rs](https://docs.rs/{{crate}}) <!-- [lib.rs](https://lib.rs/crates/{{crate}}) --> | {{description}}
 {{/crates}}
 
 {{/categories}}

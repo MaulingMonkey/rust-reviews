@@ -10,11 +10,12 @@ fn main() {
         .insert_vec("categories", |v| crates.by_category.iter().fold(v, |v, (category, crates)| { v
             .push_map(|m| { m
                 .insert_str("category", &**category)
+                .insert_str("anchor", category.to_ascii_lowercase().replace(" ", "-"))
                 .insert_vec("crates", |v| crates.iter().fold(v, |v, krate| { v
                     .push_map(|m| { m
-                        .insert_str("crate", &krate.name)
-                        .insert_str("badges", krate.badges.join(", ").to_string())
-                        .insert_str("description", &krate.description)
+                        .insert_str("crate",        &krate.name)
+                        .insert_str("crev",         &krate.crev)
+                        .insert_str("description",  &krate.description)
                     })
                 }))
             })
