@@ -231,65 +231,27 @@ This repository serves a few purpouses:
 
 # Procedures
 
-## Adding a new review
+## Newfangled Reviews
 
-* Add `cratename = "=0.0.1" to Cargo.toml
-* Review via crev
-    ```cmd
-    cargo update
-    cargo crev query review  cratename
-    cargo crev open          cratename
-    cargo crev review        cratename
-    cargo crev push
-    ```
-* Create equivalent notes in new reviews/cratename.md
-* Link in README.md
-* git commit
-    ```
-    Add cratename review for v0.0.1
-    ```
-* git push
+```sh
+# Display versions in VS Code
+cargo versions byteorder
+```
 
-## Updating a review
+```sh
+# Generate template and open secondary vscode window with all versions open
+cargo review --all byteorder
+cargo open byteorder *
 
-* Bump version once in Cargo.toml
-* Review via crev
-    ```cmd
-    cargo update
-    cargo crev query review  cratename
-    cargo crev open          cratename
-    cargo crev diff          cratename --src=0.0.1 --dst=0.0.2  -u --color
-    cargo crev review        cratename --diff
-    cargo crev push
-    ```
-* Append equivalent notes to reviews/cratename.md
-* Bump version in README.md
-* git commit
-    ```
-    Update cratename review to v0.0.2
+# Diff versions
+cls && cargo diff byteorder 0.1.1
+cls && cargo diff byteorder 0.2.0
+...
 
-    Any extra notes
-
-    Closes MaulingMonkey/rust-reviews#000
-    ```
-* git push
-
-## Initial Setup
-
-* Install and configure cargo crev
-    ```cmd
-    cargo install cargo-crev
-    :: ...?
-    ```
-* Add the following to your `cargo crev edit config`:
-    ```yml
-    ---
-    version: -1
-    ...
-    open-cmd: "start \"\" \"C:\\Users\\UserName\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" -n --disable-extension rust-lang.rust --disable-extension matklad.ra-lsp --disable-extension kalitaalexey.vscode-rust"
-     
-    ```
-    This disables these extensions, which all provide Rust intellisense, which has a tendency to pollute `%USERPROFILE%\.cargo\registry\src` with `Cargo.lock` files, `target` directories, or worse, which makes cargo crev angry:
-    * rust-lang.rust
-    * matklad.ra-lsp
-    * kalitaalexey.vscode-rust
+# Crosspost to crev
+cargo install cargo-crev
+cargo crev crate review -u --advisory            byteorder --vers 0.2.11
+cargo crev crate review -u --advisory            byteorder --vers 0.3.8
+cargo crev crate review -u --skip-activity-check byteorder --vers 1.3.4
+cargo crev repo publish
+```
