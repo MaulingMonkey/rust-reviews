@@ -16,7 +16,7 @@ crev:           negative
 ## Cons
 
 * Excessive and distributed `unsafe` in serialization related code is hard to audit and makes me nervous
-* History of unsoundness.  Most crate versions have alignment related bugs, and 0.2.x had serious overflow issues.
+* History of unsoundness.  Most crate versions have alignment related bugs, and 0.2.x had overflow issues which regressed in 0.3.x.
 * Very limited functionality
 
 ## Issues
