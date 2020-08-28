@@ -24,16 +24,16 @@ crev:           negative
 | issue                     | severity  | broke     | fix      | desc |
 | ------------------------- | --------- | --------- | -------- | ---- |
 | <a name="na-1">N/A#1</a>  | ❗️ high    | [0.2.0]   | [0.2.2]  | Unsound: missing bounds checks for {`read`,`write`}`_num_bytes!`
-| [rust-lang#22776]         | ❗️ high    | [0.2.0]<br>[0.3.3]🐵 | [0.2.11]<br>[0.3.8] | Unsound: dangling pointer `bytes` in `write_num_bytes!`<br>.. regression
+| [rust-lang/rust#22776]    | ❗️ high    | [0.2.0]<br>[0.3.3]🐵 | [0.2.11]<br>[0.3.8] | Unsound: dangling pointer `bytes` in `write_num_bytes!`<br>.. regression
 | [#47]                     | ❗️ high    | [0.3.9]   | [0.5.2]  | Unsound: unaligned read for `read_num_bytes!`
 | [#157]                    | ❗️ high    | [1.1.0]🐵 | [1.3.3]  | Unsound: unaligned read for `read_uint`\[`128`\]
 
 🐵 Spotted in audit
 
-[rust-lang#22776]:  https://github.com/rust-lang/rust/issues/22776
-[#47]:              https://github.com/BurntSushi/byteorder/issues/47
-[#157]:             https://github.com/BurntSushi/byteorder/pull/157
-[N/A#1]:            #na-1
+[rust-lang/rust#22776]: https://github.com/rust-lang/rust/issues/22776
+[#47]:                  https://github.com/BurntSushi/byteorder/issues/47
+[#157]:                 https://github.com/BurntSushi/byteorder/pull/157
+[N/A#1]:                #na-1
 
 ## Audit
 
@@ -74,30 +74,30 @@ numeric types, slices thereof, and endians - that's a bit much.
 | [0.3.11]  | low           | medium        | ❗️ dangerous   | Unsound!  [#47]
 | [0.3.10]  | low           | medium        | ❗️ dangerous   | Unsound!  [#47]
 | [0.3.9]   | low           | medium        | ❗️ dangerous   | Unsound!  **[#47]**
-| [0.3.8]   | low           | medium        | ❔ neutral    | Fixed: ~~[rust-lang#22776]~~
-| [0.3.7]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang#22776]
-| [0.3.6]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang#22776]
-| [0.3.5]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang#22776]
-| [0.3.4]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang#22776]
-| [0.3.3]   | low           | medium        | ❗️ dangerous   | Unsound!  **[rust-lang#22776]** (regression)
+| [0.3.8]   | low           | medium        | ❔ neutral    | Fixed: ~~[rust-lang/rust#22776]~~
+| [0.3.7]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang/rust#22776]
+| [0.3.6]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang/rust#22776]
+| [0.3.5]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang/rust#22776]
+| [0.3.4]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang/rust#22776]
+| [0.3.3]   | low           | medium        | ❗️ dangerous   | Unsound!  **[rust-lang/rust#22776]** (regression)
 | [0.3.2]   | low           | medium        | ❔ neutral    |
 | [0.3.1]   | low           | medium        | ❔ neutral    |
 | [0.3.0]   | low           | medium        | ❔ neutral    |
 | [0.2.14]  | low           | medium        | ❔ neutral    |
 | [0.2.13]  | low           | medium        | ❔ neutral    |
 | [0.2.12]  | low           | medium        | ❔ neutral    |
-| [0.2.11]  | low           | medium        | ❔ neutral    | Fixed: ~~[rust-lang#22776]~~
-| [0.2.10]  | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang#22776]
-| [0.2.9]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang#22776]
-| [0.2.8]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang#22776]
-| [0.2.7]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang#22776]
-| [0.2.6]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang#22776]
-| [0.2.5]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang#22776]
-| [0.2.4]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang#22776]
-| [0.2.3]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang#22776]
-| [0.2.2]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang#22776] (Fixed: ~~[N/A#1]~~)
-| [0.2.1]   | low           | medium        | ❗️ dangerous   | Unsound!  [N/A#1] [rust-lang#22776]
-| [0.2.0]   | low           | medium        | ❗️ dangerous   | Unsound!  **[N/A#1] [rust-lang#22776]**
+| [0.2.11]  | low           | medium        | ❔ neutral    | Fixed: ~~[rust-lang/rust#22776]~~
+| [0.2.10]  | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang/rust#22776]
+| [0.2.9]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang/rust#22776]
+| [0.2.8]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang/rust#22776]
+| [0.2.7]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang/rust#22776]
+| [0.2.6]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang/rust#22776]
+| [0.2.5]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang/rust#22776]
+| [0.2.4]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang/rust#22776]
+| [0.2.3]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang/rust#22776]
+| [0.2.2]   | low           | medium        | ❗️ dangerous   | Unsound!  [rust-lang/rust#22776] (Fixed: ~~[N/A#1]~~)
+| [0.2.1]   | low           | medium        | ❗️ dangerous   | Unsound!  [N/A#1] [rust-lang/rust#22776]
+| [0.2.0]   | low           | medium        | ❗️ dangerous   | Unsound!  **[N/A#1] [rust-lang/rust#22776]**
 | [0.1.1]   | medium        | medium        | ❔ neutral    | initial implementation
 | [0.1.0]   | high          | medium        | ⚠️ negative   | empty
 
@@ -449,7 +449,7 @@ Trivial
 | Diff                              | Rating | Notes |
 | --------------------------------- | ------ | ----- |
 | README.md                         | ✔️ | badge
-| src\lib.rs                        | ⚠️ | Fixed [rust-lang#22776] regression, -`MarkerTrait`
+| src\lib.rs                        | ⚠️ | Fixed [rust-lang/rust#22776] regression, -`MarkerTrait`
 
 <h2 name="0.3.7">0.3.7</h2>
 
@@ -472,21 +472,21 @@ Trivial
 
 | Diff                              | Rating | Notes |
 | --------------------------------- | ------ | ----- |
-| src\lib.rs                        | ✔️❗️ | [[rust-lang#22776]]
+| src\lib.rs                        | ✔️❗️ | [[rust-lang/rust#22776]]
 | src\new.rs                        | ✔️  | Error handling
 
 <h2 name="0.3.4">0.3.4</h2>
 
 | Diff                              | Rating | Notes |
 | --------------------------------- | ------ | ----- |
-| src\lib.rs                        | ✔️❗️ | [[rust-lang#22776]]
+| src\lib.rs                        | ✔️❗️ | [[rust-lang/rust#22776]]
 
 <h2 name="0.3.3">0.3.3</h2>
 
 | Diff                              | Rating | Notes |
 | --------------------------------- | ------ | ----- |
 | Cargo.toml                        | ✔️ | -`bswap`
-| src\lib.rs                        | ❗️ | Regression!  Re-introduced [rust-lang#22776] when removing bswap?
+| src\lib.rs                        | ❗️ | Regression!  Re-introduced [rust-lang/rust#22776] when removing bswap?
 
 | Other     | Rating | Notes |
 | --------- | ------ | ----- |
@@ -538,7 +538,7 @@ Trivial
 
 | Diff                              | Rating | Notes |
 | --------------------------------- | ------ | ----- |
-| src\lib.rs                        | ⚠️ | Fixed dangling pointer [[rust-lang#22776]].
+| src\lib.rs                        | ⚠️ | Fixed dangling pointer [[rust-lang/rust#22776]].
 
 | Other     | Rating | Notes |
 | --------- | ------ | ----- |
@@ -548,7 +548,7 @@ Trivial
 
 | Diff                              | Rating | Notes |
 | --------------------------------- | ------ | ----- |
-| src\lib.rs                        | ✔️❗️ | [[rust-lang#22776]] `copy_nonoverlapping_memory` -> `copy_nonoverlapping`
+| src\lib.rs                        | ✔️❗️ | [[rust-lang/rust#22776]] `copy_nonoverlapping_memory` -> `copy_nonoverlapping`
 | src\new.rs                        | ✔️ | `FromError`
 
 <h2 name="0.2.9">0.2.9</h2>
@@ -556,7 +556,7 @@ Trivial
 | Diff                              | Rating | Notes |
 | --------------------------------- | ------ | ----- |
 | README.md                         | ✔️ | Docs
-| src\lib.rs                        | ✔️❗️ | [[rust-lang#22776]] Trivial
+| src\lib.rs                        | ✔️❗️ | [[rust-lang/rust#22776]] Trivial
 | src\new.rs                        | ✔️ | `Error` / `FromError` / `Display`
 | src\old.rs                        | ✔️ | old_io docs
 
@@ -566,7 +566,7 @@ Significant rewrite/refactor (std::old_io + std::io?)
 
 | Diff                              | Rating | Notes |
 | --------------------------------- | ------ | ----- |
-| src\lib.rs                        | ✔️❗️ | [[rust-lang#22776]]
+| src\lib.rs                        | ✔️❗️ | [[rust-lang/rust#22776]]
 | src\new.rs                        | ✔️
 | src\old.rs                        | ✔️
 
@@ -574,25 +574,25 @@ Significant rewrite/refactor (std::old_io + std::io?)
 
 | Diff                              | Rating | Notes |
 | --------------------------------- | ------ | ----- |
-| src\lib.rs                        | ✔️❗️ | [[rust-lang#22776]] MarkerTrait, usize, old_io
+| src\lib.rs                        | ✔️❗️ | [[rust-lang/rust#22776]] MarkerTrait, usize, old_io
 
 <h2 name="0.2.6">0.2.6</h2>
 
 | Diff                              | Rating | Notes |
 | --------------------------------- | ------ | ----- |
-| src\lib.rs                        | ✔️❗️ | [[rust-lang#22776]]
+| src\lib.rs                        | ✔️❗️ | [[rust-lang/rust#22776]]
 
 <h2 name="0.2.5">0.2.5</h2>
 
 | Diff                              | Rating | Notes |
 | --------------------------------- | ------ | ----- |
-| src\lib.rs                        | ✔️❗️ | [[rust-lang#22776]].  `unsafe`: new `read_num_bytes!` overloads for `read_uint` appear sound
+| src\lib.rs                        | ✔️❗️ | [[rust-lang/rust#22776]].  `unsafe`: new `read_num_bytes!` overloads for `read_uint` appear sound
 
 <h2 name="0.2.4">0.2.4</h2>
 
 | Diff                              | Rating | Notes |
 | --------------------------------- | ------ | ----- |
-| src\lib.rs                        | ✔️❗️ | [[rust-lang#22776]]
+| src\lib.rs                        | ✔️❗️ | [[rust-lang/rust#22776]]
 
 <h2 name="0.2.3">0.2.3</h2>
 
@@ -603,7 +603,7 @@ Trivial
 | Diff                              | Rating | Notes |
 | --------------------------------- | ------ | ----- |
 | README.md                         | ✔️
-| src\lib.rs                        | ❗️ | Fixed {`read`,`write`}`_num_bytes!` bounds checks [[N/A#1]], `bytes` still dangles [[rust-lang#22776]]
+| src\lib.rs                        | ❗️ | Fixed {`read`,`write`}`_num_bytes!` bounds checks [[N/A#1]], `bytes` still dangles [[rust-lang/rust#22776]]
 
 <h2 name="0.2.1">0.2.1</h2>
 
@@ -611,13 +611,13 @@ Trivial
 | --------------------------------- | ------ | ----- |
 | Cargo.toml                        | ✔️ +`rand`(dev)
 | README.md                         | ✔️ | TODO, Ideas
-| src\lib.rs                        | ✔️❗️ | [[N/A#1], [rust-lang#22776]]
+| src\lib.rs                        | ✔️❗️ | [[N/A#1], [rust-lang/rust#22776]]
 
 <h2 name="0.2.0">0.2.0</h2>
 
 | Diff                              | Rating | Notes |
 | --------------------------------- | ------ | ----- |
-| src\lib.rs                        | ❗️ | {`read`,`write`}`_num_bytes!`: unsound: may overflow [[N/A#1]].  `let bytes = (...).as_ptr();` also dangles [[rust-lang#22776]]!
+| src\lib.rs                        | ❗️ | {`read`,`write`}`_num_bytes!`: unsound: may overflow [[N/A#1]].  `let bytes = (...).as_ptr();` also dangles [[rust-lang/rust#22776]]!
 
 <h2 name="0.1.1">0.1.1</h2>
 
