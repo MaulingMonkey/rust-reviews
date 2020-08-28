@@ -188,6 +188,7 @@ This repository serves a few purpouses:
 | Review | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-negative] &nbsp; [ascii](reviews/ascii.md) | [docs.rs](https://docs.rs/ascii) <!-- [lib.rs](https://lib.rs/crates/ascii) --> | ASCII conversion and parsing.
+| ![crev-positive] &nbsp; [ico](reviews/ico.md) | [docs.rs](https://docs.rs/ico) <!-- [lib.rs](https://lib.rs/crates/ico) --> | Encoders/decoders for .ico and .cur file formats
 | ![crev-positive] &nbsp; [idna](reviews/idna.md) | [docs.rs](https://docs.rs/idna) <!-- [lib.rs](https://lib.rs/crates/idna) --> | Encoding/decoding domain names/punycode.
 | ![crev-neutral] &nbsp; [itoa](reviews/itoa.md) | [docs.rs](https://docs.rs/itoa) <!-- [lib.rs](https://lib.rs/crates/itoa) --> | Fast integer I/O
 | ![crev-none] &nbsp; [serde](reviews/serde.md) | [docs.rs](https://docs.rs/serde) <!-- [lib.rs](https://lib.rs/crates/serde) --> | The crate used for serialization throughout the Rust ecosystem
@@ -239,6 +240,8 @@ cargo versions byteorder
 ```
 
 ```sh
+# Prefer cmd.exe for keepass purpouses
+
 # Generate template and open secondary vscode window with all versions open
 cargo review --all byteorder
 cargo open byteorder *
@@ -253,5 +256,6 @@ cargo install cargo-crev
 cargo crev crate review -u --advisory            byteorder --vers 0.2.11
 cargo crev crate review -u --advisory            byteorder --vers 0.3.8
 cargo crev crate review -u --skip-activity-check byteorder --vers 1.3.4
+cargo crev repo git diff HEAD~1
 cargo crev repo publish
 ```

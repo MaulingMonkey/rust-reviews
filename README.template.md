@@ -52,6 +52,8 @@ cargo versions byteorder
 ```
 
 ```sh
+# Prefer cmd.exe for keepass purpouses
+
 # Generate template and open secondary vscode window with all versions open
 cargo review --all byteorder
 cargo open byteorder *
@@ -66,5 +68,6 @@ cargo install cargo-crev
 cargo crev crate review -u --advisory            byteorder --vers 0.2.11
 cargo crev crate review -u --advisory            byteorder --vers 0.3.8
 cargo crev crate review -u --skip-activity-check byteorder --vers 1.3.4
+cargo crev repo git diff HEAD~1
 cargo crev repo publish
 ```
