@@ -21,7 +21,7 @@ msrv:
 <!--
     thoroughness:   none low medium high
     understanding:  none low medium high
-    rating:         dangerous negative medium positive strong
+    rating:         dangerous negative neutral positive strong
 -->
 
 {{#versions}}

@@ -204,6 +204,7 @@ This repository serves a few purpouses:
 | Review | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-dangerous] &nbsp; [actix-web](reviews/actix-web.md) | [docs.rs](https://docs.rs/actix-web) <!-- [lib.rs](https://lib.rs/crates/actix-web) --> | AVOID.  Closes soundness bugs unfixed.  Deletes external soundness bugs.
+| ![crev-negative] &nbsp; [byteorder](reviews/byteorder.md) | [docs.rs](https://docs.rs/byteorder) <!-- [lib.rs](https://lib.rs/crates/byteorder) --> | Super basic casting/endian/swizzling with a history of unsoundness
 | ![crev-negative] &nbsp; [cargo-apk](reviews/cargo-apk.md) | [docs.rs](https://docs.rs/cargo-apk) <!-- [lib.rs](https://lib.rs/crates/cargo-apk) --> | Glue code is full of unsafe and unsound.
 | ![crev-negative] &nbsp; [crossterm](reviews/crossterm.md) | [docs.rs](https://docs.rs/crossterm) <!-- [lib.rs](https://lib.rs/crates/crossterm) --> | Cross-platform console stuff.  No web support, soundness issues.
 | ![crev-negative] &nbsp; [crossterm_cursor](reviews/crossterm_cursor.md) | [docs.rs](https://docs.rs/crossterm_cursor) <!-- [lib.rs](https://lib.rs/crates/crossterm_cursor) --> | Cross-platform console cursor maniulation. Needs soundness fixes.

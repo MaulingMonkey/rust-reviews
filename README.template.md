@@ -18,7 +18,7 @@ This repository serves a few purpouses:
 | Legend | Description |
 | ------ | ----------- |
 | ![crev-author]    &nbsp; Author      | I wrote this!
-| ![crev-positive]  &nbsp; Positive    | I like this crate
+| ![crev-positive]  &nbsp; Positive    | Seems safe/sound/possibly useful
 | ![crev-neutral]   &nbsp; Neutral     | This crate is OK, but might have better alternatives
 | ![crev-negative]  &nbsp; Negative    | I have serious concerns, possibly including: too much `unsafe`, `panic!`-prone, history of soundness bugs, general brittleness, or lacking critical functionality.  Might still be a good basis for cleanup / forking.
 | ![crev-dangerous] &nbsp; Dangerous   | Unsound, vulnerable, or likely to be (now or in the future based on poor history)
