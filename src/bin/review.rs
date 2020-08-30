@@ -6,6 +6,18 @@ use std::process::{Command, exit};
 enum Mode {
     Stable,
     All,
+    Version(String),
+}
+
+fn usage() {
+    eprintln!("Usage:");
+    eprintln!("cargo review [crate] [version]");
+    eprintln!();
+    eprintln!("version:");
+    eprintln!("    --one | --latest | --stable      Latest stable version");
+    eprintln!("    * | --all                        All stable versions");
+    eprintln!("    0.0.3-beta                       A specific version, stable or otherwise");
+    eprintln!();
 }
 
 fn main() {
@@ -21,14 +33,28 @@ fn main() {
             "--latest"  => { assert!(mode.is_none()); mode = Some(Mode::Stable); },
             "--stable"  => { assert!(mode.is_none()); mode = Some(Mode::Stable); },
             "--all"     => { assert!(mode.is_none()); mode = Some(Mode::All); },
+            "*"         => { assert!(mode.is_none()); mode = Some(Mode::All); },
             // --range?
-            flag if flag.starts_with("--") => { panic!("Unrecognized flag: {}", flag); },
-            _other  => { assert!(krate.is_none()); krate = Some(arg); },
+            flag if flag.starts_with("--") => { eprintln!("Unrecognized flag: {}", flag); usage(); exit(1); },
+            _ => {
+                if krate.is_none() {
+                    krate = Some(arg);
+                } else if mode.is_none() {
+                    if arg == "*" {
+                        mode = Some(Mode::All);
+                    } else {
+                        mode = Some(Mode::Version(arg));
+                    }
+                } else {
+                    usage();
+                    exit(1);
+                }
+            }
         }
     }
 
-    let krate = krate.unwrap_or_else(|| { eprintln!("Usage: cargo review [--all | --stable] [crate]"); exit(1); });
-    let mode  = mode .unwrap_or_else(|| { eprintln!("Usage: cargo review [--all | --stable] [crate]"); exit(1); });
+    let krate = krate.unwrap_or_else(|| { usage(); exit(1); });
+    let mode  = mode .unwrap_or_else(|| { usage(); exit(1); });
 
     let temp = PathBuf::from(std::env::var_os("TEMP").expect("%TEMP% not set"));
     let registry_src = PathBuf::from(std::env::var_os("USERPROFILE").expect("%USERPROFILE% not set")).join(r".cargo\registry\src\github.com-1ecc6299db9ec823");
@@ -51,6 +77,7 @@ fn main() {
     match mode {
         Mode::Stable    => versions.extend(krate.highest_stable_version().map(|v| v.to_string())),
         Mode::All       => versions.extend(krate.versions().iter().filter(|v| !v.is_yanked()).map(|v| v.version().to_string())),
+        Mode::Version(v)=> versions.extend(Some(v)),
     }
 
     let review = temp.join("rust-reviews-fetch");
