@@ -10,7 +10,7 @@ Basic 0-dependencies Fn-based [Waker] source.
 This could eventually be made safe when [Wake] (not [Waker]!) stabilizes.
 In the meantime, this crate manually creates a [Waker] via [RawWaker].
 This requires some `unsafe` code, but this crate appropriately uses just about
-the bare minimum necessary to accomplish the task.
+the bare minimum necessary to accomplish the task, and appears to do so soundly and correctly.
 Additionally, the code is minimal (63 LOC including comments and whitespace for 1.1.0) and straightforward.
 
 [Wake]:     https://doc.rust-lang.org/std/task/trait.Wake.html
