@@ -15,18 +15,19 @@ This repository serves a few purpouses:
 [crev-negative]:    https://img.shields.io/badge/-✗-yellow
 [crev-dangerous]:   https://img.shields.io/badge/-✗-red
 
-| Legend | Description |
-| ------ | ----------- |
-| ![crev-author]    &nbsp; Author      | I wrote this!
-| ![crev-positive]  &nbsp; Positive    | Seems safe/sound/possibly useful
-| ![crev-neutral]   &nbsp; Neutral     | This crate is OK, but might have better alternatives
-| ![crev-negative]  &nbsp; Negative    | I have serious concerns, possibly including: too much `unsafe`, `panic!`-prone, history of soundness bugs, general brittleness, or lacking critical functionality.  Might still be a good basis for cleanup / forking.
-| ![crev-dangerous] &nbsp; Dangerous   | Unsound, vulnerable, or likely to be (now or in the future based on poor history)
-| ![crev-none]      &nbsp; N/A         | Haven't properly reviewed the code yet
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Legend&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description |
+| ----------------------------- | ----------- |
+| ![crev-author]    Author      | I wrote this!
+| ![crev-positive]  Positive    | Seems safe/sound/possibly useful
+| ![crev-neutral]   Neutral     | This crate is OK, but might have better alternatives
+| ![crev-negative]  Negative    | I have serious concerns, possibly including: too much `unsafe`, `panic!`-prone, history of soundness bugs, general brittleness, or lacking critical functionality.  Might still be a good basis for cleanup / forking.
+| ![crev-dangerous] Dangerous   | Unsound, vulnerable, or likely to be (now or in the future based on poor history)
+| ![crev-none]      N/A         | Haven't properly reviewed the code yet
 
 # Categories
 
 * [Android](#android)
+* [Async](#async)
 * [Build Utility](#build-utility)
 * [CLI Tools](#cli-tools)
 * [Data Structure](#data-structure)
@@ -60,6 +61,12 @@ This repository serves a few purpouses:
 | ![crev-positive] &nbsp; [jni-sys](reviews/jni-sys.md) | [docs.rs](https://docs.rs/jni-sys) <!-- [lib.rs](https://lib.rs/crates/jni-sys) --> | Rust bindings for JNI interop.
 | ![crev-negative] &nbsp; [jni](reviews/jni.md) | [docs.rs](https://docs.rs/jni) <!-- [lib.rs](https://lib.rs/crates/jni) --> | Unsafe and unsound. Has responded to fixes well though.
 
+<h2 id="async">Async</h2>
+
+| Review | Links | Description |
+| ------ | ----- | ----------- |
+| ![crev-positive] &nbsp; [waker-fn](reviews/waker-fn.md) | [docs.rs](https://docs.rs/waker-fn) <!-- [lib.rs](https://lib.rs/crates/waker-fn) --> | Basic 0-dependencies Fn-based Waker source.
+
 <h2 id="build-utility">Build Utility</h2>
 
 | Review | Links | Description |
@@ -71,6 +78,7 @@ This repository serves a few purpouses:
 | ![crev-author] &nbsp; [lies](reviews/lies.md) | [docs.rs](https://docs.rs/lies) <!-- [lib.rs](https://lib.rs/crates/lies) --> | Embed license text into your program via proc macros around cargo-about.
 | ![crev-positive] &nbsp; [rustversion](reviews/rustversion.md) | [docs.rs](https://docs.rs/rustversion) <!-- [lib.rs](https://lib.rs/crates/rustversion) --> | Attributes to do conditional compilation based on rust version/channel
 | ![crev-positive] &nbsp; [vcpkg](reviews/vcpkg.md) | [docs.rs](https://docs.rs/vcpkg) <!-- [lib.rs](https://lib.rs/crates/vcpkg) --> | Build dependency to get C/C++ [vcpkg](https://github.com/Microsoft/vcpkg)s
+| ![crev-positive] &nbsp; [winres](reviews/winres.md) | [docs.rs](https://docs.rs/winres) <!-- [lib.rs](https://lib.rs/crates/winres) --> | Embed resources (icons, versions, ...) into your executables.
 
 <h2 id="cli-tools">CLI Tools</h2>
 
@@ -145,13 +153,16 @@ This repository serves a few purpouses:
 | Review | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-none] &nbsp; [crates-index](reviews/crates-index.md) | [docs.rs](https://docs.rs/crates-index) <!-- [lib.rs](https://lib.rs/crates/crates-index) --> | Parse the crates.io index
+| ![crev-positive] &nbsp; [icon-pie](reviews/icon-pie.md) | [docs.rs](https://docs.rs/icon-pie) <!-- [lib.rs](https://lib.rs/crates/icon-pie) --> | Generate .ico / .icns
 | ![crev-positive] &nbsp; [inventory](reviews/inventory.md) | [docs.rs](https://docs.rs/inventory) <!-- [lib.rs](https://lib.rs/crates/inventory) --> | Decentralized static registration
 | ![crev-positive] &nbsp; [lazy_static](reviews/lazy_static.md) | [docs.rs](https://docs.rs/lazy_static) <!-- [lib.rs](https://lib.rs/crates/lazy_static) --> | Static init at runtime.
 | ![crev-positive] &nbsp; [macro_rules_attribute](reviews/macro_rules_attribute.md) | [docs.rs](https://docs.rs/macro_rules_attribute) <!-- [lib.rs](https://lib.rs/crates/macro_rules_attribute) --> | Provides a #[derive(...)]-like attribute without needing your own proc macro crate.
 | ![crev-positive] &nbsp; [matches](reviews/matches.md) | [docs.rs](https://docs.rs/matches) <!-- [lib.rs](https://lib.rs/crates/matches) --> | `matches!(variable, SomeEnum::SomeCase) == true`
+| ![crev-positive] &nbsp; [num_cpus](reviews/num_cpus.md) | [docs.rs](https://docs.rs/num_cpus) <!-- [lib.rs](https://lib.rs/crates/num_cpus) --> | Queries the OS for the number of CPU cores you have
 | ![crev-positive] &nbsp; [num_enum](reviews/num_enum.md) | [docs.rs](https://docs.rs/num_enum) <!-- [lib.rs](https://lib.rs/crates/num_enum) --> | derive traits for enums
 | ![crev-positive] &nbsp; [num_enum_derive](reviews/num_enum_derive.md) | [docs.rs](https://docs.rs/num_enum_derive) <!-- [lib.rs](https://lib.rs/crates/num_enum_derive) --> | impl crate for num_enum
 | ![crev-positive] &nbsp; [require_unsafe_in_body](reviews/require_unsafe_in_body.md) | [docs.rs](https://docs.rs/require_unsafe_in_body) <!-- [lib.rs](https://lib.rs/crates/require_unsafe_in_body) --> | Reducing the scope of `unsafe { ... }` in `unsafe fn`s.
+| ![crev-positive] &nbsp; [threadpool](reviews/threadpool.md) | [docs.rs](https://docs.rs/threadpool) <!-- [lib.rs](https://lib.rs/crates/threadpool) --> | Simple basic thread pool
 | ![crev-none] &nbsp; [wchar](reviews/wchar.md) | [docs.rs](https://docs.rs/wchar) <!-- [lib.rs](https://lib.rs/crates/wchar) --> | Compile time UTF16 strings for windows `wchar_t *` interop.
 
 <h2 id="graphics">Graphics</h2>
@@ -175,6 +186,7 @@ This repository serves a few purpouses:
 | ![crev-positive] &nbsp; [podio](reviews/podio.md) | [docs.rs](https://docs.rs/podio) <!-- [lib.rs](https://lib.rs/crates/podio) --> | Utility extension methods for `Read` / `Write`
 | ![crev-positive] &nbsp; [shellexpand](reviews/shellexpand.md) | [docs.rs](https://docs.rs/shellexpand) <!-- [lib.rs](https://lib.rs/crates/shellexpand) --> | Expand unix style env vars within strings.
 | ![crev-positive] &nbsp; [tempfile](reviews/tempfile.md) | [docs.rs](https://docs.rs/tempfile) <!-- [lib.rs](https://lib.rs/crates/tempfile) --> | Create/cleanup temporary files and directories.
+| ![crev-positive] &nbsp; [vfs](reviews/vfs.md) | [docs.rs](https://docs.rs/vfs) <!-- [lib.rs](https://lib.rs/crates/vfs) --> | Filesystem virtualization
 | ![crev-positive] &nbsp; [warmy](reviews/warmy.md) | [docs.rs](https://docs.rs/warmy) <!-- [lib.rs](https://lib.rs/crates/warmy) --> | Hot reloading resources. Not browser friendly.
 
 <h2 id="macros">Macros</h2>
@@ -189,6 +201,7 @@ This repository serves a few purpouses:
 | ------ | ----- | ----------- |
 | ![crev-negative] &nbsp; [ascii](reviews/ascii.md) | [docs.rs](https://docs.rs/ascii) <!-- [lib.rs](https://lib.rs/crates/ascii) --> | ASCII conversion and parsing.
 | ![crev-positive] &nbsp; [ico](reviews/ico.md) | [docs.rs](https://docs.rs/ico) <!-- [lib.rs](https://lib.rs/crates/ico) --> | Encoders/decoders for .ico and .cur file formats
+| ![crev-negative] &nbsp; [icon_baker](reviews/icon_baker.md) | [docs.rs](https://docs.rs/icon_baker) <!-- [lib.rs](https://lib.rs/crates/icon_baker) --> | Generate .ico / .icns
 | ![crev-positive] &nbsp; [idna](reviews/idna.md) | [docs.rs](https://docs.rs/idna) <!-- [lib.rs](https://lib.rs/crates/idna) --> | Encoding/decoding domain names/punycode.
 | ![crev-neutral] &nbsp; [itoa](reviews/itoa.md) | [docs.rs](https://docs.rs/itoa) <!-- [lib.rs](https://lib.rs/crates/itoa) --> | Fast integer I/O
 | ![crev-none] &nbsp; [serde](reviews/serde.md) | [docs.rs](https://docs.rs/serde) <!-- [lib.rs](https://lib.rs/crates/serde) --> | The crate used for serialization throughout the Rust ecosystem
@@ -258,4 +271,23 @@ cargo crev crate review -u --advisory            byteorder --vers 0.3.8
 cargo crev crate review -u --skip-activity-check byteorder --vers 1.3.4
 cargo crev repo git diff HEAD~1
 cargo crev repo publish
+```
+
+```yml
+# Combined advisory/review/flags/alternatives template
+advisories:
+  - ids: []
+    severity: medium
+    range: major
+    comment: ""
+review:
+  thoroughness: low
+  understanding: medium
+  rating: positive
+flags:
+  unmaintained: false
+alternatives:
+  - source: "https://crates.io"
+    name: ""
+comment: |-
 ```

@@ -15,14 +15,14 @@ This repository serves a few purpouses:
 [crev-negative]:    https://img.shields.io/badge/-✗-yellow
 [crev-dangerous]:   https://img.shields.io/badge/-✗-red
 
-| Legend | Description |
-| ------ | ----------- |
-| ![crev-author]    &nbsp; Author      | I wrote this!
-| ![crev-positive]  &nbsp; Positive    | Seems safe/sound/possibly useful
-| ![crev-neutral]   &nbsp; Neutral     | This crate is OK, but might have better alternatives
-| ![crev-negative]  &nbsp; Negative    | I have serious concerns, possibly including: too much `unsafe`, `panic!`-prone, history of soundness bugs, general brittleness, or lacking critical functionality.  Might still be a good basis for cleanup / forking.
-| ![crev-dangerous] &nbsp; Dangerous   | Unsound, vulnerable, or likely to be (now or in the future based on poor history)
-| ![crev-none]      &nbsp; N/A         | Haven't properly reviewed the code yet
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Legend&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description |
+| ----------------------------- | ----------- |
+| ![crev-author]    Author      | I wrote this!
+| ![crev-positive]  Positive    | Seems safe/sound/possibly useful
+| ![crev-neutral]   Neutral     | This crate is OK, but might have better alternatives
+| ![crev-negative]  Negative    | I have serious concerns, possibly including: too much `unsafe`, `panic!`-prone, history of soundness bugs, general brittleness, or lacking critical functionality.  Might still be a good basis for cleanup / forking.
+| ![crev-dangerous] Dangerous   | Unsound, vulnerable, or likely to be (now or in the future based on poor history)
+| ![crev-none]      N/A         | Haven't properly reviewed the code yet
 
 # Categories
 
@@ -70,4 +70,23 @@ cargo crev crate review -u --advisory            byteorder --vers 0.3.8
 cargo crev crate review -u --skip-activity-check byteorder --vers 1.3.4
 cargo crev repo git diff HEAD~1
 cargo crev repo publish
+```
+
+```yml
+# Combined advisory/review/flags/alternatives template
+advisories:
+  - ids: []
+    severity: medium
+    range: major
+    comment: ""
+review:
+  thoroughness: low
+  understanding: medium
+  rating: positive
+flags:
+  unmaintained: false
+alternatives:
+  - source: "https://crates.io"
+    name: ""
+comment: |-
 ```
