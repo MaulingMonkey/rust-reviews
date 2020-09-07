@@ -32,14 +32,14 @@ Cons:
 
 | version   | thoroughness | understanding | rating | notes |
 | --------- | ------------ | ------------- | ------ | ----- |
-| [1.8.1] | medium  | high  | ✔️ positive | 
-| [1.8.0] | medium  | high  | ✔️ positive | 
-| [1.7.1] | medium  | high  | ✔️ positive | 
-| [1.7.0] | medium  | high  | ✔️ positive | Join waves
-| [1.6.0] | medium  | high  | ✔️ positive | Builder
-| [1.5.0] | medium  | high  | ✔️ positive | Clone, Eq for ThreadPool, frewsxcv -> rust-threadpool
-| [1.4.1] | medium  | high  | ✔️ positive | ThreadPool::default uses num_cpus
-| [1.4.0] | medium  | high  | ✔️ positive | ThreadPool::queued_count, join
+| [1.8.1] | medium  | medium| ✔️ positive | 
+| [1.8.0] | medium  | medium| ✔️ positive | 
+| [1.7.1] | medium  | medium| ✔️ positive | 
+| [1.7.0] | medium  | medium| ✔️ positive | Join waves
+| [1.6.0] | medium  | medium| ✔️ positive | Builder
+| [1.5.0] | medium  | medium| ✔️ positive | Clone, Eq for ThreadPool, frewsxcv -> rust-threadpool
+| [1.4.1] | medium  | medium| ✔️ positive | ThreadPool::default uses num_cpus
+| [1.4.0] | medium  | medium| ✔️ positive | ThreadPool::queued_count, join
 | [1.3.2] | medium  | high  | ✔️ positive | MSRV 1.9.0
 | [1.3.1] | medium  | high  | ✔️ positive |
 | [1.3.0] | medium  | high  | ✔️ positive | MSRV 1.4.0
