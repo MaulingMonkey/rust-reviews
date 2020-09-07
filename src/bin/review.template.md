@@ -31,12 +31,13 @@ msrv:
 {{#versions}}
 <h2 name="{{{version}}}">{{version}}</h2>
 
-| File                              | Rating | Notes |
-| --------------------------------- | ------ | ----- |
+| {{file_or_diff}}                                                      | Rating | Notes |
+| --------------------------------------------------------- | ------ | ----- |
 {{#files}}
-| {{name}} | ✔️❔⚠️❗️
+| {{{name}}} | ✔️❔⚠️❗️
 {{/files}}
 
+{{/versions}}
 | Other     | Rating | Notes |
 | --------- | ------ | ----- |
 | unsafe    | ✔️❔⚠️❗️
@@ -44,8 +45,6 @@ msrv:
 | io        | ✔️❔⚠️❗️
 | docs      | ✔️❔⚠️❗️
 | tests     | ✔️❔⚠️❗️
-
-{{/versions}}
 
 <h2 name="0.0.1/src/lib.rs">src/lib.rs</h2>
 

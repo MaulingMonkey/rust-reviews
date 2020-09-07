@@ -1,3 +1,4 @@
+use std::collections::*;
 use std::time::*;
 use std::io::Write;
 use std::path::*;
@@ -95,28 +96,50 @@ fn main() {
         let _ = writeln!(o, "{:?} = {:?}", krate.name(), format!("={}", version));
         std::mem::drop(o);
 
-        print!("Fetching {}...", version);
-        let _ = std::io::stdout().flush();
-        Command::new("cargo").arg("fetch").current_dir(&review).status().unwrap();
+        if !registry_src.join(&format!("{}-{}", krate.name(), version)).exists() {
+            print!("Fetching {}...", version);
+            let _ = std::io::stdout().flush();
+            Command::new("cargo").arg("fetch").current_dir(&review).status().unwrap();
+        }
     }
 
+    struct Version {
+        pub version:    String,
+        pub abs:        PathBuf,
+        pub files:      BTreeMap<PathBuf, Vec<u8>>,
+    }
     let old_cwd = std::env::current_dir().expect("CWD");
+    let versions = versions.into_iter().map(|version|{
+        let abs = registry_src.join(&format!("{}-{}", krate.name(), version));
+        std::env::set_current_dir(&abs).expect("set CWD"); // evil
+        let files = glob::glob("**/*").unwrap().filter_map(|file| {
+            let file = file.unwrap();
+            if file.is_dir() { return None }
+            let blob = std::fs::read(&file).unwrap_or_else(|e| panic!("Unable to read {}: {}", abs.join(&file).display(), e));
+            Some((file, blob))
+        }).collect();
+        Version { version, abs, files }
+    }).collect::<Vec<_>>();
+    std::env::set_current_dir(old_cwd).expect("set CWD"); // restore
+
     let data = mustache::MapBuilder::new()
         .insert_map("crate", |c|{c
             .insert_str("name", krate.name())
         })
         .insert_vec("versions", |mut v| {
-            for version in versions.iter().rev() {
-                let src = registry_src.join(&format!("{}-{}", krate.name(), version));
-                std::env::set_current_dir(&src).expect("set CWD"); // evil
+            for (i, version) in versions.iter().enumerate().rev() {
+                let prev = if i > 0 { Some(&versions[i-1]) } else { None };
                 v = v.push_map(|m|{m
-                    .insert_str("version", version)
-                    .insert_str("local_path", src.to_string_lossy().into_owned())
+                    .insert_str("version", &version.version)
+                    .insert_str("local_path", version.abs.to_string_lossy().into_owned())
+                    .insert_str("file_or_diff", if prev.is_some() { "Diff" } else { "File" })
                     .insert_vec("files", |mut f|{
-                        for file in glob::glob("**/*").unwrap() {
-                            let file = file.unwrap();
+                        for (file, contents) in version.files.iter() {
+                            if let Some(prev) = prev.and_then(|p| p.files.get(file)) {
+                                if contents == prev { continue } // Don't diff identical files
+                            }
                             f = f.push_map(|f|{
-                                f.insert_str("name", &format!("{:33}", file.display()))
+                                f.insert_str("name", &format!("{:57}", file.display().to_string().replace(".","<span>.</span>"))) // spans disable urlification
                             });
                         }
                         f
@@ -126,7 +149,6 @@ fn main() {
             v
         })
         .build();
-    std::env::set_current_dir(old_cwd).expect("set CWD"); // restore
 
     let template = mustache::compile_str(include_str!("review.template.md")).expect("Unable to compile review.template.md");
     let mut review_md = std::fs::OpenOptions::new()
