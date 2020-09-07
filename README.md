@@ -65,7 +65,10 @@ This repository serves a few purpouses:
 
 | Review | Links | Description |
 | ------ | ----- | ----------- |
+| ![crev-positive] &nbsp; [futures](reviews/futures.md) | [docs.rs](https://docs.rs/futures) <!-- [lib.rs](https://lib.rs/crates/futures) --> | Asyncronous streams, sinks, executors, tasks, I/O, etc.
+| ![crev-none] &nbsp; [tokio](reviews/tokio.md) | [docs.rs](https://docs.rs/tokio) <!-- [lib.rs](https://lib.rs/crates/tokio) --> | Asyncronous I/O runtime/framework
 | ![crev-positive] &nbsp; [waker-fn](reviews/waker-fn.md) | [docs.rs](https://docs.rs/waker-fn) <!-- [lib.rs](https://lib.rs/crates/waker-fn) --> | Basic 0-dependencies Fn-based Waker source.
+| ![crev-none] &nbsp; [wasm_bindgen_futures](reviews/wasm_bindgen_futures.md) | [docs.rs](https://docs.rs/wasm_bindgen_futures) <!-- [lib.rs](https://lib.rs/crates/wasm_bindgen_futures) --> | Convert JS `Promise`s to/from Rust `Future`s
 
 <h2 id="build-utility">Build Utility</h2>
 
