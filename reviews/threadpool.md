@@ -272,7 +272,7 @@ Cons:
 | src\lib<span>.</span>rs                                   | ❗️ | ScopedPool using [JoinGuard]
 
 * ✔️ lifetime for Thunk
-* ❗️ ScopedPool relying on the removed-as-unsound [JoinGuard] / std::thread::scoped
+* ❗️ ScopedPool relying on the removed-as-unsound [JoinGuard] / std\:\:thread\:\:scoped
 
 <h2 name="0.1.0">0.1.0</h2>
 
