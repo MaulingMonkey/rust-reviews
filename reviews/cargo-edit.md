@@ -1,6 +1,6 @@
 ---
-category:       CLI Tools
-description:    Add/remove/update Cargo.toml dependencies from the command line.
+category:       Command Line Tools
+description:    Add/remove/update Cargo.toml dependencies from the CLI.
 ---
 
 # cargo-edit

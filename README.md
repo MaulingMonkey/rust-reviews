@@ -29,7 +29,7 @@ This repository serves a few purpouses:
 * [Android](#android)
 * [Async](#async)
 * [Build Utility](#build-utility)
-* [CLI Tools](#cli-tools)
+* [Command Line Tools](#command-line-tools)
 * [Data Structure](#data-structure)
 * [Debugging](#debugging)
 * [FFI](#ffi)
@@ -75,22 +75,22 @@ This repository serves a few purpouses:
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-positive] &nbsp; [autocfg](reviews/autocfg.md) | [docs.rs](https://docs.rs/autocfg) <!-- [lib.rs](https://lib.rs/crates/autocfg) --> | Runs `rustc` to test for features / versions.
-| ![crev-positive] &nbsp; [cargo_metadata](reviews/cargo_metadata.md) | [docs.rs](https://docs.rs/cargo_metadata) <!-- [lib.rs](https://lib.rs/crates/cargo_metadata) --> | Parse `cargo metadata` and `cargo build --message-format=json` output.
-| ![crev-positive] &nbsp; [cfg-if](reviews/cfg-if.md) | [docs.rs](https://docs.rs/cfg-if) <!-- [lib.rs](https://lib.rs/crates/cfg-if) --> | Parse `cargo metadata` and `cargo build --message-format=json` output.
-| ![crev-author] &nbsp; [lies](reviews/lies.md) | [docs.rs](https://docs.rs/lies) <!-- [lib.rs](https://lib.rs/crates/lies) --> | Embed license text into your program via proc macros around cargo-about.
+| ![crev-positive] &nbsp; [cargo_metadata](reviews/cargo_metadata.md) | [docs.rs](https://docs.rs/cargo_metadata) <!-- [lib.rs](https://lib.rs/crates/cargo_metadata) --> | Parse `cargo metadata` and `cargo build --message-format=json`.
+| ![crev-positive] &nbsp; [cfg-if](reviews/cfg-if.md) | [docs.rs](https://docs.rs/cfg-if) <!-- [lib.rs](https://lib.rs/crates/cfg-if) --> | `else if` chainable cfg attributes
+| ![crev-author] &nbsp; [lies](reviews/lies.md) | [docs.rs](https://docs.rs/lies) <!-- [lib.rs](https://lib.rs/crates/lies) --> | Embed license text into your program via proc macros + cargo-about.
 | ![crev-author] &nbsp; [lies-impl](reviews/lies-impl.md) | [docs.rs](https://docs.rs/lies-impl) <!-- [lib.rs](https://lib.rs/crates/lies-impl) --> | 
 | ![crev-positive] &nbsp; [rustversion](reviews/rustversion.md) | [docs.rs](https://docs.rs/rustversion) <!-- [lib.rs](https://lib.rs/crates/rustversion) --> | Attributes to do conditional compilation based on rust version/channel
 | ![crev-positive] &nbsp; [vcpkg](reviews/vcpkg.md) | [docs.rs](https://docs.rs/vcpkg) <!-- [lib.rs](https://lib.rs/crates/vcpkg) --> | Build dependency to get C/C++ [vcpkg](https://github.com/Microsoft/vcpkg)s
 | ![crev-positive] &nbsp; [winres](reviews/winres.md) | [docs.rs](https://docs.rs/winres) <!-- [lib.rs](https://lib.rs/crates/winres) --> | Embed resources (icons, versions, ...) into your executables.
 
-<h2 id="cli-tools">CLI Tools</h2>
+<h2 id="command-line-tools">Command Line Tools</h2>
 
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-positive] &nbsp; [cargo](reviews/cargo.md) | [docs.rs](https://docs.rs/cargo) <!-- [lib.rs](https://lib.rs/crates/cargo) --> | *The* rust build tool.
 | ![crev-none] &nbsp; [cargo-about](reviews/cargo-about.md) | [docs.rs](https://docs.rs/cargo-about) <!-- [lib.rs](https://lib.rs/crates/cargo-about) --> | Validate dependency licenses and aggregate into a single .html file
 | ![crev-none] &nbsp; [cargo-crev](reviews/cargo-crev.md) | [docs.rs](https://docs.rs/cargo-crev) <!-- [lib.rs](https://lib.rs/crates/cargo-crev) --> | Share code reviews/audits through a web of trust
-| ![crev-neutral] &nbsp; [cargo-edit](reviews/cargo-edit.md) | [docs.rs](https://docs.rs/cargo-edit) <!-- [lib.rs](https://lib.rs/crates/cargo-edit) --> | Add/remove/update Cargo.toml dependencies from the command line.
+| ![crev-neutral] &nbsp; [cargo-edit](reviews/cargo-edit.md) | [docs.rs](https://docs.rs/cargo-edit) <!-- [lib.rs](https://lib.rs/crates/cargo-edit) --> | Add/remove/update Cargo.toml dependencies from the CLI.
 
 <h2 id="data-structure">Data Structure</h2>
 

@@ -1,5 +1,5 @@
 ---
-category:       CLI Tools
+category:       Command Line Tools
 description:    *The* rust build tool.
 ---
 

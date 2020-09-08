@@ -1,6 +1,6 @@
 ---
 category:       Build Utility
-description:    Parse `cargo metadata` and `cargo build --message-format=json` output.
+description:    Parse `cargo metadata` and `cargo build --message-format=json`.
 ---
 
 # cargo_metadata
