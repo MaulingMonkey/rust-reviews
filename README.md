@@ -51,15 +51,15 @@ This repository serves a few purpouses:
 | ![crev-positive] &nbsp; [cargo-ndk](reviews/cargo-ndk.md) | [docs.rs](https://docs.rs/cargo-ndk) <!-- [lib.rs](https://lib.rs/crates/cargo-ndk) --> | Kinda trivial `.apk` building.
 | ![crev-positive] &nbsp; [dinghy-build](reviews/dinghy-build.md) | [docs.rs](https://docs.rs/dinghy-build) <!-- [lib.rs](https://lib.rs/crates/dinghy-build) --> | 
 | ![crev-neutral] &nbsp; [dinghy-lib](reviews/dinghy-lib.md) | [docs.rs](https://docs.rs/dinghy-lib) <!-- [lib.rs](https://lib.rs/crates/dinghy-lib) --> | 
+| ![crev-author] &nbsp; [jerk](reviews/jerk.md) | [docs.rs](https://docs.rs/jerk) <!-- [lib.rs](https://lib.rs/crates/jerk) --> | Java path discovery and other utilities
 | ![crev-author] &nbsp; [jerk-build](reviews/jerk-build.md) | [docs.rs](https://docs.rs/jerk-build) <!-- [lib.rs](https://lib.rs/crates/jerk-build) --> | Build Java alongside Rust via build.rs/metabuild scripts
 | ![crev-author] &nbsp; [jerk-test](reviews/jerk-test.md) | [docs.rs](https://docs.rs/jerk-test) <!-- [lib.rs](https://lib.rs/crates/jerk-test) --> | Unit test Java built alongside Rust
-| ![crev-author] &nbsp; [jerk](reviews/jerk.md) | [docs.rs](https://docs.rs/jerk) <!-- [lib.rs](https://lib.rs/crates/jerk) --> | Java path discovery and other utilities
+| ![crev-negative] &nbsp; [jni](reviews/jni.md) | [docs.rs](https://docs.rs/jni) <!-- [lib.rs](https://lib.rs/crates/jni) --> | Unsafe and unsound. Has responded to fixes well though.
 | ![crev-author] &nbsp; [jni-android-sys](reviews/jni-android-sys.md) | [docs.rs](https://docs.rs/jni-android-sys) <!-- [lib.rs](https://lib.rs/crates/jni-android-sys) --> | Bindings to Android Java APIs
 | ![crev-author] &nbsp; [jni-bindgen](reviews/jni-bindgen.md) | [docs.rs](https://docs.rs/jni-bindgen) <!-- [lib.rs](https://lib.rs/crates/jni-bindgen) --> | Java API binding code generator
-| ![crev-author] &nbsp; [jni-glue-macros](reviews/jni-glue-macros.md) | [docs.rs](https://docs.rs/jni-glue-macros) <!-- [lib.rs](https://lib.rs/crates/jni-glue-macros) --> | Proc macros to implement Java APIs from Rust
 | ![crev-author] &nbsp; [jni-glue](reviews/jni-glue.md) | [docs.rs](https://docs.rs/jni-glue) <!-- [lib.rs](https://lib.rs/crates/jni-glue) --> | Safeish wrappers around jni-sys used by jni-bindgen bindings
+| ![crev-author] &nbsp; [jni-glue-macros](reviews/jni-glue-macros.md) | [docs.rs](https://docs.rs/jni-glue-macros) <!-- [lib.rs](https://lib.rs/crates/jni-glue-macros) --> | Proc macros to implement Java APIs from Rust
 | ![crev-positive] &nbsp; [jni-sys](reviews/jni-sys.md) | [docs.rs](https://docs.rs/jni-sys) <!-- [lib.rs](https://lib.rs/crates/jni-sys) --> | Rust bindings for JNI interop.
-| ![crev-negative] &nbsp; [jni](reviews/jni.md) | [docs.rs](https://docs.rs/jni) <!-- [lib.rs](https://lib.rs/crates/jni) --> | Unsafe and unsound. Has responded to fixes well though.
 
 <h2 id="async">Async</h2>
 
@@ -77,8 +77,8 @@ This repository serves a few purpouses:
 | ![crev-positive] &nbsp; [autocfg](reviews/autocfg.md) | [docs.rs](https://docs.rs/autocfg) <!-- [lib.rs](https://lib.rs/crates/autocfg) --> | Runs `rustc` to test for features / versions.
 | ![crev-positive] &nbsp; [cargo_metadata](reviews/cargo_metadata.md) | [docs.rs](https://docs.rs/cargo_metadata) <!-- [lib.rs](https://lib.rs/crates/cargo_metadata) --> | Parse `cargo metadata` and `cargo build --message-format=json` output.
 | ![crev-positive] &nbsp; [cfg-if](reviews/cfg-if.md) | [docs.rs](https://docs.rs/cfg-if) <!-- [lib.rs](https://lib.rs/crates/cfg-if) --> | Parse `cargo metadata` and `cargo build --message-format=json` output.
-| ![crev-author] &nbsp; [lies-impl](reviews/lies-impl.md) | [docs.rs](https://docs.rs/lies-impl) <!-- [lib.rs](https://lib.rs/crates/lies-impl) --> | 
 | ![crev-author] &nbsp; [lies](reviews/lies.md) | [docs.rs](https://docs.rs/lies) <!-- [lib.rs](https://lib.rs/crates/lies) --> | Embed license text into your program via proc macros around cargo-about.
+| ![crev-author] &nbsp; [lies-impl](reviews/lies-impl.md) | [docs.rs](https://docs.rs/lies-impl) <!-- [lib.rs](https://lib.rs/crates/lies-impl) --> | 
 | ![crev-positive] &nbsp; [rustversion](reviews/rustversion.md) | [docs.rs](https://docs.rs/rustversion) <!-- [lib.rs](https://lib.rs/crates/rustversion) --> | Attributes to do conditional compilation based on rust version/channel
 | ![crev-positive] &nbsp; [vcpkg](reviews/vcpkg.md) | [docs.rs](https://docs.rs/vcpkg) <!-- [lib.rs](https://lib.rs/crates/vcpkg) --> | Build dependency to get C/C++ [vcpkg](https://github.com/Microsoft/vcpkg)s
 | ![crev-positive] &nbsp; [winres](reviews/winres.md) | [docs.rs](https://docs.rs/winres) <!-- [lib.rs](https://lib.rs/crates/winres) --> | Embed resources (icons, versions, ...) into your executables.
@@ -87,10 +87,10 @@ This repository serves a few purpouses:
 
 | Review | Links | Description |
 | ------ | ----- | ----------- |
+| ![crev-positive] &nbsp; [cargo](reviews/cargo.md) | [docs.rs](https://docs.rs/cargo) <!-- [lib.rs](https://lib.rs/crates/cargo) --> | *The* rust build tool.
 | ![crev-none] &nbsp; [cargo-about](reviews/cargo-about.md) | [docs.rs](https://docs.rs/cargo-about) <!-- [lib.rs](https://lib.rs/crates/cargo-about) --> | Validate dependency licenses and aggregate into a single .html file
 | ![crev-none] &nbsp; [cargo-crev](reviews/cargo-crev.md) | [docs.rs](https://docs.rs/cargo-crev) <!-- [lib.rs](https://lib.rs/crates/cargo-crev) --> | Share code reviews/audits through a web of trust
 | ![crev-neutral] &nbsp; [cargo-edit](reviews/cargo-edit.md) | [docs.rs](https://docs.rs/cargo-edit) <!-- [lib.rs](https://lib.rs/crates/cargo-edit) --> | Add/remove/update Cargo.toml dependencies from the command line.
-| ![crev-positive] &nbsp; [cargo](reviews/cargo.md) | [docs.rs](https://docs.rs/cargo) <!-- [lib.rs](https://lib.rs/crates/cargo) --> | *The* rust build tool.
 
 <h2 id="data-structure">Data Structure</h2>
 
@@ -121,8 +121,8 @@ This repository serves a few purpouses:
 | ![crev-none] &nbsp; [cbindgen](reviews/cbindgen.md) | [docs.rs](https://docs.rs/cbindgen) <!-- [lib.rs](https://lib.rs/crates/cbindgen) --> | Generate C/C++ headers for Rust code
 | ![crev-neutral] &nbsp; [cloudabi](reviews/cloudabi.md) | [docs.rs](https://docs.rs/cloudabi) <!-- [lib.rs](https://lib.rs/crates/cloudabi) --> | Reduced capability-based POSIX subset/alternative.
 | ![crev-none] &nbsp; [com_impl](reviews/com_impl.md) | [docs.rs](https://docs.rs/com_impl) <!-- [lib.rs](https://lib.rs/crates/com_impl) --> | COM interop utilities.
-| ![crev-negative] &nbsp; [foreign-types-shared](reviews/foreign-types-shared.md) | [docs.rs](https://docs.rs/foreign-types-shared) <!-- [lib.rs](https://lib.rs/crates/foreign-types-shared) --> | foreign-types support crate
 | ![crev-neutral] &nbsp; [foreign-types](reviews/foreign-types.md) | [docs.rs](https://docs.rs/foreign-types) <!-- [lib.rs](https://lib.rs/crates/foreign-types) --> | Generate Rust wrappers around C types
+| ![crev-negative] &nbsp; [foreign-types-shared](reviews/foreign-types-shared.md) | [docs.rs](https://docs.rs/foreign-types-shared) <!-- [lib.rs](https://lib.rs/crates/foreign-types-shared) --> | foreign-types support crate
 | ![crev-none] &nbsp; [libc](reviews/libc.md) | [docs.rs](https://docs.rs/libc) <!-- [lib.rs](https://lib.rs/crates/libc) --> | POSIX / C APIs megacrate.  You use this.
 | ![crev-negative] &nbsp; [redox_syscall](reviews/redox_syscall.md) | [docs.rs](https://docs.rs/redox_syscall) <!-- [lib.rs](https://lib.rs/crates/redox_syscall) --> | System calls for the Rust OS, Redox
 | ![crev-none] &nbsp; [rust-ffi](reviews/rust-ffi.md) | [docs.rs](https://docs.rs/rust-ffi) <!-- [lib.rs](https://lib.rs/crates/rust-ffi) --> | Generate C/C++ headers for Rust code
@@ -148,8 +148,8 @@ This repository serves a few purpouses:
 | ![crev-author] &nbsp; [nines](reviews/nines.md) | [docs.rs](https://docs.rs/nines) <!-- [lib.rs](https://lib.rs/crates/nines) --> | 9-slice scaling math
 | ![crev-neutral] &nbsp; [rdrand](reviews/rdrand.md) | [docs.rs](https://docs.rs/rdrand) <!-- [lib.rs](https://lib.rs/crates/rdrand) --> | 🎲 Get random numbers 🎲
 | ![crev-neutral] &nbsp; [specs](reviews/specs.md) | [docs.rs](https://docs.rs/specs) <!-- [lib.rs](https://lib.rs/crates/specs) --> | High boilerplate ECS.  Fancy and parallel though.
-| ![crev-negative] &nbsp; [tiled-json-rs](reviews/tiled-json-rs.md) | [docs.rs](https://docs.rs/tiled-json-rs) <!-- [lib.rs](https://lib.rs/crates/tiled-json-rs) --> | [Tiled](https://www.mapeditor.org/) `.json` export file parser. Decent bones, but I&#39;m concerned about path traversal attacks.
 | ![crev-negative] &nbsp; [tiled](reviews/tiled.md) | [docs.rs](https://docs.rs/tiled) <!-- [lib.rs](https://lib.rs/crates/tiled) --> | [Tiled](https://www.mapeditor.org/) `.tmx` file parser. Decent bones, but I&#39;m concerned about path traversal attacks.
+| ![crev-negative] &nbsp; [tiled-json-rs](reviews/tiled-json-rs.md) | [docs.rs](https://docs.rs/tiled-json-rs) <!-- [lib.rs](https://lib.rs/crates/tiled-json-rs) --> | [Tiled](https://www.mapeditor.org/) `.json` export file parser. Decent bones, but I&#39;m concerned about path traversal attacks.
 
 <h2 id="general-utility">General Utility</h2>
 
@@ -180,8 +180,8 @@ This repository serves a few purpouses:
 | Review | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-positive] &nbsp; [codepage-437](reviews/codepage-437.md) | [docs.rs](https://docs.rs/codepage-437) <!-- [lib.rs](https://lib.rs/crates/codepage-437) --> | Codepage 437 conversion functions
-| ![crev-none] &nbsp; [codespan-reporting](reviews/codespan-reporting.md) | [docs.rs](https://docs.rs/codespan-reporting) <!-- [lib.rs](https://lib.rs/crates/codespan-reporting) --> | Beautiful cargo-like error reporting
 | ![crev-none] &nbsp; [codespan](reviews/codespan.md) | [docs.rs](https://docs.rs/codespan) <!-- [lib.rs](https://lib.rs/crates/codespan) --> | Core structures for codespan-reporting
+| ![crev-none] &nbsp; [codespan-reporting](reviews/codespan-reporting.md) | [docs.rs](https://docs.rs/codespan-reporting) <!-- [lib.rs](https://lib.rs/crates/codespan-reporting) --> | Beautiful cargo-like error reporting
 | ![crev-none] &nbsp; [dlopen](reviews/dlopen.md) | [docs.rs](https://docs.rs/dlopen) <!-- [lib.rs](https://lib.rs/crates/dlopen) --> | Safeish and unsafe APIs for loading `.so`s, `.dll`s at runtime.
 | ![crev-positive] &nbsp; [fs2](reviews/fs2.md) | [docs.rs](https://docs.rs/fs2) <!-- [lib.rs](https://lib.rs/crates/fs2) --> | Some extra filesystem utilities
 | ![crev-none] &nbsp; [libloading](reviews/libloading.md) | [docs.rs](https://docs.rs/libloading) <!-- [lib.rs](https://lib.rs/crates/libloading) --> | Unsafe APIs for loading `.so`s, `.dll`s at runtime.
@@ -210,8 +210,8 @@ This repository serves a few purpouses:
 | ![crev-none] &nbsp; [serde](reviews/serde.md) | [docs.rs](https://docs.rs/serde) <!-- [lib.rs](https://lib.rs/crates/serde) --> | The crate used for serialization throughout the Rust ecosystem
 | ![crev-none] &nbsp; [serde_json](reviews/serde_json.md) | [docs.rs](https://docs.rs/serde_json) <!-- [lib.rs](https://lib.rs/crates/serde_json) --> | serde companion crate for (de)serializing `.json` files.
 | ![crev-positive] &nbsp; [sourcefile](reviews/sourcefile.md) | [docs.rs](https://docs.rs/sourcefile) <!-- [lib.rs](https://lib.rs/crates/sourcefile) --> | Source code file:line &lt;-&gt; offset conversion
-| ![crev-none] &nbsp; [toml-spanned-value](reviews/toml-spanned-value.md) | [docs.rs](https://docs.rs/toml-spanned-value) <!-- [lib.rs](https://lib.rs/crates/toml-spanned-value) --> | File line/col span for .toml values
 | ![crev-none] &nbsp; [toml](reviews/toml.md) | [docs.rs](https://docs.rs/toml) <!-- [lib.rs](https://lib.rs/crates/toml) --> | serde .toml deserialization
+| ![crev-none] &nbsp; [toml-spanned-value](reviews/toml-spanned-value.md) | [docs.rs](https://docs.rs/toml-spanned-value) <!-- [lib.rs](https://lib.rs/crates/toml-spanned-value) --> | File line/col span for .toml values
 | ![crev-none] &nbsp; [typetag](reviews/typetag.md) | [docs.rs](https://docs.rs/typetag) <!-- [lib.rs](https://lib.rs/crates/typetag) --> | Deserialize Box&lt;dyn Trait&gt; based on inventory registrations.
 | ![crev-positive] &nbsp; [xml-rs](reviews/xml-rs.md) | [docs.rs](https://docs.rs/xml-rs) <!-- [lib.rs](https://lib.rs/crates/xml-rs) --> | Encoding and decoding XML. Safe, sound, no deps.
 | ![crev-positive] &nbsp; [zip](reviews/zip.md) | [docs.rs](https://docs.rs/zip) <!-- [lib.rs](https://lib.rs/crates/zip) --> | Zipping/unzipping .zip archives.

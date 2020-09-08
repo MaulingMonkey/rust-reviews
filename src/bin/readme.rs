@@ -11,7 +11,7 @@ fn main() {
             .push_map(|m| { m
                 .insert_str("category", &**category)
                 .insert_str("anchor", category.to_ascii_lowercase().replace(" ", "-"))
-                .insert_vec("crates", |v| crates.iter().fold(v, |v, krate| { v
+                .insert_vec("crates", |v| crates.values().fold(v, |v, krate| { v
                     .push_map(|m| { m
                         .insert_str("crate",        &krate.name)
                         .insert_str("crev",         &krate.crev)

@@ -62,23 +62,23 @@ impl Crate {
     }
 }
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Default)]
 pub struct Crates {
-    pub by_category: BTreeMap<Category, Vec<Crate>>,
+    pub by_category: BTreeMap<Category, BTreeMap<String, Crate>>,
 }
 
 impl Crates {
     pub fn from_dir(dir: &(impl ?Sized + AsRef<Path>)) -> io::Result<Self> {
         let reviews = Reviews::find();
-        let mut by_category = BTreeMap::new();
+        let mut crates = Self::default();
 
         for e in fs::read_dir(dir)? {
             let c = Crate::from_review_md(&reviews, e?.path().as_ref());
-            by_category.entry(c.category.clone()).or_insert(Vec::new()).push(c);
+            crates.by_category.entry(c.category.clone()).or_default().insert(c.name.clone(), c);
             let _ = std::io::stdout().flush();
         }
 
-        Ok(Self{ by_category })
+        Ok(crates)
     }
 }
 
