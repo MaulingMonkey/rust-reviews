@@ -45,7 +45,7 @@ This repository serves a few purpouses:
 
 <h2 id="android">Android</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-positive] &nbsp; [cargo-dinghy](reviews/cargo-dinghy.md) | [docs.rs](https://docs.rs/cargo-dinghy) <!-- [lib.rs](https://lib.rs/crates/cargo-dinghy) --> | `cargo` subcommand for building Android/iOS
 | ![crev-positive] &nbsp; [cargo-ndk](reviews/cargo-ndk.md) | [docs.rs](https://docs.rs/cargo-ndk) <!-- [lib.rs](https://lib.rs/crates/cargo-ndk) --> | Kinda trivial `.apk` building.
@@ -63,7 +63,7 @@ This repository serves a few purpouses:
 
 <h2 id="async">Async</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-positive] &nbsp; [futures](reviews/futures.md) | [docs.rs](https://docs.rs/futures) <!-- [lib.rs](https://lib.rs/crates/futures) --> | Asyncronous streams, sinks, executors, tasks, I/O, etc.
 | ![crev-none] &nbsp; [tokio](reviews/tokio.md) | [docs.rs](https://docs.rs/tokio) <!-- [lib.rs](https://lib.rs/crates/tokio) --> | Asyncronous I/O runtime/framework
@@ -72,7 +72,7 @@ This repository serves a few purpouses:
 
 <h2 id="build-utility">Build Utility</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-positive] &nbsp; [autocfg](reviews/autocfg.md) | [docs.rs](https://docs.rs/autocfg) <!-- [lib.rs](https://lib.rs/crates/autocfg) --> | Runs `rustc` to test for features / versions.
 | ![crev-positive] &nbsp; [cargo_metadata](reviews/cargo_metadata.md) | [docs.rs](https://docs.rs/cargo_metadata) <!-- [lib.rs](https://lib.rs/crates/cargo_metadata) --> | Parse `cargo metadata` and `cargo build --message-format=json` output.
@@ -85,7 +85,7 @@ This repository serves a few purpouses:
 
 <h2 id="cli-tools">CLI Tools</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-positive] &nbsp; [cargo](reviews/cargo.md) | [docs.rs](https://docs.rs/cargo) <!-- [lib.rs](https://lib.rs/crates/cargo) --> | *The* rust build tool.
 | ![crev-none] &nbsp; [cargo-about](reviews/cargo-about.md) | [docs.rs](https://docs.rs/cargo-about) <!-- [lib.rs](https://lib.rs/crates/cargo-about) --> | Validate dependency licenses and aggregate into a single .html file
@@ -94,7 +94,7 @@ This repository serves a few purpouses:
 
 <h2 id="data-structure">Data Structure</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-neutral] &nbsp; [arrayvec](reviews/arrayvec.md) | [docs.rs](https://docs.rs/arrayvec) <!-- [lib.rs](https://lib.rs/crates/arrayvec) --> | Vec clone (Fixed capacity, no heap). Prefer Vec?
 | ![crev-positive] &nbsp; [lazycell](reviews/lazycell.md) | [docs.rs](https://docs.rs/lazycell) <!-- [lib.rs](https://lib.rs/crates/lazycell) --> | Similar to RefCell&lt;Option&lt;T&gt;&gt;, but you can keep T borrowed
@@ -104,7 +104,7 @@ This repository serves a few purpouses:
 
 <h2 id="debugging">Debugging</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-author] &nbsp; [bugsalot](reviews/bugsalot.md) | [docs.rs](https://docs.rs/bugsalot) <!-- [lib.rs](https://lib.rs/crates/bugsalot) --> | Breakpoints, debugger detection, fail-stable macros, etc.
 | ![crev-positive] &nbsp; [gimli](reviews/gimli.md) | [docs.rs](https://docs.rs/gimli) <!-- [lib.rs](https://lib.rs/crates/gimli) --> | DWARF debug info parsing.
@@ -115,7 +115,7 @@ This repository serves a few purpouses:
 
 <h2 id="ffi">FFI</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-none] &nbsp; [bindgen](reviews/bindgen.md) | [docs.rs](https://docs.rs/bindgen) <!-- [lib.rs](https://lib.rs/crates/bindgen) --> | Generate Rust bindings from C/C++ headers
 | ![crev-none] &nbsp; [cbindgen](reviews/cbindgen.md) | [docs.rs](https://docs.rs/cbindgen) <!-- [lib.rs](https://lib.rs/crates/cbindgen) --> | Generate C/C++ headers for Rust code
@@ -131,7 +131,7 @@ This repository serves a few purpouses:
 
 <h2 id="game-engine">Game Engine</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-none] &nbsp; [amethyst](reviews/amethyst.md) | [docs.rs](https://docs.rs/amethyst) <!-- [lib.rs](https://lib.rs/crates/amethyst) --> | Heavyweight data driven game engine.  Seems popular.
 | ![crev-none] &nbsp; [ggez](reviews/ggez.md) | [docs.rs](https://docs.rs/ggez) <!-- [lib.rs](https://lib.rs/crates/ggez) --> | 
@@ -140,7 +140,7 @@ This repository serves a few purpouses:
 
 <h2 id="gamedev">Gamedev</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-negative] &nbsp; [ase](reviews/ase.md) | [docs.rs](https://docs.rs/ase) <!-- [lib.rs](https://lib.rs/crates/ase) --> | Asesprite Format Reader
 | ![crev-positive] &nbsp; [glsl-include](reviews/glsl-include.md) | [docs.rs](https://docs.rs/glsl-include) <!-- [lib.rs](https://lib.rs/crates/glsl-include) --> | Handle basic `#include`s for GLSL.
@@ -153,7 +153,7 @@ This repository serves a few purpouses:
 
 <h2 id="general-utility">General Utility</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-none] &nbsp; [crates-index](reviews/crates-index.md) | [docs.rs](https://docs.rs/crates-index) <!-- [lib.rs](https://lib.rs/crates/crates-index) --> | Parse the crates.io index
 | ![crev-positive] &nbsp; [icon-pie](reviews/icon-pie.md) | [docs.rs](https://docs.rs/icon-pie) <!-- [lib.rs](https://lib.rs/crates/icon-pie) --> | Generate .ico / .icns
@@ -170,14 +170,14 @@ This repository serves a few purpouses:
 
 <h2 id="graphics">Graphics</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-none] &nbsp; [egli](reviews/egli.md) | [docs.rs](https://docs.rs/egli) <!-- [lib.rs](https://lib.rs/crates/egli) --> | EGL bindings - provides OpenGL (ES) contexts
 | ![crev-none] &nbsp; [khronos-egl](reviews/khronos-egl.md) | [docs.rs](https://docs.rs/khronos-egl) <!-- [lib.rs](https://lib.rs/crates/khronos-egl) --> | EGL bindings - provides OpenGL (ES) contexts
 
 <h2 id="i/o">I/O</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-positive] &nbsp; [codepage-437](reviews/codepage-437.md) | [docs.rs](https://docs.rs/codepage-437) <!-- [lib.rs](https://lib.rs/crates/codepage-437) --> | Codepage 437 conversion functions
 | ![crev-none] &nbsp; [codespan](reviews/codespan.md) | [docs.rs](https://docs.rs/codespan) <!-- [lib.rs](https://lib.rs/crates/codespan) --> | Core structures for codespan-reporting
@@ -194,13 +194,13 @@ This repository serves a few purpouses:
 
 <h2 id="macros">Macros</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-neutral] &nbsp; [proc-macro-crate](reviews/proc-macro-crate.md) | [docs.rs](https://docs.rs/proc-macro-crate) <!-- [lib.rs](https://lib.rs/crates/proc-macro-crate) --> | $crate for proc macros (prefer shim macros per review notes!)
 
 <h2 id="serialization">Serialization</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-negative] &nbsp; [ascii](reviews/ascii.md) | [docs.rs](https://docs.rs/ascii) <!-- [lib.rs](https://lib.rs/crates/ascii) --> | ASCII conversion and parsing.
 | ![crev-positive] &nbsp; [ico](reviews/ico.md) | [docs.rs](https://docs.rs/ico) <!-- [lib.rs](https://lib.rs/crates/ico) --> | Encoders/decoders for .ico and .cur file formats
@@ -218,7 +218,7 @@ This repository serves a few purpouses:
 
 <h2 id="unsound">Unsound</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-dangerous] &nbsp; [actix-web](reviews/actix-web.md) | [docs.rs](https://docs.rs/actix-web) <!-- [lib.rs](https://lib.rs/crates/actix-web) --> | AVOID.  Closes soundness bugs unfixed.  Deletes external soundness bugs.
 | ![crev-negative] &nbsp; [byteorder](reviews/byteorder.md) | [docs.rs](https://docs.rs/byteorder) <!-- [lib.rs](https://lib.rs/crates/byteorder) --> | Super basic casting/endian/swizzling with a history of unsoundness
@@ -234,7 +234,7 @@ This repository serves a few purpouses:
 
 <h2 id="web">Web</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 | ![crev-none] &nbsp; [cargo-web](reviews/cargo-web.md) | [docs.rs](https://docs.rs/cargo-web) <!-- [lib.rs](https://lib.rs/crates/cargo-web) --> | .wasm packager for use with stdweb
 | ![crev-positive] &nbsp; [instant](reviews/instant.md) | [docs.rs](https://docs.rs/instant) <!-- [lib.rs](https://lib.rs/crates/instant) --> | std::time::Instant alternative that doesn&#39;t panic on wasm targets.

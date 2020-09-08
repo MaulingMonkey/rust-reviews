@@ -33,7 +33,7 @@ This repository serves a few purpouses:
 {{#categories}}
 <h2 id="{{anchor}}">{{{category}}}</h2>
 
-| Review | Links | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
 {{#crates}}
 | ![crev-{{crev}}] &nbsp; [{{crate}}](reviews/{{crate}}.md) | [docs.rs](https://docs.rs/{{crate}}) <!-- [lib.rs](https://lib.rs/crates/{{crate}}) --> | {{description}}
