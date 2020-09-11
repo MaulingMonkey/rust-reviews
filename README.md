@@ -179,6 +179,7 @@ This repository serves a few purpouses:
 
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
+| ![crev-positive] &nbsp; [buffered_offset_reader](reviews/buffered_offset_reader.md) | [docs.rs](https://docs.rs/buffered_offset_reader) <!-- [lib.rs](https://lib.rs/crates/buffered_offset_reader) --> | Prefer read_write_at - read_at/write_at with &amp;self
 | ![crev-positive] &nbsp; [codepage-437](reviews/codepage-437.md) | [docs.rs](https://docs.rs/codepage-437) <!-- [lib.rs](https://lib.rs/crates/codepage-437) --> | Codepage 437 conversion functions
 | ![crev-none] &nbsp; [codespan](reviews/codespan.md) | [docs.rs](https://docs.rs/codespan) <!-- [lib.rs](https://lib.rs/crates/codespan) --> | Core structures for codespan-reporting
 | ![crev-none] &nbsp; [codespan-reporting](reviews/codespan-reporting.md) | [docs.rs](https://docs.rs/codespan-reporting) <!-- [lib.rs](https://lib.rs/crates/codespan-reporting) --> | Beautiful cargo-like error reporting
@@ -187,9 +188,12 @@ This repository serves a few purpouses:
 | ![crev-none] &nbsp; [libloading](reviews/libloading.md) | [docs.rs](https://docs.rs/libloading) <!-- [lib.rs](https://lib.rs/crates/libloading) --> | Unsafe APIs for loading `.so`s, `.dll`s at runtime.
 | ![crev-negative] &nbsp; [midir](reviews/midir.md) | [docs.rs](https://docs.rs/midir) <!-- [lib.rs](https://lib.rs/crates/midir) --> | Pure rust MIDI device I/O. Good start, but probably unsound.
 | ![crev-positive] &nbsp; [podio](reviews/podio.md) | [docs.rs](https://docs.rs/podio) <!-- [lib.rs](https://lib.rs/crates/podio) --> | Utility extension methods for `Read` / `Write`
+| ![crev-positive] &nbsp; [read_write_at](reviews/read_write_at.md) | [docs.rs](https://docs.rs/read_write_at) <!-- [lib.rs](https://lib.rs/crates/read_write_at) --> | Offset read_at/write_at with &amp;self
 | ![crev-positive] &nbsp; [shellexpand](reviews/shellexpand.md) | [docs.rs](https://docs.rs/shellexpand) <!-- [lib.rs](https://lib.rs/crates/shellexpand) --> | Expand unix style env vars within strings.
 | ![crev-positive] &nbsp; [tempfile](reviews/tempfile.md) | [docs.rs](https://docs.rs/tempfile) <!-- [lib.rs](https://lib.rs/crates/tempfile) --> | Create/cleanup temporary files and directories.
 | ![crev-positive] &nbsp; [vfs](reviews/vfs.md) | [docs.rs](https://docs.rs/vfs) <!-- [lib.rs](https://lib.rs/crates/vfs) --> | Filesystem virtualization
+| ![crev-author] &nbsp; [vfs-clgit](reviews/vfs-clgit.md) | [docs.rs](https://docs.rs/vfs-clgit) <!-- [lib.rs](https://lib.rs/crates/vfs-clgit) --> | Filesystem virtualization over git
+| ![crev-author] &nbsp; [vfs-zip](reviews/vfs-zip.md) | [docs.rs](https://docs.rs/vfs-zip) <!-- [lib.rs](https://lib.rs/crates/vfs-zip) --> | Filesystem virtualization over zip archives
 | ![crev-positive] &nbsp; [warmy](reviews/warmy.md) | [docs.rs](https://docs.rs/warmy) <!-- [lib.rs](https://lib.rs/crates/warmy) --> | Hot reloading resources. Not browser friendly.
 
 <h2 id="macros">Macros</h2>
