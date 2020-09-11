@@ -1,11 +1,11 @@
 ---
 category:       I/O
-description:    Offset read/write with `&self`
+description:    Offset read_at/write_at with &self
 ---
 
 # read_write_at
 
-Offset read/write with `&self`
+Offset read_at/write_at with `&self`
 
 Pros:
 * No runtime dependencies
