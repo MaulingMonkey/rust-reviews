@@ -9,7 +9,7 @@ Offset read/write with `&self`
 
 Pros:
 * No runtime dependencies
-* `write_at(&self, ...)`
+* `read_at(&self, ...)`
 
 Cons:
 * `BufOffsetReader` is a bit kludgy - `u64 as usize` casts should probably `Err` instead
