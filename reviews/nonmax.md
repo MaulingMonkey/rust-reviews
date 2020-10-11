@@ -8,6 +8,11 @@ msrv:           1.46.0
 
 std::num::NonZero___ equivalents
 
+[ [github](https://github.com/lpghatguy/nonmax)
+• [docs.rs](https://docs.rs/nonmax/)
+• [lib.rs](https://lib.rs/crates/nonmax)
+]
+
 Pros:
 * Works
 * Can represent 0
