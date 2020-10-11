@@ -63,7 +63,12 @@ cls && cargo diff byteorder 0.1.1
 cls && cargo diff byteorder 0.2.0
 ...
 
-# Crosspost to crev
+# Publish review to github:
+# Finish authoring [cratename].md
+# Add/commit [cratename].md
+git push github master
+
+# Crosspost to crev, linking https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/ [cratename].md
 cargo install cargo-crev
 cargo crev crate review -u --advisory            byteorder --vers 0.2.11
 cargo crev crate review -u --advisory            byteorder --vers 0.3.8
