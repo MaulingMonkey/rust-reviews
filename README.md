@@ -155,12 +155,15 @@ This repository serves a few purpouses:
 
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Links | Description |
 | ------ | ----- | ----------- |
+| ![crev-positive] &nbsp; [array-macro](reviews/array-macro.md) | [docs.rs](https://docs.rs/array-macro) <!-- [lib.rs](https://lib.rs/crates/array-macro) --> | `vec![]` but for fixed length arrays
+| ![crev-positive] &nbsp; [aseprite](reviews/aseprite.md) | [docs.rs](https://docs.rs/aseprite) <!-- [lib.rs](https://lib.rs/crates/aseprite) --> | Parse JSON aseprite exports
 | ![crev-none] &nbsp; [crates-index](reviews/crates-index.md) | [docs.rs](https://docs.rs/crates-index) <!-- [lib.rs](https://lib.rs/crates/crates-index) --> | Parse the crates.io index
 | ![crev-positive] &nbsp; [icon-pie](reviews/icon-pie.md) | [docs.rs](https://docs.rs/icon-pie) <!-- [lib.rs](https://lib.rs/crates/icon-pie) --> | Generate .ico / .icns
 | ![crev-positive] &nbsp; [inventory](reviews/inventory.md) | [docs.rs](https://docs.rs/inventory) <!-- [lib.rs](https://lib.rs/crates/inventory) --> | Decentralized static registration
 | ![crev-positive] &nbsp; [lazy_static](reviews/lazy_static.md) | [docs.rs](https://docs.rs/lazy_static) <!-- [lib.rs](https://lib.rs/crates/lazy_static) --> | Static init at runtime.
 | ![crev-positive] &nbsp; [macro_rules_attribute](reviews/macro_rules_attribute.md) | [docs.rs](https://docs.rs/macro_rules_attribute) <!-- [lib.rs](https://lib.rs/crates/macro_rules_attribute) --> | Provides a #[derive(...)]-like attribute without needing your own proc macro crate.
 | ![crev-positive] &nbsp; [matches](reviews/matches.md) | [docs.rs](https://docs.rs/matches) <!-- [lib.rs](https://lib.rs/crates/matches) --> | `matches!(variable, SomeEnum::SomeCase) == true`
+| ![crev-positive] &nbsp; [nonmax](reviews/nonmax.md) | [docs.rs](https://docs.rs/nonmax) <!-- [lib.rs](https://lib.rs/crates/nonmax) --> | std::num::NonZero___ equivalents
 | ![crev-positive] &nbsp; [num_cpus](reviews/num_cpus.md) | [docs.rs](https://docs.rs/num_cpus) <!-- [lib.rs](https://lib.rs/crates/num_cpus) --> | Queries the OS for the number of CPU cores you have
 | ![crev-positive] &nbsp; [num_enum](reviews/num_enum.md) | [docs.rs](https://docs.rs/num_enum) <!-- [lib.rs](https://lib.rs/crates/num_enum) --> | derive traits for enums
 | ![crev-positive] &nbsp; [num_enum_derive](reviews/num_enum_derive.md) | [docs.rs](https://docs.rs/num_enum_derive) <!-- [lib.rs](https://lib.rs/crates/num_enum_derive) --> | impl crate for num_enum
@@ -271,7 +274,12 @@ cls && cargo diff byteorder 0.1.1
 cls && cargo diff byteorder 0.2.0
 ...
 
-# Crosspost to crev
+# Publish review to github:
+# Finish authoring [cratename].md
+# Add/commit [cratename].md
+git push github master
+
+# Crosspost to crev, linking https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/ [cratename].md
 cargo install cargo-crev
 cargo crev crate review -u --advisory            byteorder --vers 0.2.11
 cargo crev crate review -u --advisory            byteorder --vers 0.3.8
