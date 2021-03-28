@@ -214,6 +214,7 @@ This repository serves a few purpouses:
 | ![crev-negative] &nbsp; [icon_baker](reviews/icon_baker.md) | [docs.rs](https://docs.rs/icon_baker) <!-- [lib.rs](https://lib.rs/crates/icon_baker) --> | Generate .ico / .icns
 | ![crev-positive] &nbsp; [idna](reviews/idna.md) | [docs.rs](https://docs.rs/idna) <!-- [lib.rs](https://lib.rs/crates/idna) --> | Encoding/decoding domain names/punycode.
 | ![crev-neutral] &nbsp; [itoa](reviews/itoa.md) | [docs.rs](https://docs.rs/itoa) <!-- [lib.rs](https://lib.rs/crates/itoa) --> | Fast integer I/O
+| ![crev-positive] &nbsp; [leb128](reviews/leb128.md) | [docs.rs](https://docs.rs/leb128) <!-- [lib.rs](https://lib.rs/crates/leb128) --> | Encode/decode DWARF&#39;s variable length integer format, LEB128
 | ![crev-none] &nbsp; [serde](reviews/serde.md) | [docs.rs](https://docs.rs/serde) <!-- [lib.rs](https://lib.rs/crates/serde) --> | The crate used for serialization throughout the Rust ecosystem
 | ![crev-none] &nbsp; [serde_json](reviews/serde_json.md) | [docs.rs](https://docs.rs/serde_json) <!-- [lib.rs](https://lib.rs/crates/serde_json) --> | serde companion crate for (de)serializing `.json` files.
 | ![crev-positive] &nbsp; [sourcefile](reviews/sourcefile.md) | [docs.rs](https://docs.rs/sourcefile) <!-- [lib.rs](https://lib.rs/crates/sourcefile) --> | Source code file:line &lt;-&gt; offset conversion
