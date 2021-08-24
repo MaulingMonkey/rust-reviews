@@ -194,6 +194,7 @@ This repository serves a few purpouses:
 | ![crev-positive] &nbsp; [read_write_at](reviews/read_write_at.md) | [docs.rs](https://docs.rs/read_write_at) <!-- [lib.rs](https://lib.rs/crates/read_write_at) --> | Offset read_at/write_at with &amp;self
 | ![crev-positive] &nbsp; [shellexpand](reviews/shellexpand.md) | [docs.rs](https://docs.rs/shellexpand) <!-- [lib.rs](https://lib.rs/crates/shellexpand) --> | Expand unix style env vars within strings.
 | ![crev-positive] &nbsp; [tempfile](reviews/tempfile.md) | [docs.rs](https://docs.rs/tempfile) <!-- [lib.rs](https://lib.rs/crates/tempfile) --> | Create/cleanup temporary files and directories.
+| ![crev-positive] &nbsp; [termios](reviews/termios.md) | [docs.rs](https://docs.rs/termios) <!-- [lib.rs](https://lib.rs/crates/termios) --> | Terminal I/O Settings
 | ![crev-positive] &nbsp; [vfs](reviews/vfs.md) | [docs.rs](https://docs.rs/vfs) <!-- [lib.rs](https://lib.rs/crates/vfs) --> | Filesystem virtualization
 | ![crev-author] &nbsp; [vfs-clgit](reviews/vfs-clgit.md) | [docs.rs](https://docs.rs/vfs-clgit) <!-- [lib.rs](https://lib.rs/crates/vfs-clgit) --> | Filesystem virtualization over git
 | ![crev-author] &nbsp; [vfs-zip](reviews/vfs-zip.md) | [docs.rs](https://docs.rs/vfs-zip) <!-- [lib.rs](https://lib.rs/crates/vfs-zip) --> | Filesystem virtualization over zip archives
