@@ -33,7 +33,7 @@ References:
 | ❌ | [positioned-io-preview]  | 0.3.3 | [write_at](https://docs.rs/positioned-io-preview/0.3.3/positioned_io_preview/trait.WriteAt.html#tymethod.write_at) requires `&mut self`
 | ❌ | [scroll]                 | 0.10.1 | Assumes you have a fully loaded byte buffer
 
-[buffered_offset_reader]:   https://lib.rs/crates/io-at
+[buffered_offset_reader]:   https://lib.rs/crates/buffered_offset_reader
 [read_write_at]:            https://lib.rs/crates/read_write_at
 [io-at]:                    https://lib.rs/crates/io-at
 [positioned-io]:            https://lib.rs/crates/positioned-io
@@ -120,12 +120,12 @@ References:
 
 | diff                  | rating | notes |
 | --------------------- | ------ | ----- |
-| 
+|
 
 # Full File Version Template
 
 | Line  | Notes |
 | -----:| ----- |
-| 
+|
 
 -->
